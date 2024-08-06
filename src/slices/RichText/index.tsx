@@ -6,6 +6,20 @@ import {
   JSXMapSerializer,
 } from "@prismicio/react";
 import styles from "./index.module.css";
+import { Arima, Amaranth } from 'next/font/google';
+
+const arima = Arima({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-arima',
+})
+
+const amaranth = Amaranth({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ["400", "700"],
+  variable: '--font-amaranth'
+})
 
 const components: JSXMapSerializer = {
   hyperlink: ({ node, children }) => {
@@ -28,7 +42,7 @@ type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
  */
 const RichText = ({ slice }: RichTextProps): JSX.Element => {
   return (
-    <section className={styles.richtext}>
+    <section className={arima.className}>
       <PrismicRichText field={slice.primary.content} components={components} />
     </section>
   );
