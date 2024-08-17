@@ -34,7 +34,7 @@ const PageContact = ({ slice }: PageContactProps): JSX.Element => {
     >
       <div className="mt-20">
         <h2 className={`${arima.className} text-slate-200 text-3xl md:text-4xl lg:text-5xl text-balance`}>
-          <PrismicText field={slice.primary.titre_page_de_contacte} />
+          <PrismicText field={slice.primary.titre_page_contact} />
         </h2>
         <form action="" className="mt-7">
           <div className={`${amaranth.className} text-slate-400`}>
