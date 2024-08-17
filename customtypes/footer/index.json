@@ -19,11 +19,12 @@
                 "placeholder": ""
               }
             },
-            "lien_de_la_page_du_menu": {
+            "lien_vers_la_page": {
               "type": "Link",
               "config": {
-                "label": "Lien de la page du menu",
+                "label": "Lien vers la page page du menu",
                 "placeholder": "",
+                "allowTargetBlank": false,
                 "select": null
               }
             }

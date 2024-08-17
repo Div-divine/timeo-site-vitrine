@@ -5,6 +5,101 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Item in *Footer → Menu Footer*
+ */
+export interface FooterDocumentDataFooterItem {
+  /**
+   * Nom menu field in *Footer → Menu Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer[].nom_menu
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  nom_menu: prismic.KeyTextField;
+
+  /**
+   * Lien vers la page page du menu field in *Footer → Menu Footer*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer[].lien_vers_la_page
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien_vers_la_page: prismic.LinkField;
+}
+
+/**
+ * Item in *Footer → Politiques de confidentialité*
+ */
+export interface FooterDocumentDataPolitiquesDeConfidentialiteItem {
+  /**
+   * Titre de le politique field in *Footer → Politiques de confidentialité*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.politiques_de_confidentialite[].politique_de_confidentialite
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  politique_de_confidentialite: prismic.KeyTextField;
+
+  /**
+   * Lien vers la politique field in *Footer → Politiques de confidentialité*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.politiques_de_confidentialite[].lien_vers_la_politique
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien_vers_la_politique: prismic.LinkField;
+}
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+  /**
+   * Menu Footer field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  footer: prismic.GroupField<Simplify<FooterDocumentDataFooterItem>>;
+
+  /**
+   * Politiques de confidentialité field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.politiques_de_confidentialite[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  politiques_de_confidentialite: prismic.GroupField<
+    Simplify<FooterDocumentDataPolitiquesDeConfidentialiteItem>
+  >;
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FooterDocumentData>,
+    "footer",
+    Lang
+  >;
+
+/**
  * Item in *Menu → Menu de navigation*
  */
 export interface MenuDocumentDataMenuDeNavigationItem {
@@ -92,7 +187,10 @@ interface MenuDocumentData {
 export type MenuDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<MenuDocumentData>, "menu", Lang>;
 
-type PageDocumentDataSlicesSlice = CatchPhraseSectionSlice | RichTextSlice;
+type PageDocumentDataSlicesSlice =
+  | PageContactSlice
+  | CatchPhraseSectionSlice
+  | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -164,7 +262,7 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = MenuDocument | PageDocument;
+export type AllDocumentTypes = FooterDocument | MenuDocument | PageDocument;
 
 /**
  * Item in *CatchPhraseSection → Default → Primary → Button à propos*
@@ -316,6 +414,101 @@ export type CatchPhraseSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *PageContact → Default → Primary*
+ */
+export interface PageContactSliceDefaultPrimary {
+  /**
+   * Titre page de contact field in *PageContact → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_contact.default.primary.titre_page_de_contacte
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre_page_de_contacte: prismic.RichTextField;
+
+  /**
+   * Pseudo utilisateur field in *PageContact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_contact.default.primary.pseudo_utilisateur
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  pseudo_utilisateur: prismic.KeyTextField;
+
+  /**
+   * Adresse mail field in *PageContact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_contact.default.primary.adresse_mail
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  adresse_mail: prismic.KeyTextField;
+
+  /**
+   * champ de message field in *PageContact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_contact.default.primary.champ_de_message
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  champ_de_message: prismic.KeyTextField;
+
+  /**
+   * Image icon message field in *PageContact → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_contact.default.primary.image_icon_message
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_icon_message: prismic.ImageField<never>;
+
+  /**
+   * button envoyer field in *PageContact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_contact.default.primary.button_envoyer
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_envoyer: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for PageContact Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageContactSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PageContactSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PageContact*
+ */
+type PageContactSliceVariation = PageContactSliceDefault;
+
+/**
+ * PageContact Shared Slice
+ *
+ * - **API ID**: `page_contact`
+ * - **Description**: PageContact
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageContactSlice = prismic.SharedSlice<
+  "page_contact",
+  PageContactSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -370,6 +563,10 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      FooterDocument,
+      FooterDocumentData,
+      FooterDocumentDataFooterItem,
+      FooterDocumentDataPolitiquesDeConfidentialiteItem,
       MenuDocument,
       MenuDocumentData,
       MenuDocumentDataMenuDeNavigationItem,
@@ -383,6 +580,10 @@ declare module "@prismicio/client" {
       CatchPhraseSectionSliceDefaultPrimary,
       CatchPhraseSectionSliceVariation,
       CatchPhraseSectionSliceDefault,
+      PageContactSlice,
+      PageContactSliceDefaultPrimary,
+      PageContactSliceVariation,
+      PageContactSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,

@@ -22,7 +22,7 @@ export async function Footer({ bgColor }: FooterProps) {
     const footer = await client.getSingle("footer");
 
     return (
-        <footer className={`bg-[${bgColor}] mt-8`}>
+        <footer className={`bg-[${bgColor}] mt-8 pb-2`}>
             <div className="w-40 m-auto">
                 <Link href="/">
                     <TimeoIcon />
@@ -44,9 +44,13 @@ export async function Footer({ bgColor }: FooterProps) {
                     ))}
                 </ul>
                 <ul className={`${amaranth.className} flex flex-wrap justify-around w-[80%] m-auto 
-                text-xl`}>
-                    {
-                        
+                text-base mt-5`}>
+                    {footer.data.politiques_de_confidentialite.map((item, index) => {
+                        return <PrismicNextLink field={item.lien_vers_la_politique}>
+                            {item.politique_de_confidentialite}
+                        </PrismicNextLink>
+                    })
+
                     }
 
                 </ul>
