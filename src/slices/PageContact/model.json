@@ -21,6 +21,13 @@
             "multi": "heading2"
           }
         },
+        "label_pseudo": {
+          "type": "Text",
+          "config": {
+            "label": "Label Pseudo",
+            "placeholder": ""
+          }
+        },
         "pseudo_utilisateur": {
           "type": "Text",
           "config": {
@@ -28,10 +35,24 @@
             "placeholder": ""
           }
         },
+        "label_adresse_mail": {
+          "type": "Text",
+          "config": {
+            "label": "Label Adresse Mail",
+            "placeholder": ""
+          }
+        },
         "adresse_mail": {
           "type": "Text",
           "config": {
             "label": "Adresse mail",
+            "placeholder": ""
+          }
+        },
+        "label_message": {
+          "type": "Text",
+          "config": {
+            "label": "Label Message",
             "placeholder": ""
           }
         },

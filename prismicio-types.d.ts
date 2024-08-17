@@ -428,6 +428,16 @@ export interface PageContactSliceDefaultPrimary {
   titre_page_contact: prismic.RichTextField;
 
   /**
+   * Label Pseudo field in *PageContact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_contact.default.primary.label_pseudo
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label_pseudo: prismic.KeyTextField;
+
+  /**
    * Pseudo utilisateur field in *PageContact → Default → Primary*
    *
    * - **Field Type**: Text
@@ -438,6 +448,16 @@ export interface PageContactSliceDefaultPrimary {
   pseudo_utilisateur: prismic.KeyTextField;
 
   /**
+   * Label Adresse Mail field in *PageContact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_contact.default.primary.label_adresse_mail
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label_adresse_mail: prismic.KeyTextField;
+
+  /**
    * Adresse mail field in *PageContact → Default → Primary*
    *
    * - **Field Type**: Text
@@ -446,6 +466,16 @@ export interface PageContactSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   adresse_mail: prismic.KeyTextField;
+
+  /**
+   * Label Message field in *PageContact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_contact.default.primary.label_message
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label_message: prismic.KeyTextField;
 
   /**
    * champ de message field in *PageContact → Default → Primary*

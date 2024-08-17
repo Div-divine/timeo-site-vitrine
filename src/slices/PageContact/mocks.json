@@ -56,6 +56,21 @@
 						}
 					}
 				]
+			},
+			"label_pseudo": {
+				"__TYPE__": "FieldContent",
+				"value": "together",
+				"type": "Text"
+			},
+			"label_adresse_mail": {
+				"__TYPE__": "FieldContent",
+				"value": "south",
+				"type": "Text"
+			},
+			"label_message": {
+				"__TYPE__": "FieldContent",
+				"value": "bell",
+				"type": "Text"
 			}
 		},
 		"items": []

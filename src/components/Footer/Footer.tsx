@@ -30,8 +30,9 @@ export async function Footer({ bgColor }: FooterProps) {
                 </Link>
             </div>
             <nav aria-label="Footer" className="mt-5">
-                <ul className={`${amaranth.className} flex flex-wrap justify-around w-[40%] m-auto 
-                text-xl border border-gray-300 p-2 rounded-2xl bg-gray-200 shadow-footerMenuShadow`}>
+                <ul className={`${amaranth.className} flex flex-wrap justify-around w-[90%] sm:w-[40%] m-auto 
+                text-sm sm:text-xl border border-gray-300 p-2 rounded-2xl bg-gray-200 
+                shadow-footerMenuShadow`}>
                     {footer.data.footer.map((item, index) => (
                         <ActiveLink key={index} href={item.lien_vers_la_page.url}>
                             <PrismicNextLink

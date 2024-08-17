@@ -38,28 +38,28 @@ const PageContact = ({ slice }: PageContactProps): JSX.Element => {
         </h2>
         <form action="" className="mt-7">
           <div className={`${amaranth.className} text-slate-400 text-lg`}>
-            <label htmlFor="pseudo-field">Pseudo (facultatif)</label>
+            <label htmlFor="pseudo-field">{slice.primary.label_pseudo} (facultatif)</label>
           </div>
           <div>
             <input type="text" name="pseudo-field" id="pseudo-field" placeholder={`${slice.primary.pseudo_utilisateur}`}
-              className="w-full sm:w-[600px] md:w-[700px] h-10 rounded-2xl mt-1 px-3" />
+              className="w-full sm:w-[600px] md:w-[700px] h-10 rounded-2xl mt-1 px-3 md:text-xl" />
           </div>
           <div className="mt-7">
             <div className={`${amaranth.className} text-slate-400 text-lg`}>
-              <label htmlFor="email-field">Adresse mail</label>
+              <label htmlFor="email-field">{slice.primary.label_adresse_mail}</label>
             </div>
             <div className="mt-1">
               <input type="email" name="email-field" id="email-field" placeholder={`${slice.primary.adresse_mail}`}
-                className="w-full sm:w-[600px] md:w-[700px] h-10 rounded-2xl px-3" />
+                className="w-full sm:w-[600px] md:w-[700px] h-10 rounded-2xl px-3 md:text-xl" />
             </div>
           </div>
           <div className="mt-7">
             <div className={`${amaranth.className} text-slate-400 text-lg`}>
-            <label htmlFor="text-area">Message</label>
+            <label htmlFor="text-area">{slice.primary.label_message}</label>
             </div>
             <div className="mt-1">
               <textarea name="text-area" id="text-area" placeholder={`${slice.primary.champ_de_message}`}
-                className="w-full sm:w-[600px] md:w-[700px] h-40 rounded-2xl p-3" />
+                className="w-full sm:w-[600px] md:w-[700px] h-40 rounded-2xl p-3 md:text-xl" />
             </div>
           </div>
           <div className={clsx(`${amaranth.className} text-slate-300 md:text-xl bg-[#072A35] w-[80%] 
