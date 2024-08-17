@@ -1,0 +1,102 @@
+{
+  "id": "catch_phrase_section",
+  "type": "SharedSlice",
+  "name": "CatchPhraseSection",
+  "description": "CatchPhraseSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "sous_titre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sous-titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "photo_mobile": {
+          "type": "Image",
+          "config": {
+            "label": "photo mobile",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "button_a_propos": {
+          "type": "Group",
+          "config": {
+            "label": "Button à propos",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label ",
+                  "placeholder": ""
+                }
+              },
+              "lien": {
+                "type": "Link",
+                "config": {
+                  "label": "Lien",
+                  "placeholder": "",
+                  "select": null
+                }
+              }
+            }
+          }
+        },
+        "section_photo_personnes_ayant_teste": {
+          "type": "Group",
+          "config": {
+            "label": "Section photo personnes ayant testé",
+            "repeat": true,
+            "fields": {
+              "photo": {
+                "type": "Image",
+                "config": {
+                  "label": "Photo",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "numbre_de_personnes_ayant_aimees": {
+                "type": "Text",
+                "config": {
+                  "label": "numbre de personnes ayant aimées",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "phrase_des_personnes_qui_ont_testes": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Phrase des personnes qui ont testé",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

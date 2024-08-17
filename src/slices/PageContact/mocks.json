@@ -1,0 +1,63 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"pseudo_utilisateur": {
+				"__TYPE__": "FieldContent",
+				"value": "general",
+				"type": "Text"
+			},
+			"adresse_mail": {
+				"__TYPE__": "FieldContent",
+				"value": "common",
+				"type": "Text"
+			},
+			"champ_de_message": {
+				"__TYPE__": "FieldContent",
+				"value": "year",
+				"type": "Text"
+			},
+			"titre_page_de_contacte": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Behavior"
+						}
+					}
+				]
+			},
+			"image_icon_message": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+					"width": 4480,
+					"height": 4480
+				},
+				"url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+				"width": 4480,
+				"height": 4480,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"button_envoyer": {
+				"__TYPE__": "FieldContent",
+				"value": "wave",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

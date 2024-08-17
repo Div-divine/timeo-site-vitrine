@@ -4,7 +4,95 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+/**
+ * Item in *Menu → Menu de navigation*
+ */
+export interface MenuDocumentDataMenuDeNavigationItem {
+  /**
+   * Label du menu field in *Menu → Menu de navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu.menu_de_navigation[].label_du_menu
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label_du_menu: prismic.KeyTextField;
+
+  /**
+   * Lien du menu field in *Menu → Menu de navigation*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu.menu_de_navigation[].lien_du_menu
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien_du_menu: prismic.LinkField;
+}
+
+/**
+ * Content for Menu documents
+ */
+interface MenuDocumentData {
+  /**
+   * Titre du site field in *Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu.titre_du_site
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_du_site: prismic.KeyTextField;
+
+  /**
+   * Description field in *Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Image par défaut field in *Menu*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu.image_par_defaut
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_par_defaut: prismic.ImageField<never>;
+
+  /**
+   * Menu de navigation field in *Menu*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu.menu_de_navigation[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  menu_de_navigation: prismic.GroupField<
+    Simplify<MenuDocumentDataMenuDeNavigationItem>
+  >;
+}
+
+/**
+ * Menu document from Prismic
+ *
+ * - **API ID**: `menu`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MenuDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<MenuDocumentData>, "menu", Lang>;
+
+type PageDocumentDataSlicesSlice = CatchPhraseSectionSlice | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -76,18 +164,167 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = PageDocument;
+export type AllDocumentTypes = MenuDocument | PageDocument;
 
 /**
- * Primary content in *RichText → Primary*
+ * Item in *CatchPhraseSection → Default → Primary → Button à propos*
+ */
+export interface CatchPhraseSectionSliceDefaultPrimaryButtonAProposItem {
+  /**
+   * Label  field in *CatchPhraseSection → Default → Primary → Button à propos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catch_phrase_section.default.primary.button_a_propos[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Lien field in *CatchPhraseSection → Default → Primary → Button à propos*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catch_phrase_section.default.primary.button_a_propos[].lien
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien: prismic.LinkField;
+}
+
+/**
+ * Item in *CatchPhraseSection → Default → Primary → Section photo personnes ayant testé*
+ */
+export interface CatchPhraseSectionSliceDefaultPrimarySectionPhotoPersonnesAyantTesteItem {
+  /**
+   * Photo field in *CatchPhraseSection → Default → Primary → Section photo personnes ayant testé*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catch_phrase_section.default.primary.section_photo_personnes_ayant_teste[].photo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  photo: prismic.ImageField<never>;
+
+  /**
+   * numbre de personnes ayant aimées field in *CatchPhraseSection → Default → Primary → Section photo personnes ayant testé*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catch_phrase_section.default.primary.section_photo_personnes_ayant_teste[].numbre_de_personnes_ayant_aimees
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  numbre_de_personnes_ayant_aimees: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *CatchPhraseSection → Default → Primary*
+ */
+export interface CatchPhraseSectionSliceDefaultPrimary {
+  /**
+   * Titre field in *CatchPhraseSection → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catch_phrase_section.default.primary.titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre: prismic.TitleField;
+
+  /**
+   * Sous-titre field in *CatchPhraseSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catch_phrase_section.default.primary.sous_titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sous_titre: prismic.RichTextField;
+
+  /**
+   * photo mobile field in *CatchPhraseSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catch_phrase_section.default.primary.photo_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  photo_mobile: prismic.ImageField<never>;
+
+  /**
+   * Button à propos field in *CatchPhraseSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catch_phrase_section.default.primary.button_a_propos[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  button_a_propos: prismic.GroupField<
+    Simplify<CatchPhraseSectionSliceDefaultPrimaryButtonAProposItem>
+  >;
+
+  /**
+   * Section photo personnes ayant testé field in *CatchPhraseSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catch_phrase_section.default.primary.section_photo_personnes_ayant_teste[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  section_photo_personnes_ayant_teste: prismic.GroupField<
+    Simplify<CatchPhraseSectionSliceDefaultPrimarySectionPhotoPersonnesAyantTesteItem>
+  >;
+
+  /**
+   * Phrase des personnes qui ont testé field in *CatchPhraseSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catch_phrase_section.default.primary.phrase_des_personnes_qui_ont_testes
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  phrase_des_personnes_qui_ont_testes: prismic.RichTextField;
+}
+
+/**
+ * Default variation for CatchPhraseSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CatchPhraseSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CatchPhraseSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CatchPhraseSection*
+ */
+type CatchPhraseSectionSliceVariation = CatchPhraseSectionSliceDefault;
+
+/**
+ * CatchPhraseSection Shared Slice
+ *
+ * - **API ID**: `catch_phrase_section`
+ * - **Description**: CatchPhraseSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CatchPhraseSectionSlice = prismic.SharedSlice<
+  "catch_phrase_section",
+  CatchPhraseSectionSliceVariation
+>;
+
+/**
+ * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
   /**
-   * Content field in *RichText → Primary*
+   * Content field in *RichText → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Lorem ipsum...
-   * - **API ID Path**: rich_text.primary.content
+   * - **API ID Path**: rich_text.default.primary.content
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
@@ -133,10 +370,19 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      MenuDocument,
+      MenuDocumentData,
+      MenuDocumentDataMenuDeNavigationItem,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      CatchPhraseSectionSlice,
+      CatchPhraseSectionSliceDefaultPrimaryButtonAProposItem,
+      CatchPhraseSectionSliceDefaultPrimarySectionPhotoPersonnesAyantTesteItem,
+      CatchPhraseSectionSliceDefaultPrimary,
+      CatchPhraseSectionSliceVariation,
+      CatchPhraseSectionSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,

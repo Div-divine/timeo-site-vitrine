@@ -9,7 +9,10 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['var(--font-arima)', 'var(--font-amaranth)']
-      }
+      },
+      boxShadow: {
+        'footerMenuShadow': '0 4px 10px rgba(0, 0, 0, 0.25)'
+      },
     },
   },
   plugins: [],

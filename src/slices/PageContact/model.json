@@ -1,0 +1,64 @@
+{
+  "id": "page_contact",
+  "type": "SharedSlice",
+  "name": "PageContact",
+  "description": "PageContact",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titre_page_de_contacte": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre page de contact",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "pseudo_utilisateur": {
+          "type": "Text",
+          "config": {
+            "label": "Pseudo utilisateur",
+            "placeholder": ""
+          }
+        },
+        "adresse_mail": {
+          "type": "Text",
+          "config": {
+            "label": "Adresse mail",
+            "placeholder": ""
+          }
+        },
+        "champ_de_message": {
+          "type": "Text",
+          "config": {
+            "label": "champ de message",
+            "placeholder": ""
+          }
+        },
+        "image_icon_message": {
+          "type": "Image",
+          "config": {
+            "label": "Image icon message",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "button_envoyer": {
+          "type": "Text",
+          "config": {
+            "label": "button envoyer",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

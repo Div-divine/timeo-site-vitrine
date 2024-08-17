@@ -3,5 +3,7 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  catch_phrase_section: dynamic(() => import("./CatchPhraseSection")),
+  page_contact: dynamic(() => import("./PageContact")),
   rich_text: dynamic(() => import("./RichText")),
 };

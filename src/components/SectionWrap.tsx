@@ -1,17 +1,17 @@
 import clsx from "clsx";
 
-type BoundedProps = {
+type SectionWrapProps = {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 };
 
-export default function Bounded({
+export default function SectionWrap({
   as: Comp = "section",
   className,
   children,
   ...restProps
-}: BoundedProps) {
+}: SectionWrapProps) {
   return (
     <Comp
       className={clsx(

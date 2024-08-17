@@ -1,0 +1,59 @@
+{
+  "format": "custom",
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "footer": {
+        "type": "Group",
+        "config": {
+          "label": "Menu Footer",
+          "repeat": true,
+          "fields": {
+            "nom_menu": {
+              "type": "Text",
+              "config": {
+                "label": "Nom menu",
+                "placeholder": ""
+              }
+            },
+            "lien_de_la_page_du_menu": {
+              "type": "Link",
+              "config": {
+                "label": "Lien de la page du menu",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "politiques_de_confidentialite": {
+        "type": "Group",
+        "config": {
+          "label": "Politiques de confidentialité",
+          "repeat": true,
+          "fields": {
+            "politique_de_confidentialite": {
+              "type": "Text",
+              "config": {
+                "label": "Titre de le politique",
+                "placeholder": ""
+              }
+            },
+            "lien_vers_la_politique": {
+              "type": "Link",
+              "config": {
+                "label": "Lien vers la politique",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

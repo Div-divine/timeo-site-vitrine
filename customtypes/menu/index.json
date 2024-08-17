@@ -1,0 +1,57 @@
+{
+  "format": "custom",
+  "id": "menu",
+  "label": "Menu",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "titre_du_site": {
+        "type": "Text",
+        "config": {
+          "label": "Titre du site",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
+      "image_par_defaut": {
+        "type": "Image",
+        "config": {
+          "label": "Image par défaut",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "menu_de_navigation": {
+        "type": "Group",
+        "config": {
+          "label": "Menu de navigation",
+          "repeat": true,
+          "fields": {
+            "label_du_menu": {
+              "type": "Text",
+              "config": {
+                "label": "Label du menu",
+                "placeholder": ""
+              }
+            },
+            "lien_du_menu": {
+              "type": "Link",
+              "config": {
+                "label": "Lien du menu",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
