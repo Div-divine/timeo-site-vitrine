@@ -422,10 +422,10 @@ export interface PageContactSliceDefaultPrimary {
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: page_contact.default.primary.titre_page_de_contacte
+   * - **API ID Path**: page_contact.default.primary.titre_page_contact
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  titre_page_de_contacte: prismic.RichTextField;
+  titre_page_contact: prismic.RichTextField;
 
   /**
    * Pseudo utilisateur field in *PageContact → Default → Primary*

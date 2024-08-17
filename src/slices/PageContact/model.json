@@ -12,7 +12,7 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "titre_page_de_contacte": {
+        "titre_page_contact": {
           "type": "StructuredText",
           "config": {
             "label": "Titre page de contact",

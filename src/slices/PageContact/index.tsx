@@ -37,20 +37,30 @@ const PageContact = ({ slice }: PageContactProps): JSX.Element => {
           <PrismicText field={slice.primary.titre_page_contact} />
         </h2>
         <form action="" className="mt-7">
-          <div className={`${amaranth.className} text-slate-400`}>
-            <label htmlFor="pseudo-field">Ce champs pseudo est facultatif</label>
+          <div className={`${amaranth.className} text-slate-400 text-lg`}>
+            <label htmlFor="pseudo-field">Pseudo (facultatif)</label>
           </div>
           <div>
             <input type="text" name="pseudo-field" id="pseudo-field" placeholder={`${slice.primary.pseudo_utilisateur}`}
-              className="w-full sm:w-[600px] md:w-[700px] h-10 rounded-2xl mt-2 px-3" />
+              className="w-full sm:w-[600px] md:w-[700px] h-10 rounded-2xl mt-1 px-3" />
           </div>
           <div className="mt-7">
-            <input type="email" placeholder={`${slice.primary.adresse_mail}`}
-              className="w-full sm:w-[600px] md:w-[700px] h-10 rounded-2xl px-3" />
+            <div className={`${amaranth.className} text-slate-400 text-lg`}>
+              <label htmlFor="email-field">Adresse mail</label>
+            </div>
+            <div className="mt-1">
+              <input type="email" name="email-field" id="email-field" placeholder={`${slice.primary.adresse_mail}`}
+                className="w-full sm:w-[600px] md:w-[700px] h-10 rounded-2xl px-3" />
+            </div>
           </div>
           <div className="mt-7">
-            <textarea name="text-area" id="text-area" placeholder={`${slice.primary.champ_de_message}`}
-              className="w-full sm:w-[600px] md:w-[700px] h-40 rounded-2xl p-3" />
+            <div className={`${amaranth.className} text-slate-400 text-lg`}>
+            <label htmlFor="text-area">Message</label>
+            </div>
+            <div className="mt-1">
+              <textarea name="text-area" id="text-area" placeholder={`${slice.primary.champ_de_message}`}
+                className="w-full sm:w-[600px] md:w-[700px] h-40 rounded-2xl p-3" />
+            </div>
           </div>
           <div className={clsx(`${amaranth.className} text-slate-300 md:text-xl bg-[#072A35] w-[80%] 
             mx-auto flex flex-wrap flex-col justify-center items-center rounded-full border border-blue-100/20

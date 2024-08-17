@@ -18,17 +18,6 @@
 				"value": "year",
 				"type": "Text"
 			},
-			"titre_page_de_contacte": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Behavior"
-						}
-					}
-				]
-			},
 			"image_icon_message": {
 				"origin": {
 					"id": "main",
@@ -56,6 +45,17 @@
 				"__TYPE__": "FieldContent",
 				"value": "wave",
 				"type": "Text"
+			},
+			"titre_page_contact": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Place"
+						}
+					}
+				]
 			}
 		},
 		"items": []
