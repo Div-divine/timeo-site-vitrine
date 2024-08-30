@@ -39,12 +39,13 @@ const CatchPhraseSection = ({
     >
       <SectionWrap className="py-0 md:py-0 lg:py-0 pb-0 md:pb-0 lg:pb-0">
         {isFilled.richText(slice.primary.titre) &&
-          <h1 className={`${arima.className} text-balance font-light text-4xl lg:text-5xl text-center text-slate-200 
+          <h1 className={`${arima.className} text-balance font-medium text-4xl lg:text-5xl text-center text-slate-200 
           w-full mt-10 md:mt-20 lg:mt-24`}>
             <PrismicText field={slice.primary.titre} />
           </h1>}
         {isFilled.richText(slice.primary.sous_titre) &&
-          <h2 className={`${amaranth.className} max-lg:text-balance text-center font-light md:text-lg bg-[#b2efdb] bg-clip-text text-transparent max-w-xl md:max-w-3xl`}>
+          <h2 className={`${amaranth.className} max-lg:text-balance text-center font-light md:text-lg bg-[#b2efdb] bg-clip-text text-transparent max-w-xl md:max-w-3xl
+          m-auto`}>
             <PrismicText field={slice.primary.sous_titre} />
           </h2>
         }

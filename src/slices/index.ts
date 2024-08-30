@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 
 export const components = {
   catch_phrase_section: dynamic(() => import("./CatchPhraseSection")),
+  developpement: dynamic(() => import("./Developpement")),
+  eveil_individuel: dynamic(() => import("./EveilIndividuel")),
   page_contact: dynamic(() => import("./PageContact")),
   rich_text: dynamic(() => import("./RichText")),
 };

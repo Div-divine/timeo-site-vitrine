@@ -1,0 +1,93 @@
+{
+  "id": "developpement",
+  "type": "SharedSlice",
+  "name": "Developpement",
+  "description": "Developpement",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "etape": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Étape",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3"
+          }
+        },
+        "valeur": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Valeur",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3"
+          }
+        },
+        "titre_de_conte": {
+          "type": "Text",
+          "config": {
+            "label": "Titre de conte",
+            "placeholder": ""
+          }
+        },
+        "image_conte": {
+          "type": "Image",
+          "config": {
+            "label": "Image conte",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "icon_audio_play": {
+          "type": "Select",
+          "config": {
+            "label": "Icon audio play",
+            "placeholder": "",
+            "options": [
+              "icon_play_circle",
+              "icon_play_square"
+            ],
+            "default_value": "icon_play_circle"
+          }
+        },
+        "icon_audio_pause": {
+          "type": "Select",
+          "config": {
+            "label": "Icon audio pause",
+            "placeholder": "",
+            "options": [
+              "icon_pause_circle",
+              "icon_pause_square"
+            ],
+            "default_value": "icon_pause_circle"
+          }
+        },
+        "audio_coaching": {
+          "type": "Link",
+          "config": {
+            "label": "Audio coaching",
+            "placeholder": "",
+            "select": "media"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

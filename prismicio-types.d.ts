@@ -188,6 +188,8 @@ export type MenuDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<MenuDocumentData>, "menu", Lang>;
 
 type PageDocumentDataSlicesSlice =
+  | DeveloppementSlice
+  | EveilIndividuelSlice
   | PageContactSlice
   | CatchPhraseSectionSlice
   | RichTextSlice;
@@ -414,6 +416,258 @@ export type CatchPhraseSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Developpement → Default → Primary*
+ */
+export interface DeveloppementSliceDefaultPrimary {
+  /**
+   * Étape field in *Developpement → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: developpement.default.primary.etape
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  etape: prismic.RichTextField;
+
+  /**
+   * Description field in *Developpement → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: developpement.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Valeur field in *Developpement → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: developpement.default.primary.valeur
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  valeur: prismic.RichTextField;
+
+  /**
+   * Titre de conte field in *Developpement → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: developpement.default.primary.titre_de_conte
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_de_conte: prismic.KeyTextField;
+
+  /**
+   * Image conte field in *Developpement → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: developpement.default.primary.image_conte
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_conte: prismic.ImageField<never>;
+
+  /**
+   * Icon audio play field in *Developpement → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: icon_play_circle
+   * - **API ID Path**: developpement.default.primary.icon_audio_play
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon_audio_play: prismic.SelectField<
+    "icon_play_circle" | "icon_play_square",
+    "filled"
+  >;
+
+  /**
+   * Icon audio pause field in *Developpement → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: icon_pause_circle
+   * - **API ID Path**: developpement.default.primary.icon_audio_pause
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon_audio_pause: prismic.SelectField<
+    "icon_pause_circle" | "icon_pause_square",
+    "filled"
+  >;
+
+  /**
+   * Audio coaching field in *Developpement → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: developpement.default.primary.audio_coaching
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  audio_coaching: prismic.LinkToMediaField;
+}
+
+/**
+ * Default variation for Developpement Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DeveloppementSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DeveloppementSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Developpement*
+ */
+type DeveloppementSliceVariation = DeveloppementSliceDefault;
+
+/**
+ * Developpement Shared Slice
+ *
+ * - **API ID**: `developpement`
+ * - **Description**: Developpement
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DeveloppementSlice = prismic.SharedSlice<
+  "developpement",
+  DeveloppementSliceVariation
+>;
+
+/**
+ * Item in *EveilIndividuel → Default → Primary → Image et description*
+ */
+export interface EveilIndividuelSliceDefaultPrimaryImageEtDescriptionItem {
+  /**
+   * Image slider field in *EveilIndividuel → Default → Primary → Image et description*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: eveil_individuel.default.primary.image_et_description[].image_slider
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_slider: prismic.ImageField<never>;
+
+  /**
+   * Description field in *EveilIndividuel → Default → Primary → Image et description*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: eveil_individuel.default.primary.image_et_description[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Item in *EveilIndividuel → Default → Primary → Button découvrire notre catalogue*
+ */
+export interface EveilIndividuelSliceDefaultPrimaryButtonCatalogueItem {
+  /**
+   * lien vers la page catalogue field in *EveilIndividuel → Default → Primary → Button découvrire notre catalogue*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: eveil_individuel.default.primary.button_catalogue[].lien_vers_la_page_catalogue
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien_vers_la_page_catalogue: prismic.LinkField;
+
+  /**
+   * Placeholder button field in *EveilIndividuel → Default → Primary → Button découvrire notre catalogue*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: eveil_individuel.default.primary.button_catalogue[].placeholder_button
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  placeholder_button: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *EveilIndividuel → Default → Primary*
+ */
+export interface EveilIndividuelSliceDefaultPrimary {
+  /**
+   * Titre field in *EveilIndividuel → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: eveil_individuel.default.primary.titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre: prismic.TitleField;
+
+  /**
+   * Sous titre field in *EveilIndividuel → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: eveil_individuel.default.primary.sous_titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sous_titre: prismic.RichTextField;
+
+  /**
+   * Image et description field in *EveilIndividuel → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: eveil_individuel.default.primary.image_et_description[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  image_et_description: prismic.GroupField<
+    Simplify<EveilIndividuelSliceDefaultPrimaryImageEtDescriptionItem>
+  >;
+
+  /**
+   * Button découvrire notre catalogue field in *EveilIndividuel → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: eveil_individuel.default.primary.button_catalogue[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  button_catalogue: prismic.GroupField<
+    Simplify<EveilIndividuelSliceDefaultPrimaryButtonCatalogueItem>
+  >;
+}
+
+/**
+ * Default variation for EveilIndividuel Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EveilIndividuelSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<EveilIndividuelSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *EveilIndividuel*
+ */
+type EveilIndividuelSliceVariation = EveilIndividuelSliceDefault;
+
+/**
+ * EveilIndividuel Shared Slice
+ *
+ * - **API ID**: `eveil_individuel`
+ * - **Description**: EveilIndividuel
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EveilIndividuelSlice = prismic.SharedSlice<
+  "eveil_individuel",
+  EveilIndividuelSliceVariation
+>;
+
+/**
  * Primary content in *PageContact → Default → Primary*
  */
 export interface PageContactSliceDefaultPrimary {
@@ -610,6 +864,16 @@ declare module "@prismicio/client" {
       CatchPhraseSectionSliceDefaultPrimary,
       CatchPhraseSectionSliceVariation,
       CatchPhraseSectionSliceDefault,
+      DeveloppementSlice,
+      DeveloppementSliceDefaultPrimary,
+      DeveloppementSliceVariation,
+      DeveloppementSliceDefault,
+      EveilIndividuelSlice,
+      EveilIndividuelSliceDefaultPrimaryImageEtDescriptionItem,
+      EveilIndividuelSliceDefaultPrimaryButtonCatalogueItem,
+      EveilIndividuelSliceDefaultPrimary,
+      EveilIndividuelSliceVariation,
+      EveilIndividuelSliceDefault,
       PageContactSlice,
       PageContactSliceDefaultPrimary,
       PageContactSliceVariation,

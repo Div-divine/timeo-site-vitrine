@@ -27,6 +27,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "developpement": {
+              "type": "SharedSlice"
+            },
+            "eveil_individuel": {
+              "type": "SharedSlice"
+            },
             "page_contact": {
               "type": "SharedSlice"
             },

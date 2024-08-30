@@ -1,0 +1,85 @@
+{
+  "id": "eveil_individuel",
+  "type": "SharedSlice",
+  "name": "EveilIndividuel",
+  "description": "EveilIndividuel",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "sous_titre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sous titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3"
+          }
+        },
+        "image_et_description": {
+          "type": "Group",
+          "config": {
+            "label": "Image et description",
+            "repeat": true,
+            "fields": {
+              "image_slider": {
+                "type": "Image",
+                "config": {
+                  "label": "Image slider",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "button_catalogue": {
+          "type": "Group",
+          "config": {
+            "label": "Button découvrire notre catalogue",
+            "repeat": true,
+            "fields": {
+              "lien_vers_la_page_catalogue": {
+                "type": "Link",
+                "config": {
+                  "label": "lien vers la page catalogue",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "placeholder_button": {
+                "type": "Text",
+                "config": {
+                  "label": "Placeholder button",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
