@@ -46,7 +46,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </Head>
-      <body className={`${arima.variable} ${amaranth.variable}`}>
+      <body className={`${arima.variable} ${amaranth.variable} bg-[#e4faee]`}>
         <Header />
         <main>
           {children}

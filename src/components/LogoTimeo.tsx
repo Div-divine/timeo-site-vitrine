@@ -7,7 +7,7 @@ function TimeoIcon() {
         <filter id="shadow">
           <feOffset dx="5" dy="5" />
           <feGaussianBlur stdDeviation="2" />  {/* Optional blur for softer shadow */}
-          <feFlood flood-color="#000" />
+          <feFlood floodColor="#000" />
           <feComposite in2="SourceAlpha" operator="in" />
           <feMerge>
             <feMergeNode in="SourceGraphic" />

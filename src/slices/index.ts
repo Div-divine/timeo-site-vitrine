@@ -8,4 +8,5 @@ export const components = {
   eveil_individuel: dynamic(() => import("./EveilIndividuel")),
   page_contact: dynamic(() => import("./PageContact")),
   rich_text: dynamic(() => import("./RichText")),
+  transformation: dynamic(() => import("./Transformation")),
 };

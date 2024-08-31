@@ -1,0 +1,53 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"etape": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Control"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"value": "mouse",
+				"type": "Text"
+			},
+			"button_transformation": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"lien_vers_la_page",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://twitter.com"
+									}
+								}
+							],
+							[
+								"placeholder_button",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "history",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,59 @@
+{
+  "id": "transformation",
+  "type": "SharedSlice",
+  "name": "Transformation",
+  "description": "Transformation",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "etape": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Étape",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        },
+        "button_transformation": {
+          "type": "Group",
+          "config": {
+            "label": "Button",
+            "repeat": true,
+            "fields": {
+              "lien_vers_la_page": {
+                "type": "Link",
+                "config": {
+                  "label": "Lien vers la page",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "placeholder_button": {
+                "type": "Text",
+                "config": {
+                  "label": "Placeholder button",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

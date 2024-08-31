@@ -188,6 +188,7 @@ export type MenuDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<MenuDocumentData>, "menu", Lang>;
 
 type PageDocumentDataSlicesSlice =
+  | TransformationSlice
   | DeveloppementSlice
   | EveilIndividuelSlice
   | PageContactSlice
@@ -857,6 +858,98 @@ export type RichTextSlice = prismic.SharedSlice<
   RichTextSliceVariation
 >;
 
+/**
+ * Item in *Transformation → Default → Primary → Button*
+ */
+export interface TransformationSliceDefaultPrimaryButtonTransformationItem {
+  /**
+   * Lien vers la page field in *Transformation → Default → Primary → Button*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: transformation.default.primary.button_transformation[].lien_vers_la_page
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien_vers_la_page: prismic.LinkField;
+
+  /**
+   * Placeholder button field in *Transformation → Default → Primary → Button*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: transformation.default.primary.button_transformation[].placeholder_button
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  placeholder_button: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Transformation → Default → Primary*
+ */
+export interface TransformationSliceDefaultPrimary {
+  /**
+   * Étape field in *Transformation → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: transformation.default.primary.etape
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  etape: prismic.RichTextField;
+
+  /**
+   * Description field in *Transformation → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: transformation.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Button field in *Transformation → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: transformation.default.primary.button_transformation[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  button_transformation: prismic.GroupField<
+    Simplify<TransformationSliceDefaultPrimaryButtonTransformationItem>
+  >;
+}
+
+/**
+ * Default variation for Transformation Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TransformationSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TransformationSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Transformation*
+ */
+type TransformationSliceVariation = TransformationSliceDefault;
+
+/**
+ * Transformation Shared Slice
+ *
+ * - **API ID**: `transformation`
+ * - **Description**: Transformation
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TransformationSlice = prismic.SharedSlice<
+  "transformation",
+  TransformationSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -902,6 +995,11 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      TransformationSlice,
+      TransformationSliceDefaultPrimaryButtonTransformationItem,
+      TransformationSliceDefaultPrimary,
+      TransformationSliceVariation,
+      TransformationSliceDefault,
     };
   }
 }
