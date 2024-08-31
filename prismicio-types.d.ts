@@ -188,6 +188,7 @@ export type MenuDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<MenuDocumentData>, "menu", Lang>;
 
 type PageDocumentDataSlicesSlice =
+  | ParcoursTimeoSlice
   | TransformationSlice
   | DeveloppementSlice
   | EveilIndividuelSlice
@@ -814,6 +815,108 @@ export type PageContactSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ParcoursTimeo → Default → Primary*
+ */
+export interface ParcoursTimeoSliceDefaultPrimary {
+  /**
+   * Titre field in *ParcoursTimeo → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parcours_timeo.default.primary.titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre: prismic.RichTextField;
+
+  /**
+   * Étape éveil field in *ParcoursTimeo → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parcours_timeo.default.primary.etape_eveil
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  etape_eveil: prismic.KeyTextField;
+
+  /**
+   * Étape developpement field in *ParcoursTimeo → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parcours_timeo.default.primary.etape_developpement
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  etape_developpement: prismic.KeyTextField;
+
+  /**
+   * Étape transformation field in *ParcoursTimeo → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parcours_timeo.default.primary.etape_transformation
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  etape_transformation: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ParcoursTimeo → Items*
+ */
+export interface ParcoursTimeoSliceDefaultItem {
+  /**
+   * Icon field in *ParcoursTimeo → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parcours_timeo.items[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<
+    "eveil" | "developpement" | "transformation" | "Timeo"
+  >;
+
+  /**
+   * Etape field in *ParcoursTimeo → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parcours_timeo.items[].etape
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  etape: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ParcoursTimeo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ParcoursTimeoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ParcoursTimeoSliceDefaultPrimary>,
+  Simplify<ParcoursTimeoSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ParcoursTimeo*
+ */
+type ParcoursTimeoSliceVariation = ParcoursTimeoSliceDefault;
+
+/**
+ * ParcoursTimeo Shared Slice
+ *
+ * - **API ID**: `parcours_timeo`
+ * - **Description**: ParcoursTimeo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ParcoursTimeoSlice = prismic.SharedSlice<
+  "parcours_timeo",
+  ParcoursTimeoSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -991,6 +1094,11 @@ declare module "@prismicio/client" {
       PageContactSliceDefaultPrimary,
       PageContactSliceVariation,
       PageContactSliceDefault,
+      ParcoursTimeoSlice,
+      ParcoursTimeoSliceDefaultPrimary,
+      ParcoursTimeoSliceDefaultItem,
+      ParcoursTimeoSliceVariation,
+      ParcoursTimeoSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,

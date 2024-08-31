@@ -69,3 +69,22 @@
     }
 }
 
+/* Timeo parcours animated section*/
+.pulsin-icon {
+    transition: all 0.3s ease;
+  }
+  
+  .signal-line {
+    transition: background-position 0.5s ease, opacity 0.5s ease;
+    background-size: 200% 200%;
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      slategray 20%,
+      #e2e8f0 50%, /* slate-200 color with thickness */
+      slategray 80%,
+      transparent
+    );
+  }
+  
+  

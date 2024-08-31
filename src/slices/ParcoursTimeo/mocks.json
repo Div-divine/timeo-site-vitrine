@@ -1,0 +1,57 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titre": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Somebody"
+						}
+					}
+				]
+			},
+			"etape_eveil": {
+				"__TYPE__": "FieldContent",
+				"value": "floor",
+				"type": "Text"
+			},
+			"etape_developpement": {
+				"__TYPE__": "FieldContent",
+				"value": "wrapped",
+				"type": "Text"
+			},
+			"etape_transformation": {
+				"__TYPE__": "FieldContent",
+				"value": "level",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"icon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "transformation",
+							"type": "Select"
+						}
+					],
+					[
+						"etape",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "whistle",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

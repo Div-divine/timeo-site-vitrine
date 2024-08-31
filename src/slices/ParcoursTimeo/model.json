@@ -1,0 +1,70 @@
+{
+  "id": "parcours_timeo",
+  "type": "SharedSlice",
+  "name": "ParcoursTimeo",
+  "description": "ParcoursTimeo",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "etape_eveil": {
+          "type": "Text",
+          "config": {
+            "label": "Étape éveil",
+            "placeholder": ""
+          }
+        },
+        "etape_developpement": {
+          "type": "Text",
+          "config": {
+            "label": "Étape developpement",
+            "placeholder": ""
+          }
+        },
+        "etape_transformation": {
+          "type": "Text",
+          "config": {
+            "label": "Étape transformation",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "icon": {
+          "type": "Select",
+          "config": {
+            "label": "Icon",
+            "placeholder": "",
+            "options": [
+              "eveil",
+              "developpement",
+              "transformation",
+              "Timeo"
+            ]
+          }
+        },
+        "etape": {
+          "type": "Text",
+          "config": {
+            "label": "Etape",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

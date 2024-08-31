@@ -7,6 +7,7 @@ export const components = {
   developpement: dynamic(() => import("./Developpement")),
   eveil_individuel: dynamic(() => import("./EveilIndividuel")),
   page_contact: dynamic(() => import("./PageContact")),
+  parcours_timeo: dynamic(() => import("./ParcoursTimeo")),
   rich_text: dynamic(() => import("./RichText")),
   transformation: dynamic(() => import("./Transformation")),
 };
