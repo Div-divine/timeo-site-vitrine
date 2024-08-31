@@ -506,6 +506,26 @@ export interface DeveloppementSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   audio_coaching: prismic.LinkToMediaField;
+
+  /**
+   * Catch phrase video leader field in *Developpement → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: developpement.default.primary.catch_phrase_video_leader
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  catch_phrase_video_leader: prismic.KeyTextField;
+
+  /**
+   * Video du leader field in *Developpement → Default → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: developpement.default.primary.video_du_leader
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  video_du_leader: prismic.EmbedField;
 }
 
 /**

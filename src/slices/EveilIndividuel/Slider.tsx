@@ -5,18 +5,6 @@ import { ImageField, KeyTextField, LinkField } from '@prismicio/client';
 import { Arima, Amaranth } from 'next/font/google';
 import ButtonLink from '@/components/PageBtnLink';
 
-
-type CarouselProps = {
-    content: Array<{
-        image_slider: ImageField;
-        description: KeyTextField;
-    }>;
-    button_catalogue: Array<{
-        lien_vers_la_page_catalogue: LinkField;
-        placeholder_button: KeyTextField
-    }>;
-};
-
 const arima = Arima({
     subsets: ['latin'],
     display: 'swap',
@@ -29,6 +17,18 @@ const amaranth = Amaranth({
     weight: ["400", "700"],
     variable: '--font-amaranth'
 })
+
+type CarouselProps = {
+    content: Array<{
+        image_slider: ImageField;
+        description: KeyTextField;
+    }>;
+    button_catalogue: Array<{
+        lien_vers_la_page_catalogue: LinkField;
+        placeholder_button: KeyTextField
+    }>;
+};
+
 
 export default function CustomCarousel({ content, button_catalogue }: CarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -87,7 +87,7 @@ export default function CustomCarousel({ content, button_catalogue }: CarouselPr
     }
 
     return (
-        <div className='h-[100vh]'>
+        <div className='h-[85vh] sm:h-[100vh] mt-3'>
             <div className="relative w-full mx-auto overflow-auto h-[75%]">
                 <div className="relative w-full flex left-0">
                     {slides.map((slide, slideIndex) => (
@@ -125,7 +125,7 @@ export default function CustomCarousel({ content, button_catalogue }: CarouselPr
             </div>
             <div className='w-fit m-auto font-semibold shadow-2xl max-[380px]:mt-4 sm:mt-0'>
                 {button_catalogue && button_catalogue.map((item, index) => (
-                    <ButtonLink field={item.lien_vers_la_page_catalogue} className={`${arima.className} bg-[#356A78]`}>
+                    <ButtonLink field={item.lien_vers_la_page_catalogue} className=" arima-font bg-[#356A78]">
                         {item.placeholder_button}
                     </ButtonLink>
                 ))}

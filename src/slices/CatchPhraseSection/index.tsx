@@ -44,7 +44,7 @@ const CatchPhraseSection = ({
             <PrismicText field={slice.primary.titre} />
           </h1>}
         {isFilled.richText(slice.primary.sous_titre) &&
-          <h2 className={`${amaranth.className} max-lg:text-balance text-center font-light md:text-lg bg-[#b2efdb] bg-clip-text text-transparent max-w-xl md:max-w-3xl
+          <h2 className={`${amaranth.className} text-center font-light md:text-lg bg-[#b2efdb] bg-clip-text text-transparent max-w-xl md:max-w-2xl
           m-auto`}>
             <PrismicText field={slice.primary.sous_titre} />
           </h2>
