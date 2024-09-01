@@ -47,7 +47,7 @@ export async function Footer({ bgColor }: FooterProps) {
                 <ul className={`${amaranth.className} flex flex-wrap justify-around w-[80%] m-auto 
                 text-base mt-5`}>
                     {footer.data.politiques_de_confidentialite.map((item, index) => {
-                        return <PrismicNextLink field={item.lien_vers_la_politique}>
+                        return <PrismicNextLink field={item.lien_vers_la_politique} key={index}>
                             {item.politique_de_confidentialite}
                         </PrismicNextLink>
                     })

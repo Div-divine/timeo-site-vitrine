@@ -4,7 +4,6 @@ import { repositoryName } from "@/prismicio";
 import Header from "@/components/nav/Header";
 import { Footer } from "@/components/Footer/Footer";
 import { Content } from "@prismicio/client";
-import Head from "next/head";
 import { Arima, Amaranth } from 'next/font/google';
 
 const arima = Arima({
@@ -34,19 +33,8 @@ export default function RootLayout({
   footer: Content.FooterDocument
 }>) {
   return (
-    <html lang="fr">
-      <Head>
-        {/* Preconnect to Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-        {/* Link to Google Fonts */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Arima&family=Amaranth:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-      <body className={`${arima.variable} ${amaranth.variable} bg-[#e4faee]`}>
+    <html lang="fr" className={`${arima.variable} ${amaranth.variable}`}>
+      <body>
         <Header />
         <main>
           {children}

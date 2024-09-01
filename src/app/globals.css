@@ -2,19 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --font-arima: 'Arima', sans-serif;
-    --font-amaranth: 'Amaranth', sans-serif;
-  }
-  
-  .arima-font {
-    font-family: var(--font-arima);
-  }
-  
-  .amaranth-font {
-    font-family: var(--font-amaranth);
-  }
-
 /* css section for audio display and control*/
 #audio-progress-bar {
     -webkit-appearance: none;

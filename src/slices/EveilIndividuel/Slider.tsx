@@ -125,7 +125,7 @@ export default function CustomCarousel({ content, button_catalogue }: CarouselPr
             </div>
             <div className='w-fit m-auto font-semibold shadow-2xl max-[380px]:mt-4 sm:mt-0'>
                 {button_catalogue && button_catalogue.map((item, index) => (
-                    <ButtonLink field={item.lien_vers_la_page_catalogue} className=" arima-font bg-[#356A78]">
+                    <ButtonLink field={item.lien_vers_la_page_catalogue} className={`${arima.className} bg-[#356A78]`} key={index}>
                         {item.placeholder_button}
                     </ButtonLink>
                 ))}

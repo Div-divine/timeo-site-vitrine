@@ -2,7 +2,6 @@ import { Content } from "@prismicio/client";
 import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import SectionWrap from "@/components/SectionWrap";
 import { Arima, Amaranth } from 'next/font/google';
-import ButtonLink from "@/components/PageBtnLink";
 import clsx from "clsx";
 
 const arima = Arima({

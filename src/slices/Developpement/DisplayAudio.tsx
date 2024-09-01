@@ -4,6 +4,22 @@ import { PrismicNextImage } from '@prismicio/next';
 import { BsFillPlayCircleFill, BsFillPlayBtnFill, BsFillPauseCircleFill, BsFillPauseBtnFill, BsFillHeartFill } from 'react-icons/bs';
 import { KeyTextField, LinkToMediaField, RichTextField } from '@prismicio/client';
 import { PrismicRichText } from '@prismicio/react';
+import { Arima, Amaranth } from 'next/font/google';
+
+
+const arima = Arima({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-arima',
+})
+
+const amaranth = Amaranth({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ["400", "700"],
+  variable: '--font-amaranth'
+})
+
 
 type IconKey = 'icon_play_circle' | 'icon_play_square' | 'icon_pause_circle' | 'icon_pause_square';
 
@@ -126,11 +142,11 @@ export default function AudioPlayer({
                 </div>
               </div>
               <div className='ml-2'>
-                <div className='arima-font text-[#61c1c9] font-bold text-xl sm:text-2xl'>
+                <div className={`${arima.className}text-[#61c1c9] font-bold text-xl sm:text-2xl`}>
                   <PrismicRichText field={taleValue} />
                 </div>
                 <div>
-                  <p className='amaranth-font text-slate-200 font-medium'>{taleTitle}</p>
+                  <p className={`${amaranth.className} text-slate-200 font-medium`}>{taleTitle}</p>
                 </div>
               </div>
             </div>
