@@ -49,7 +49,7 @@ const ParcoursTimeo = ({ slice }: ParcoursTimeoProps): JSX.Element => {
       {/* Align item.etape with the icon containers */}
       <div className={`${amaranth.className} w-full max-w-7xl m-auto hidden md:flex justify-between`}>
         {slice.items.map((item, index) => (
-          <div key={index} className={clsx("text-slate-300 text-center",
+          <div key={index} className={clsx("text-slate-300 text-center font-light md:text-lg",
             index === 0 ? "w-56" : "w-40"
           )}>
             {item.etape}

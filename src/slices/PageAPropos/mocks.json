@@ -1,0 +1,101 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titre": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Clearly"
+						}
+					}
+				]
+			},
+			"description_timeo": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ipsum aute quis mollit minim voluptate exercitation ad dolor exercitation duis ullamco ut mollit deserunt. Occaecat tempor commodo nulla commodo qui nulla nostrud laboris consequat aute cillum incididunt consectetur."
+						}
+					}
+				]
+			},
+			"creatrice_timeo": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image_creatrice",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+										"width": 3456,
+										"height": 3456
+									},
+									"url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+									"width": 3456,
+									"height": 3456,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"nom",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "gasoline",
+									"type": "Text"
+								}
+							],
+							[
+								"titre",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "all",
+									"type": "Text"
+								}
+							],
+							[
+								"site",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com"
+									}
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "popular",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

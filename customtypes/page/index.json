@@ -27,6 +27,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "page_a_propos": {
+              "type": "SharedSlice"
+            },
             "parcours_timeo": {
               "type": "SharedSlice"
             },

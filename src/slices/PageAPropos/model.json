@@ -1,0 +1,83 @@
+{
+  "id": "page_a_propos",
+  "type": "SharedSlice",
+  "name": "PageAPropos",
+  "description": "PageAPropos",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "description_timeo": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description Timéo",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "creatrice_timeo": {
+          "type": "Group",
+          "config": {
+            "label": "Créatrice Timéo",
+            "repeat": true,
+            "fields": {
+              "image_creatrice": {
+                "type": "Image",
+                "config": {
+                  "label": "Image créatrice",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "nom": {
+                "type": "Text",
+                "config": {
+                  "label": "Nom",
+                  "placeholder": ""
+                }
+              },
+              "titre": {
+                "type": "Text",
+                "config": {
+                  "label": "Titre",
+                  "placeholder": ""
+                }
+              },
+              "site": {
+                "type": "Link",
+                "config": {
+                  "label": "Site",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -188,6 +188,7 @@ export type MenuDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<MenuDocumentData>, "menu", Lang>;
 
 type PageDocumentDataSlicesSlice =
+  | PageAProposSlice
   | ParcoursTimeoSlice
   | TransformationSlice
   | DeveloppementSlice
@@ -690,6 +691,128 @@ export type EveilIndividuelSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *PageAPropos → Default → Primary → Créatrice Timéo*
+ */
+export interface PageAProposSliceDefaultPrimaryCreatriceTimeoItem {
+  /**
+   * Image créatrice field in *PageAPropos → Default → Primary → Créatrice Timéo*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.creatrice_timeo[].image_creatrice
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_creatrice: prismic.ImageField<never>;
+
+  /**
+   * Nom field in *PageAPropos → Default → Primary → Créatrice Timéo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.creatrice_timeo[].nom
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  nom: prismic.KeyTextField;
+
+  /**
+   * Titre field in *PageAPropos → Default → Primary → Créatrice Timéo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.creatrice_timeo[].titre
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre: prismic.KeyTextField;
+
+  /**
+   * Site field in *PageAPropos → Default → Primary → Créatrice Timéo*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.creatrice_timeo[].site
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  site: prismic.LinkField;
+
+  /**
+   * Description field in *PageAPropos → Default → Primary → Créatrice Timéo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.creatrice_timeo[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *PageAPropos → Default → Primary*
+ */
+export interface PageAProposSliceDefaultPrimary {
+  /**
+   * Titre field in *PageAPropos → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre: prismic.RichTextField;
+
+  /**
+   * Description Timéo field in *PageAPropos → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.description_timeo
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_timeo: prismic.RichTextField;
+
+  /**
+   * Créatrice Timéo field in *PageAPropos → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.creatrice_timeo[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  creatrice_timeo: prismic.GroupField<
+    Simplify<PageAProposSliceDefaultPrimaryCreatriceTimeoItem>
+  >;
+}
+
+/**
+ * Default variation for PageAPropos Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageAProposSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PageAProposSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PageAPropos*
+ */
+type PageAProposSliceVariation = PageAProposSliceDefault;
+
+/**
+ * PageAPropos Shared Slice
+ *
+ * - **API ID**: `page_a_propos`
+ * - **Description**: PageAPropos
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageAProposSlice = prismic.SharedSlice<
+  "page_a_propos",
+  PageAProposSliceVariation
+>;
+
+/**
  * Primary content in *PageContact → Default → Primary*
  */
 export interface PageContactSliceDefaultPrimary {
@@ -1090,6 +1213,11 @@ declare module "@prismicio/client" {
       EveilIndividuelSliceDefaultPrimary,
       EveilIndividuelSliceVariation,
       EveilIndividuelSliceDefault,
+      PageAProposSlice,
+      PageAProposSliceDefaultPrimaryCreatriceTimeoItem,
+      PageAProposSliceDefaultPrimary,
+      PageAProposSliceVariation,
+      PageAProposSliceDefault,
       PageContactSlice,
       PageContactSliceDefaultPrimary,
       PageContactSliceVariation,
