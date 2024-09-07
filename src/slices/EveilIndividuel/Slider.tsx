@@ -32,30 +32,32 @@ type CarouselProps = {
 
 export default function CustomCarousel({ content, button_catalogue }: CarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
-   
+
     const [itemsPerSlide, setItemsPerSlide] = useState(1);
     const [totalItems, setTotalItems] = useState(0)
 
     useEffect(() => {
-        // Function to determine items per slide based on screen width
-        const updateItemsPerSlide = () => {
-            if (window.innerWidth >= 1024) { // lg
-                setItemsPerSlide(3);
-                setTotalItems( content.length)
-            } else if (window.innerWidth >= 768) { // md
-                setItemsPerSlide(2);
-                setTotalItems( content.length)
-            } else { // sm
-                setItemsPerSlide(1);
-                setTotalItems( content.length/2)
-            }
-        };
+        if (content) {
+            // Function to determine items per slide based on screen width
+            const updateItemsPerSlide = () => {
+                if (window.innerWidth >= 1024) { // lg
+                    setItemsPerSlide(3);
+                    setTotalItems(content.length)
+                } else if (window.innerWidth >= 768) { // md
+                    setItemsPerSlide(2);
+                    setTotalItems(content.length)
+                } else { // sm
+                    setItemsPerSlide(1);
+                    setTotalItems(content.length / 2)
+                }
+            };
 
-        updateItemsPerSlide(); // Initial check
-        window.addEventListener('resize', updateItemsPerSlide);
+            updateItemsPerSlide(); // Initial check
+            window.addEventListener('resize', updateItemsPerSlide);
 
-        return () => window.removeEventListener('resize', updateItemsPerSlide);
-    }, []);
+            return () => window.removeEventListener('resize', updateItemsPerSlide);
+        }
+    }, [content]);
 
     const slidesCount = Math.ceil(totalItems / itemsPerSlide);
 
