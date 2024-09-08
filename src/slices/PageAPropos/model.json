@@ -58,6 +58,13 @@
                   "placeholder": ""
                 }
               },
+              "nom_du_lien_vers_le_site": {
+                "type": "Text",
+                "config": {
+                  "label": "Nom du lien vers le site",
+                  "placeholder": ""
+                }
+              },
               "site": {
                 "type": "Link",
                 "config": {

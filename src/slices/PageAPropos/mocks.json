@@ -9,7 +9,7 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Clearly"
+							"text": "Spring"
 						}
 					}
 				]
@@ -88,6 +88,14 @@
 								{
 									"__TYPE__": "FieldContent",
 									"value": "popular",
+									"type": "Text"
+								}
+							],
+							[
+								"nom_du_lien_vers_le_site",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "vessels",
 									"type": "Text"
 								}
 							]

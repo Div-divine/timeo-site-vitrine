@@ -725,6 +725,16 @@ export interface PageAProposSliceDefaultPrimaryCreatriceTimeoItem {
   titre: prismic.KeyTextField;
 
   /**
+   * Nom du lien vers le site field in *PageAPropos → Default → Primary → Créatrice Timéo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.creatrice_timeo[].nom_du_lien_vers_le_site
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  nom_du_lien_vers_le_site: prismic.KeyTextField;
+
+  /**
    * Site field in *PageAPropos → Default → Primary → Créatrice Timéo*
    *
    * - **Field Type**: Link
