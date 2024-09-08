@@ -5,6 +5,7 @@ import Link from "next/link";
 import TimeoIcon from "../LogoTimeo";
 import { PrismicNextLink } from "@prismicio/next";
 import { usePathname } from "next/navigation";
+import ActiveLink from "../SetNavLinkState";
 
 const amaranth = Amaranth({
     subsets: ['latin'],
@@ -32,8 +33,10 @@ export default function NavBar({ menu }: MenuProps) {
                 <div>
                     <ul className="gap-16 hidden md:flex">
                         {menu && menu.data.menu_de_navigation.map((item, index) => {
+                            const linkUrl = asLink(item.lien_du_menu);
+                            
                             return (
-                                <li key={index}>
+                                linkUrl && (<ActiveLink key={index} href={linkUrl}>
                                     <PrismicNextLink field={item.lien_du_menu} className="inline-flex min-h-11 items-center text-xl"
                                      aria-current={
                                         pathName.includes(asLink(item.lien_du_menu) as string) ? "page" : undefined
@@ -41,7 +44,7 @@ export default function NavBar({ menu }: MenuProps) {
                                         {item.label_du_menu}
                                     </PrismicNextLink>
 
-                                </li>
+                                </ActiveLink>)
                             );
                         })
 
