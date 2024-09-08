@@ -34,7 +34,7 @@ const Developpement = ({ slice }: DeveloppementProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full h-auto bg-[#e4faee] px-4 md:px-12 -mt-14 sm:-mt-10 pb-5 md:pb-10 lg:pb-12"
+      className="w-full h-auto bg-[#e4faee] px-4 md:px-4 -mt-14 sm:-mt-10 pb-5 md:pb-10 lg:pb-12"
     >
       <div className=" w-[95%] md:w-[80%] lg:w-[60%] m-auto">
         <div className="flex justify-between">

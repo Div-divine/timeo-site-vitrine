@@ -34,7 +34,7 @@ const EveilIndividuel = ({ slice }: EveilIndividuelProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full h-auto bg-[#e4faee] px-4 md:px-12 pt-2 "
+      className="w-full h-auto bg-[#e4faee] px-4 md:px-4 pt-2 "
     >
       <div className={`${arima.className} text-balance font-medium text-4xl lg:text-5xl text-center text-[#113a2c]
           w-fit m-auto mt-10 md:mt-20 lg:mt-24`}>

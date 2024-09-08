@@ -85,23 +85,6 @@
             }
           }
         }
-      },
-      "items": {
-        "icon": {
-          "type": "Select",
-          "config": {
-            "label": "Icon",
-            "placeholder": "",
-            "options": [
-              "cloudflair",
-              "npm",
-              "github",
-              "figma",
-              "digitalocean",
-              "fly"
-            ]
-          }
-        }
       }
     }
   ]
