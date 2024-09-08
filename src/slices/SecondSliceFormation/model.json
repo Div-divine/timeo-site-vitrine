@@ -1,0 +1,108 @@
+{
+  "id": "second_slice_formation",
+  "type": "SharedSlice",
+  "name": "SecondSliceFormation",
+  "description": "SecondSliceFormation",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "sous_titre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sous titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3"
+          }
+        },
+        "section_example_de_catalogues": {
+          "type": "Group",
+          "config": {
+            "label": "Section example de catalogues",
+            "repeat": true,
+            "fields": {
+              "saison": {
+                "type": "Text",
+                "config": {
+                  "label": "Saison",
+                  "placeholder": ""
+                }
+              },
+              "catalogue": {
+                "type": "Image",
+                "config": {
+                  "label": "Catalogue",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "titre_catalogue": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Titre catalogue",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "sous_titre_catalogue": {
+                "type": "Text",
+                "config": {
+                  "label": "Sous titre catalogue",
+                  "placeholder": ""
+                }
+              },
+              "text_button": {
+                "type": "Text",
+                "config": {
+                  "label": "Text button",
+                  "placeholder": ""
+                }
+              },
+              "lien_vers_la_page_catalogue": {
+                "type": "Link",
+                "config": {
+                  "label": "lien vers la page catalogue",
+                  "placeholder": "",
+                  "select": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {
+        "icon": {
+          "type": "Select",
+          "config": {
+            "label": "Icon",
+            "placeholder": "",
+            "options": [
+              "cloudflair",
+              "npm",
+              "github",
+              "figma",
+              "digitalocean",
+              "fly"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

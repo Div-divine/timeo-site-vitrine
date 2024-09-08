@@ -1,0 +1,115 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titre": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Court"
+						}
+					}
+				]
+			},
+			"sous_titre": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Paragraph"
+						}
+					}
+				]
+			},
+			"section_example_de_catalogues": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"text_button",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "mission",
+									"type": "Text"
+								}
+							],
+							[
+								"lien_vers_la_page_catalogue",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev"
+									}
+								}
+							],
+							[
+								"catalogue",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+										"width": 4380,
+										"height": 2895
+									},
+									"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+									"width": 4380,
+									"height": 2895,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"titre_catalogue",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Reprehenderit veniam laborum ullamco. Nostrud dolor aliqua quis cupidatat anim ad esse non enim nulla labore sit."
+											}
+										}
+									]
+								}
+							],
+							[
+								"sous_titre_catalogue",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "captured",
+									"type": "Text"
+								}
+							],
+							[
+								"saison",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "cut",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

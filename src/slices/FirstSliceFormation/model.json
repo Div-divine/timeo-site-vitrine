@@ -1,0 +1,94 @@
+{
+  "id": "first_slice_formation",
+  "type": "SharedSlice",
+  "name": "FirstSliceFormation",
+  "description": "FirstSliceFormation",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image_de_fond": {
+          "type": "Image",
+          "config": {
+            "label": "Image de fond de page",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "titre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "sous_titre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sous titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3"
+          }
+        },
+        "button_nous_contacter": {
+          "type": "Group",
+          "config": {
+            "label": "Button nous contacter",
+            "repeat": true,
+            "fields": {
+              "text_button": {
+                "type": "Text",
+                "config": {
+                  "label": "Text button",
+                  "placeholder": ""
+                }
+              },
+              "lien_vers_la_page_contacter": {
+                "type": "Link",
+                "config": {
+                  "label": "Lien vers la page contacter",
+                  "placeholder": "",
+                  "select": null
+                }
+              }
+            }
+          }
+        },
+        "description_outils_timeo": {
+          "type": "Group",
+          "config": {
+            "label": "Description Outils Timeo",
+            "repeat": true,
+            "fields": {
+              "titre": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Titre",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading2"
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

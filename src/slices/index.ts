@@ -6,9 +6,11 @@ export const components = {
   catch_phrase_section: dynamic(() => import("./CatchPhraseSection")),
   developpement: dynamic(() => import("./Developpement")),
   eveil_individuel: dynamic(() => import("./EveilIndividuel")),
+  first_slice_formation: dynamic(() => import("./FirstSliceFormation")),
   page_a_propos: dynamic(() => import("./PageAPropos")),
   page_contact: dynamic(() => import("./PageContact")),
   parcours_timeo: dynamic(() => import("./ParcoursTimeo")),
   rich_text: dynamic(() => import("./RichText")),
+  second_slice_formation: dynamic(() => import("./SecondSliceFormation")),
   transformation: dynamic(() => import("./Transformation")),
 };

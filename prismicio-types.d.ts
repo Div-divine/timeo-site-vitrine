@@ -188,6 +188,8 @@ export type MenuDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<MenuDocumentData>, "menu", Lang>;
 
 type PageDocumentDataSlicesSlice =
+  | SecondSliceFormationSlice
+  | FirstSliceFormationSlice
   | PageAProposSlice
   | ParcoursTimeoSlice
   | TransformationSlice
@@ -691,6 +693,145 @@ export type EveilIndividuelSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *FirstSliceFormation → Default → Primary → Button nous contacter*
+ */
+export interface FirstSliceFormationSliceDefaultPrimaryButtonNousContacterItem {
+  /**
+   * Text button field in *FirstSliceFormation → Default → Primary → Button nous contacter*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: first_slice_formation.default.primary.button_nous_contacter[].text_button
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_button: prismic.KeyTextField;
+
+  /**
+   * Lien vers la page contacter field in *FirstSliceFormation → Default → Primary → Button nous contacter*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: first_slice_formation.default.primary.button_nous_contacter[].lien_vers_la_page_contacter
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien_vers_la_page_contacter: prismic.LinkField;
+}
+
+/**
+ * Item in *FirstSliceFormation → Default → Primary → Description Outils Timeo*
+ */
+export interface FirstSliceFormationSliceDefaultPrimaryDescriptionOutilsTimeoItem {
+  /**
+   * Titre field in *FirstSliceFormation → Default → Primary → Description Outils Timeo*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: first_slice_formation.default.primary.description_outils_timeo[].titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre: prismic.RichTextField;
+
+  /**
+   * Description field in *FirstSliceFormation → Default → Primary → Description Outils Timeo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: first_slice_formation.default.primary.description_outils_timeo[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *FirstSliceFormation → Default → Primary*
+ */
+export interface FirstSliceFormationSliceDefaultPrimary {
+  /**
+   * Image de fond de page field in *FirstSliceFormation → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: first_slice_formation.default.primary.image_de_fond
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_de_fond: prismic.ImageField<never>;
+
+  /**
+   * Titre field in *FirstSliceFormation → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: first_slice_formation.default.primary.titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre: prismic.RichTextField;
+
+  /**
+   * Sous titre field in *FirstSliceFormation → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: first_slice_formation.default.primary.sous_titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sous_titre: prismic.RichTextField;
+
+  /**
+   * Button nous contacter field in *FirstSliceFormation → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: first_slice_formation.default.primary.button_nous_contacter[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  button_nous_contacter: prismic.GroupField<
+    Simplify<FirstSliceFormationSliceDefaultPrimaryButtonNousContacterItem>
+  >;
+
+  /**
+   * Description Outils Timeo field in *FirstSliceFormation → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: first_slice_formation.default.primary.description_outils_timeo[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  description_outils_timeo: prismic.GroupField<
+    Simplify<FirstSliceFormationSliceDefaultPrimaryDescriptionOutilsTimeoItem>
+  >;
+}
+
+/**
+ * Default variation for FirstSliceFormation Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FirstSliceFormationSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FirstSliceFormationSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FirstSliceFormation*
+ */
+type FirstSliceFormationSliceVariation = FirstSliceFormationSliceDefault;
+
+/**
+ * FirstSliceFormation Shared Slice
+ *
+ * - **API ID**: `first_slice_formation`
+ * - **Description**: FirstSliceFormation
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FirstSliceFormationSlice = prismic.SharedSlice<
+  "first_slice_formation",
+  FirstSliceFormationSliceVariation
+>;
+
+/**
  * Item in *PageAPropos → Default → Primary → Créatrice Timéo*
  */
 export interface PageAProposSliceDefaultPrimaryCreatriceTimeoItem {
@@ -1095,6 +1236,138 @@ export type RichTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *SecondSliceFormation → Default → Primary → Section example de catalogues*
+ */
+export interface SecondSliceFormationSliceDefaultPrimarySectionExampleDeCataloguesItem {
+  /**
+   * Saison field in *SecondSliceFormation → Default → Primary → Section example de catalogues*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: second_slice_formation.default.primary.section_example_de_catalogues[].saison
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  saison: prismic.KeyTextField;
+
+  /**
+   * Catalogue field in *SecondSliceFormation → Default → Primary → Section example de catalogues*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: second_slice_formation.default.primary.section_example_de_catalogues[].catalogue
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  catalogue: prismic.ImageField<never>;
+
+  /**
+   * Titre catalogue field in *SecondSliceFormation → Default → Primary → Section example de catalogues*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: second_slice_formation.default.primary.section_example_de_catalogues[].titre_catalogue
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre_catalogue: prismic.RichTextField;
+
+  /**
+   * Sous titre catalogue field in *SecondSliceFormation → Default → Primary → Section example de catalogues*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: second_slice_formation.default.primary.section_example_de_catalogues[].sous_titre_catalogue
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sous_titre_catalogue: prismic.KeyTextField;
+
+  /**
+   * Text button field in *SecondSliceFormation → Default → Primary → Section example de catalogues*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: second_slice_formation.default.primary.section_example_de_catalogues[].text_button
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_button: prismic.KeyTextField;
+
+  /**
+   * lien vers la page catalogue field in *SecondSliceFormation → Default → Primary → Section example de catalogues*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: second_slice_formation.default.primary.section_example_de_catalogues[].lien_vers_la_page_catalogue
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien_vers_la_page_catalogue: prismic.LinkField;
+}
+
+/**
+ * Primary content in *SecondSliceFormation → Default → Primary*
+ */
+export interface SecondSliceFormationSliceDefaultPrimary {
+  /**
+   * Titre field in *SecondSliceFormation → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: second_slice_formation.default.primary.titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre: prismic.RichTextField;
+
+  /**
+   * Sous titre field in *SecondSliceFormation → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: second_slice_formation.default.primary.sous_titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sous_titre: prismic.RichTextField;
+
+  /**
+   * Section example de catalogues field in *SecondSliceFormation → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: second_slice_formation.default.primary.section_example_de_catalogues[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  section_example_de_catalogues: prismic.GroupField<
+    Simplify<SecondSliceFormationSliceDefaultPrimarySectionExampleDeCataloguesItem>
+  >;
+}
+
+/**
+ * Default variation for SecondSliceFormation Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SecondSliceFormationSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SecondSliceFormationSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SecondSliceFormation*
+ */
+type SecondSliceFormationSliceVariation = SecondSliceFormationSliceDefault;
+
+/**
+ * SecondSliceFormation Shared Slice
+ *
+ * - **API ID**: `second_slice_formation`
+ * - **Description**: SecondSliceFormation
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SecondSliceFormationSlice = prismic.SharedSlice<
+  "second_slice_formation",
+  SecondSliceFormationSliceVariation
+>;
+
+/**
  * Item in *Transformation → Default → Primary → Button*
  */
 export interface TransformationSliceDefaultPrimaryButtonTransformationItem {
@@ -1223,6 +1496,12 @@ declare module "@prismicio/client" {
       EveilIndividuelSliceDefaultPrimary,
       EveilIndividuelSliceVariation,
       EveilIndividuelSliceDefault,
+      FirstSliceFormationSlice,
+      FirstSliceFormationSliceDefaultPrimaryButtonNousContacterItem,
+      FirstSliceFormationSliceDefaultPrimaryDescriptionOutilsTimeoItem,
+      FirstSliceFormationSliceDefaultPrimary,
+      FirstSliceFormationSliceVariation,
+      FirstSliceFormationSliceDefault,
       PageAProposSlice,
       PageAProposSliceDefaultPrimaryCreatriceTimeoItem,
       PageAProposSliceDefaultPrimary,
@@ -1241,6 +1520,11 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      SecondSliceFormationSlice,
+      SecondSliceFormationSliceDefaultPrimarySectionExampleDeCataloguesItem,
+      SecondSliceFormationSliceDefaultPrimary,
+      SecondSliceFormationSliceVariation,
+      SecondSliceFormationSliceDefault,
       TransformationSlice,
       TransformationSliceDefaultPrimaryButtonTransformationItem,
       TransformationSliceDefaultPrimary,

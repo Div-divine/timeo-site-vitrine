@@ -27,6 +27,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "second_slice_formation": {
+              "type": "SharedSlice"
+            },
+            "first_slice_formation": {
+              "type": "SharedSlice"
+            },
             "page_a_propos": {
               "type": "SharedSlice"
             },
