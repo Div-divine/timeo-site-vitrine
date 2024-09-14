@@ -7,6 +7,17 @@ import self_disvovery from './self-discovery.png';
 import trophy from './trophy.png';
 import Image from "next/image";
 import clsx from "clsx";
+import { Amaranth } from "next/font/google";
+
+
+
+const amaranth = Amaranth({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ["400", "700"],
+  variable: '--font-amaranth'
+})
+
 
 
 /**
@@ -39,14 +50,14 @@ const FirstSliceFormation = ({
         backgroundImage: `url(${slice.primary.image_de_fond.url})`,
       }}>
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50 bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-black/80 bg-opacity-50"></div>
 
         {/* Content */}
-        <div className="relative z-10 h-auto text-white w-[90%] sm:w-[60%] m-auto">
+        <div className="relative z-10 h-auto text-slate-300 w-[90%] sm:w-[60%] m-auto">
           <div className="text-lg sm:text-3xl text-center font-bold pb-4">
             <PrismicRichText field={slice.primary.titre} />
           </div>
-          <div className="text-base sm:text-2xl text-justify">
+          <div className={`sm:text-xl text-justify text-slate-300`}>
             <PrismicRichText field={slice.primary.sous_titre} />
           </div>
           {slice.primary.button_nous_contacter.map((item, index) => (
@@ -72,7 +83,7 @@ const FirstSliceFormation = ({
                 <PrismicRichText field={item.titre} />
               </div>
               <div className="mt-2">
-                <p className="text-center text-slate-200 font-semibold">{item.description}</p>
+                <p className="text-center text-slate-200">{item.description}</p>
               </div>
             </div>
           </div>

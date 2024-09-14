@@ -89,7 +89,7 @@ export default function CustomCarousel({ content, button_catalogue }: CarouselPr
     }
 
     return (
-        <div className='h-[85vh] sm:h-[100vh] mt-3'>
+        <div className='h-[85vh] sm:h-[100vh] my-4'>
             <div className="relative w-full mx-auto overflow-auto h-[75%]">
                 <div className="relative w-full flex left-0">
                     {slides.map((slide, slideIndex) => (
@@ -125,9 +125,9 @@ export default function CustomCarousel({ content, button_catalogue }: CarouselPr
                     Next
                 </button>
             </div>
-            <div className={`${arima.className} w-fit m-auto font-semibold shadow-2xl max-[380px]:mt-4 sm:mt-0`}>
+            <div className={`w-fit m-auto font-semibold shadow-2xl max-[380px]:mt-4 sm:mt-2`}>
                 {button_catalogue && button_catalogue.map((item, index) => (
-                    <ButtonLink field={item.lien_vers_la_page_catalogue} className={`${arima.className} bg-[#356A78]`} key={index}>
+                    <ButtonLink field={item.lien_vers_la_page_catalogue} className={`bg-[#356A78]`} key={index}>
                         {item.placeholder_button}
                     </ButtonLink>
                 ))}

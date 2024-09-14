@@ -36,8 +36,8 @@ const EveilIndividuel = ({ slice }: EveilIndividuelProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="w-full h-auto bg-[#e4faee] px-4 md:px-4 pt-2 "
     >
-      <div className={`${arima.className} text-balance font-medium text-4xl lg:text-5xl text-center text-[#113a2c]
-          w-fit m-auto mt-10 md:mt-20 lg:mt-24`}>
+      <div className={`text-balance font-medium text-4xl lg:text-5xl text-center text-[#113a2c]
+          w-fit m-auto mt-10`}>
         <PrismicRichText field={slice.primary.titre} />
       </div>
       <div className={`${amaranth.className} max-md:text-balance text-center font-light md:text-lg max-w-xl md:w-full m-auto

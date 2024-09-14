@@ -20,7 +20,7 @@ const CatalogueThirdSlice = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-[#e4faee] pt-4 md:pt-8"
+      className="bg-[#e4faee] py-4 md:pt-8"
     >
       <CatalogueSection slice={slice}/>
 

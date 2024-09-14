@@ -44,13 +44,15 @@ export default function AuthorSection({ content }: AuthorSectionProps) {
                             <Image src={index == 0 ? rocketImg : lightImg} alt="" className="hidden md:block md:w-20" />
                             <h2 className="max-md:text-center uppercase font-bold">{item.nom}</h2>
                             <h3 className="max-md:text-center capitalize font-bold">{item.titre}</h3>
-                            <div className="flex flex-col justify-center items-center md:block">
+                            <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
                                 <PrismicNextLink field={item.site} className="font-bold">
                                     Site: {item.nom_du_lien_vers_le_site}
                                 </PrismicNextLink>
                             </div>
                         </div>
-                        <div><p className="text-sm sm:text-base text-justify mt-5">{item.description}</p></div>
+                        <div className="w-full md:block md:w-[70%] lg:w-[50%]">
+                            <p className="text-sm sm:text-base text-justify mt-5">{item.description}</p>
+                        </div>
                     </div>
                 </div>
             ))}
