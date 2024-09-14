@@ -1,0 +1,77 @@
+{
+  "id": "catalogue_second_slice",
+  "type": "SharedSlice",
+  "name": "CatalogueSecondSlice",
+  "description": "CatalogueSecondSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "titre_prix_par_coffret": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre Prix par coffret",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "detail_de_contenus_de_coffret": {
+          "type": "Group",
+          "config": {
+            "label": "Detail de contenus de coffret",
+            "repeat": true,
+            "fields": {
+              "detail": {
+                "type": "Text",
+                "config": {
+                  "label": "Détail",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "button_demander_un_devis": {
+          "type": "Group",
+          "config": {
+            "label": "Button demander un devis",
+            "repeat": true,
+            "fields": {
+              "placeholder": {
+                "type": "Text",
+                "config": {
+                  "label": "Placeholder",
+                  "placeholder": ""
+                }
+              },
+              "lien_vers_la_page": {
+                "type": "Link",
+                "config": {
+                  "label": "Lien vers la page",
+                  "placeholder": "",
+                  "select": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "catalogue_first_slice",
+  "type": "SharedSlice",
+  "name": "CatalogueFirstSlice",
+  "description": "CatalogueFirstSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image_de_fond_de_page": {
+          "type": "Image",
+          "config": {
+            "label": "Image de fond de page",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "titre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        },
+        "les_offres_timeo": {
+          "type": "Group",
+          "config": {
+            "label": "Les offres Timéo",
+            "repeat": true,
+            "fields": {
+              "titre": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Titre",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading3"
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "button_nous_contacter": {
+          "type": "Group",
+          "config": {
+            "label": "Button nous contacter",
+            "repeat": true,
+            "fields": {
+              "placeholder": {
+                "type": "Text",
+                "config": {
+                  "label": "Placeholder",
+                  "placeholder": ""
+                }
+              },
+              "lien_vers_la_page": {
+                "type": "Link",
+                "config": {
+                  "label": "Lien vers la page",
+                  "placeholder": "",
+                  "select": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

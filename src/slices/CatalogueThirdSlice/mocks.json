@@ -1,0 +1,214 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titre_saison_1": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Vegetable"
+						}
+					}
+				]
+			},
+			"catalogue_saison_1": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image_catalogue",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+										"width": 3199,
+										"height": 3199
+									},
+									"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+									"width": 3199,
+									"height": 3199,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"valeur_traitee",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading3",
+											"content": {
+												"text": "Chemical"
+											}
+										}
+									]
+								}
+							],
+							[
+								"titre_de_conte",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "nearest",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"titre_saison_2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Concerned"
+						}
+					}
+				]
+			},
+			"catalogue_saison_2": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image_cata",
+								{
+									"__TYPE__": "ImageContent",
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+										"width": 3199,
+										"height": 3199
+									},
+									"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+									"width": 3199,
+									"height": 3199,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"thumbnails": {}
+								}
+							],
+							[
+								"valeur_traitee",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading3",
+											"content": {
+												"text": "Continent"
+											}
+										}
+									]
+								}
+							],
+							[
+								"titre_de_conte",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "loose",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"titre_saison_3": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Largest"
+						}
+					}
+				]
+			},
+			"catalogue_saison_3": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image_catalogue",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
+										"width": 3277,
+										"height": 4092
+									},
+									"url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
+									"width": 3277,
+									"height": 4092,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"valeur_traitee",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading3",
+											"content": {
+												"text": "Symbol"
+											}
+										}
+									]
+								}
+							],
+							[
+								"titre_de_conte",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "period",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

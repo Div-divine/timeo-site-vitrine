@@ -91,3 +91,25 @@
         line-height: 1.5;
     }
 }
+
+
+#flower-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensures the flowers don't block interaction */
+    z-index: 100; /* Ensure it's on top of the page content */
+  }
+  
+  .flower {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('leave-icon2.png'); /* Path to your flower image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+  }
+  

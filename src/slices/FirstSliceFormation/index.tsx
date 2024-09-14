@@ -8,6 +8,7 @@ import trophy from './trophy.png';
 import Image from "next/image";
 import clsx from "clsx";
 
+
 /**
  * Props for `FirstSliceFormation`.
  */
@@ -59,19 +60,19 @@ const FirstSliceFormation = ({
       </div>
 
       {/* Grid of items positioned 30% on top of the previous div */}
-      <div className="relative -mt-[15%] sm:-mt-[5%] pb-[5%] z-20 block sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-2 m-auto w-[80%] md:w-[80%]">
+      <div className="relative -mt-[15%] sm:-mt-[5%] pb-[5%] z-20 block sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-2 m-auto w-[80%]">
         {slice.primary.description_outils_timeo.map((item, index) => (
           <div key={index} className={clsx(index == 2 || index == 3 ? 'my-0 sm:my-10 lg:my-0' : '')}>
             <div className="w-[30%] m-auto rounded-t-full bg-[#366b7a] px-[8%] pt-[2%] border-t-2 border-slate-200">
               <Image src={Img[index]} alt={`Image for ${item.titre}`} className="w-full" />
             </div>
-            <div className="bg-[#366b7a] text-slate-200 h-full flex flex-col justify-center items-center px-2 rounded-2xl
+            <div className="bg-[#366b7a] text-black/100 h-full flex flex-col justify-center items-center px-2 rounded-2xl
             shadow-footerMenuShadow border-t-2 border-slate-200">
               <div className="font-bold text-center max-sm:mt-4">
                 <PrismicRichText field={item.titre} />
               </div>
               <div className="mt-2">
-                <p className="text-center text-black/100 font-semibold">{item.description}</p>
+                <p className="text-center text-slate-200 font-semibold">{item.description}</p>
               </div>
             </div>
           </div>

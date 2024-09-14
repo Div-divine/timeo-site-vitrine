@@ -1,0 +1,145 @@
+{
+  "id": "catalogue_third_slice",
+  "type": "SharedSlice",
+  "name": "CatalogueThirdSlice",
+  "description": "CatalogueThirdSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titre_saison_1": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre saison 1",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "catalogue_saison_1": {
+          "type": "Group",
+          "config": {
+            "label": "Catalogue saison 1",
+            "repeat": true,
+            "fields": {
+              "image_catalogue": {
+                "type": "Image",
+                "config": {
+                  "label": "Image catalogue",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "valeur_traitee": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Valeur traîtée",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading3"
+                }
+              },
+              "titre_de_conte": {
+                "type": "Text",
+                "config": {
+                  "label": "Titre de conte",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "titre_saison_2": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre saison 2",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "catalogue_saison_2": {
+          "type": "Group",
+          "config": {
+            "label": "Catalogue saison 2",
+            "repeat": true,
+            "fields": {
+              "image_cata": {
+                "type": "Image",
+                "config": {
+                  "label": "Image catalogue",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "valeur_traitee": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Valeur traîtée",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading3"
+                }
+              },
+              "titre_de_conte": {
+                "type": "Text",
+                "config": {
+                  "label": "Titre de conte",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "titre_saison_3": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre saison 3",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "catalogue_saison_3": {
+          "type": "Group",
+          "config": {
+            "label": "Catalogue saison 3",
+            "repeat": true,
+            "fields": {
+              "image_catalogue": {
+                "type": "Image",
+                "config": {
+                  "label": "Image catalogue",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "valeur_traitee": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Valeur traîtée",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading3"
+                }
+              },
+              "titre_de_conte": {
+                "type": "Text",
+                "config": {
+                  "label": "Titre de conte",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

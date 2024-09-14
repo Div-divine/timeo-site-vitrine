@@ -188,6 +188,9 @@ export type MenuDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<MenuDocumentData>, "menu", Lang>;
 
 type PageDocumentDataSlicesSlice =
+  | CatalogueThirdSliceSlice
+  | CatalogueSecondSliceSlice
+  | CatalogueFirstSliceSlice
   | SecondSliceFormationSlice
   | FirstSliceFormationSlice
   | PageAProposSlice
@@ -270,6 +273,470 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 export type AllDocumentTypes = FooterDocument | MenuDocument | PageDocument;
+
+/**
+ * Item in *CatalogueFirstSlice → Default → Primary → Les offres Timéo*
+ */
+export interface CatalogueFirstSliceSliceDefaultPrimaryLesOffresTimeoItem {
+  /**
+   * Titre field in *CatalogueFirstSlice → Default → Primary → Les offres Timéo*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_first_slice.default.primary.les_offres_timeo[].titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre: prismic.RichTextField;
+
+  /**
+   * Description field in *CatalogueFirstSlice → Default → Primary → Les offres Timéo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_first_slice.default.primary.les_offres_timeo[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Item in *CatalogueFirstSlice → Default → Primary → Button nous contacter*
+ */
+export interface CatalogueFirstSliceSliceDefaultPrimaryButtonNousContacterItem {
+  /**
+   * Placeholder field in *CatalogueFirstSlice → Default → Primary → Button nous contacter*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_first_slice.default.primary.button_nous_contacter[].placeholder
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  placeholder: prismic.KeyTextField;
+
+  /**
+   * Lien vers la page field in *CatalogueFirstSlice → Default → Primary → Button nous contacter*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_first_slice.default.primary.button_nous_contacter[].lien_vers_la_page
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien_vers_la_page: prismic.LinkField;
+}
+
+/**
+ * Primary content in *CatalogueFirstSlice → Default → Primary*
+ */
+export interface CatalogueFirstSliceSliceDefaultPrimary {
+  /**
+   * Image de fond de page field in *CatalogueFirstSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_first_slice.default.primary.image_de_fond_de_page
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_de_fond_de_page: prismic.ImageField<never>;
+
+  /**
+   * Titre field in *CatalogueFirstSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_first_slice.default.primary.titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre: prismic.RichTextField;
+
+  /**
+   * Description field in *CatalogueFirstSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_first_slice.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Les offres Timéo field in *CatalogueFirstSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_first_slice.default.primary.les_offres_timeo[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  les_offres_timeo: prismic.GroupField<
+    Simplify<CatalogueFirstSliceSliceDefaultPrimaryLesOffresTimeoItem>
+  >;
+
+  /**
+   * Button nous contacter field in *CatalogueFirstSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_first_slice.default.primary.button_nous_contacter[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  button_nous_contacter: prismic.GroupField<
+    Simplify<CatalogueFirstSliceSliceDefaultPrimaryButtonNousContacterItem>
+  >;
+}
+
+/**
+ * Default variation for CatalogueFirstSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CatalogueFirstSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CatalogueFirstSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CatalogueFirstSlice*
+ */
+type CatalogueFirstSliceSliceVariation = CatalogueFirstSliceSliceDefault;
+
+/**
+ * CatalogueFirstSlice Shared Slice
+ *
+ * - **API ID**: `catalogue_first_slice`
+ * - **Description**: CatalogueFirstSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CatalogueFirstSliceSlice = prismic.SharedSlice<
+  "catalogue_first_slice",
+  CatalogueFirstSliceSliceVariation
+>;
+
+/**
+ * Item in *CatalogueSecondSlice → Default → Primary → Detail de contenus de coffret*
+ */
+export interface CatalogueSecondSliceSliceDefaultPrimaryDetailDeContenusDeCoffretItem {
+  /**
+   * Détail field in *CatalogueSecondSlice → Default → Primary → Detail de contenus de coffret*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_second_slice.default.primary.detail_de_contenus_de_coffret[].detail
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  detail: prismic.KeyTextField;
+}
+
+/**
+ * Item in *CatalogueSecondSlice → Default → Primary → Button demander un devis*
+ */
+export interface CatalogueSecondSliceSliceDefaultPrimaryButtonDemanderUnDevisItem {
+  /**
+   * Placeholder field in *CatalogueSecondSlice → Default → Primary → Button demander un devis*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_second_slice.default.primary.button_demander_un_devis[].placeholder
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  placeholder: prismic.KeyTextField;
+
+  /**
+   * Lien vers la page field in *CatalogueSecondSlice → Default → Primary → Button demander un devis*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_second_slice.default.primary.button_demander_un_devis[].lien_vers_la_page
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien_vers_la_page: prismic.LinkField;
+}
+
+/**
+ * Primary content in *CatalogueSecondSlice → Default → Primary*
+ */
+export interface CatalogueSecondSliceSliceDefaultPrimary {
+  /**
+   * Titre field in *CatalogueSecondSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_second_slice.default.primary.titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre: prismic.RichTextField;
+
+  /**
+   * Titre Prix par coffret field in *CatalogueSecondSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_second_slice.default.primary.titre_prix_par_coffret
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre_prix_par_coffret: prismic.RichTextField;
+
+  /**
+   * Detail de contenus de coffret field in *CatalogueSecondSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_second_slice.default.primary.detail_de_contenus_de_coffret[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  detail_de_contenus_de_coffret: prismic.GroupField<
+    Simplify<CatalogueSecondSliceSliceDefaultPrimaryDetailDeContenusDeCoffretItem>
+  >;
+
+  /**
+   * Button demander un devis field in *CatalogueSecondSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_second_slice.default.primary.button_demander_un_devis[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  button_demander_un_devis: prismic.GroupField<
+    Simplify<CatalogueSecondSliceSliceDefaultPrimaryButtonDemanderUnDevisItem>
+  >;
+}
+
+/**
+ * Default variation for CatalogueSecondSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CatalogueSecondSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CatalogueSecondSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CatalogueSecondSlice*
+ */
+type CatalogueSecondSliceSliceVariation = CatalogueSecondSliceSliceDefault;
+
+/**
+ * CatalogueSecondSlice Shared Slice
+ *
+ * - **API ID**: `catalogue_second_slice`
+ * - **Description**: CatalogueSecondSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CatalogueSecondSliceSlice = prismic.SharedSlice<
+  "catalogue_second_slice",
+  CatalogueSecondSliceSliceVariation
+>;
+
+/**
+ * Item in *CatalogueThirdSlice → Default → Primary → Catalogue saison 1*
+ */
+export interface CatalogueThirdSliceSliceDefaultPrimaryCatalogueSaison1Item {
+  /**
+   * Image catalogue field in *CatalogueThirdSlice → Default → Primary → Catalogue saison 1*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.catalogue_saison_1[].image_catalogue
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_catalogue: prismic.ImageField<never>;
+
+  /**
+   * Valeur traîtée field in *CatalogueThirdSlice → Default → Primary → Catalogue saison 1*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.catalogue_saison_1[].valeur_traitee
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  valeur_traitee: prismic.RichTextField;
+
+  /**
+   * Titre de conte field in *CatalogueThirdSlice → Default → Primary → Catalogue saison 1*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.catalogue_saison_1[].titre_de_conte
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_de_conte: prismic.KeyTextField;
+}
+
+/**
+ * Item in *CatalogueThirdSlice → Default → Primary → Catalogue saison 2*
+ */
+export interface CatalogueThirdSliceSliceDefaultPrimaryCatalogueSaison2Item {
+  /**
+   * Image catalogue field in *CatalogueThirdSlice → Default → Primary → Catalogue saison 2*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.catalogue_saison_2[].image_cata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_cata: prismic.ImageField<never>;
+
+  /**
+   * Valeur traîtée field in *CatalogueThirdSlice → Default → Primary → Catalogue saison 2*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.catalogue_saison_2[].valeur_traitee
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  valeur_traitee: prismic.RichTextField;
+
+  /**
+   * Titre de conte field in *CatalogueThirdSlice → Default → Primary → Catalogue saison 2*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.catalogue_saison_2[].titre_de_conte
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_de_conte: prismic.KeyTextField;
+}
+
+/**
+ * Item in *CatalogueThirdSlice → Default → Primary → Catalogue saison 3*
+ */
+export interface CatalogueThirdSliceSliceDefaultPrimaryCatalogueSaison3Item {
+  /**
+   * Image catalogue field in *CatalogueThirdSlice → Default → Primary → Catalogue saison 3*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.catalogue_saison_3[].image_catalogue
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_catalogue: prismic.ImageField<never>;
+
+  /**
+   * Valeur traîtée field in *CatalogueThirdSlice → Default → Primary → Catalogue saison 3*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.catalogue_saison_3[].valeur_traitee
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  valeur_traitee: prismic.RichTextField;
+
+  /**
+   * Titre de conte field in *CatalogueThirdSlice → Default → Primary → Catalogue saison 3*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.catalogue_saison_3[].titre_de_conte
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_de_conte: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *CatalogueThirdSlice → Default → Primary*
+ */
+export interface CatalogueThirdSliceSliceDefaultPrimary {
+  /**
+   * Titre saison 1 field in *CatalogueThirdSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.titre_saison_1
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre_saison_1: prismic.RichTextField;
+
+  /**
+   * Catalogue saison 1 field in *CatalogueThirdSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.catalogue_saison_1[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  catalogue_saison_1: prismic.GroupField<
+    Simplify<CatalogueThirdSliceSliceDefaultPrimaryCatalogueSaison1Item>
+  >;
+
+  /**
+   * Titre saison 2 field in *CatalogueThirdSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.titre_saison_2
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre_saison_2: prismic.RichTextField;
+
+  /**
+   * Catalogue saison 2 field in *CatalogueThirdSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.catalogue_saison_2[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  catalogue_saison_2: prismic.GroupField<
+    Simplify<CatalogueThirdSliceSliceDefaultPrimaryCatalogueSaison2Item>
+  >;
+
+  /**
+   * Titre saison 3 field in *CatalogueThirdSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.titre_saison_3
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre_saison_3: prismic.RichTextField;
+
+  /**
+   * Catalogue saison 3 field in *CatalogueThirdSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalogue_third_slice.default.primary.catalogue_saison_3[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  catalogue_saison_3: prismic.GroupField<
+    Simplify<CatalogueThirdSliceSliceDefaultPrimaryCatalogueSaison3Item>
+  >;
+}
+
+/**
+ * Default variation for CatalogueThirdSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CatalogueThirdSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CatalogueThirdSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CatalogueThirdSlice*
+ */
+type CatalogueThirdSliceSliceVariation = CatalogueThirdSliceSliceDefault;
+
+/**
+ * CatalogueThirdSlice Shared Slice
+ *
+ * - **API ID**: `catalogue_third_slice`
+ * - **Description**: CatalogueThirdSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CatalogueThirdSliceSlice = prismic.SharedSlice<
+  "catalogue_third_slice",
+  CatalogueThirdSliceSliceVariation
+>;
 
 /**
  * Item in *CatchPhraseSection → Default → Primary → Button à propos*
@@ -1480,6 +1947,25 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      CatalogueFirstSliceSlice,
+      CatalogueFirstSliceSliceDefaultPrimaryLesOffresTimeoItem,
+      CatalogueFirstSliceSliceDefaultPrimaryButtonNousContacterItem,
+      CatalogueFirstSliceSliceDefaultPrimary,
+      CatalogueFirstSliceSliceVariation,
+      CatalogueFirstSliceSliceDefault,
+      CatalogueSecondSliceSlice,
+      CatalogueSecondSliceSliceDefaultPrimaryDetailDeContenusDeCoffretItem,
+      CatalogueSecondSliceSliceDefaultPrimaryButtonDemanderUnDevisItem,
+      CatalogueSecondSliceSliceDefaultPrimary,
+      CatalogueSecondSliceSliceVariation,
+      CatalogueSecondSliceSliceDefault,
+      CatalogueThirdSliceSlice,
+      CatalogueThirdSliceSliceDefaultPrimaryCatalogueSaison1Item,
+      CatalogueThirdSliceSliceDefaultPrimaryCatalogueSaison2Item,
+      CatalogueThirdSliceSliceDefaultPrimaryCatalogueSaison3Item,
+      CatalogueThirdSliceSliceDefaultPrimary,
+      CatalogueThirdSliceSliceVariation,
+      CatalogueThirdSliceSliceDefault,
       CatchPhraseSectionSlice,
       CatchPhraseSectionSliceDefaultPrimaryButtonAProposItem,
       CatchPhraseSectionSliceDefaultPrimarySectionPhotoPersonnesAyantTesteItem,

@@ -3,6 +3,9 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  catalogue_first_slice: dynamic(() => import("./CatalogueFirstSlice")),
+  catalogue_second_slice: dynamic(() => import("./CatalogueSecondSlice")),
+  catalogue_third_slice: dynamic(() => import("./CatalogueThirdSlice")),
   catch_phrase_section: dynamic(() => import("./CatchPhraseSection")),
   developpement: dynamic(() => import("./Developpement")),
   eveil_individuel: dynamic(() => import("./EveilIndividuel")),

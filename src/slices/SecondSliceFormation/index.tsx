@@ -89,7 +89,7 @@ const SecondSliceFormation = ({
       className="bg-[#e4faee] py-10"
     >
       <div className=" w-[90%] sm:w-[70%] lg:w-[50%] border-b-4 border-b-[#366b7a] m-auto pb-4 rounded-2xl">
-        <div className="font-bold text-lg sm:text-3xl text-center">
+        <div className="font-bold text-lg sm:text-3xl text-center pb-4">
           <PrismicRichText field={slice.primary.titre} />
         </div>
         <div className="text-base sm:text-lg text-center">

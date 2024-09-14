@@ -1,0 +1,77 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titre": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Freedom"
+						}
+					}
+				]
+			},
+			"titre_prix_par_coffret": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Lorem excepteur magna duis adipisicing est. Officia reprehenderit qui ullamco sint ipsum."
+						}
+					}
+				]
+			},
+			"detail_de_contenus_de_coffret": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"detail",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "new",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"button_demander_un_devis": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"placeholder",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "spell",
+									"type": "Text"
+								}
+							],
+							[
+								"lien_vers_la_page",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://twitter.com"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
