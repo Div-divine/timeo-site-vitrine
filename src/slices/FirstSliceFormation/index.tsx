@@ -50,7 +50,7 @@ const FirstSliceFormation = ({
         backgroundImage: `url(${slice.primary.image_de_fond.url})`,
       }}>
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/80 bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-black/60 bg-opacity-50"></div>
 
         {/* Content */}
         <div className="relative z-10 h-auto text-slate-300 w-[90%] sm:w-[60%] m-auto">
