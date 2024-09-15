@@ -31,7 +31,7 @@ const FallingFlowers: React.FC = () => {
 
   // Function to generate multiple flowers at once
   const createFallingFlowers = () => {
-    const flowerCount = 20; // Number of flowers to generate
+    const flowerCount = 40; // Number of flowers to generate
     for (let i = 0; i < flowerCount; i++) {
       setTimeout(createFlower, i * 200); // Stagger the creation of each flower
     }
