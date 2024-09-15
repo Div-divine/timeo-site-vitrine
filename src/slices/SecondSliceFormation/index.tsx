@@ -71,7 +71,7 @@ const SecondSliceFormation = ({
     },
     {
       img: niveauxEcouteImg,
-      titre: "Les tris niveaux d'écoute",
+      titre: "Les trois niveaux d'écoute",
       sous_titre: "La cave du silence"
     },
     {
