@@ -1309,6 +1309,31 @@ export type FirstSliceFormationSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *PageAPropos → Default → Primary → Button nous contacter*
+ */
+export interface PageAProposSliceDefaultPrimaryButtonNousContacterItem {
+  /**
+   * Placeholder field in *PageAPropos → Default → Primary → Button nous contacter*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.button_nous_contacter[].placeholder
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  placeholder: prismic.KeyTextField;
+
+  /**
+   * Lien vers la page contacter field in *PageAPropos → Default → Primary → Button nous contacter*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.button_nous_contacter[].lien_vers_la_page_contacter
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien_vers_la_page_contacter: prismic.LinkField;
+}
+
+/**
  * Item in *PageAPropos → Default → Primary → Créatrice Timéo*
  */
 export interface PageAProposSliceDefaultPrimaryCreatriceTimeoItem {
@@ -1396,6 +1421,18 @@ export interface PageAProposSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description_timeo: prismic.RichTextField;
+
+  /**
+   * Button nous contacter field in *PageAPropos → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.button_nous_contacter[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  button_nous_contacter: prismic.GroupField<
+    Simplify<PageAProposSliceDefaultPrimaryButtonNousContacterItem>
+  >;
 
   /**
    * Créatrice Timéo field in *PageAPropos → Default → Primary*
@@ -1870,6 +1907,31 @@ export interface TransformationSliceDefaultPrimaryButtonTransformationItem {
 }
 
 /**
+ * Item in *Transformation → Default → Primary → Button nous contacter*
+ */
+export interface TransformationSliceDefaultPrimaryButtonNousContacterItem {
+  /**
+   * Placeholder field in *Transformation → Default → Primary → Button nous contacter*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: transformation.default.primary.button_nous_contacter[].placeholder
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  placeholder: prismic.KeyTextField;
+
+  /**
+   * Lien vers la page field in *Transformation → Default → Primary → Button nous contacter*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: transformation.default.primary.button_nous_contacter[].lien_vers_la_page
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien_vers_la_page: prismic.LinkField;
+}
+
+/**
  * Primary content in *Transformation → Default → Primary*
  */
 export interface TransformationSliceDefaultPrimary {
@@ -1894,6 +1956,28 @@ export interface TransformationSliceDefaultPrimary {
   description: prismic.KeyTextField;
 
   /**
+   * Button field in *Transformation → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: transformation.default.primary.button_transformation[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  button_transformation: prismic.GroupField<
+    Simplify<TransformationSliceDefaultPrimaryButtonTransformationItem>
+  >;
+
+  /**
+   * Text témoignage DeCathlon  field in *Transformation → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: transformation.default.primary.text_temoignage_decathlon
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_temoignage_decathlon: prismic.RichTextField;
+
+  /**
    * Vidéo explicative field in *Transformation → Default → Primary*
    *
    * - **Field Type**: Embed
@@ -1904,15 +1988,15 @@ export interface TransformationSliceDefaultPrimary {
   video_explicative: prismic.EmbedField;
 
   /**
-   * Button field in *Transformation → Default → Primary*
+   * Button nous contacter field in *Transformation → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: transformation.default.primary.button_transformation[]
+   * - **API ID Path**: transformation.default.primary.button_nous_contacter[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  button_transformation: prismic.GroupField<
-    Simplify<TransformationSliceDefaultPrimaryButtonTransformationItem>
+  button_nous_contacter: prismic.GroupField<
+    Simplify<TransformationSliceDefaultPrimaryButtonNousContacterItem>
   >;
 }
 
@@ -2009,6 +2093,7 @@ declare module "@prismicio/client" {
       FirstSliceFormationSliceVariation,
       FirstSliceFormationSliceDefault,
       PageAProposSlice,
+      PageAProposSliceDefaultPrimaryButtonNousContacterItem,
       PageAProposSliceDefaultPrimaryCreatriceTimeoItem,
       PageAProposSliceDefaultPrimary,
       PageAProposSliceVariation,
@@ -2033,6 +2118,7 @@ declare module "@prismicio/client" {
       SecondSliceFormationSliceDefault,
       TransformationSlice,
       TransformationSliceDefaultPrimaryButtonTransformationItem,
+      TransformationSliceDefaultPrimaryButtonNousContacterItem,
       TransformationSliceDefaultPrimary,
       TransformationSliceVariation,
       TransformationSliceDefault,

@@ -1,21 +1,22 @@
 import SectionWrap from "@/components/SectionWrap";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicText, SliceComponentProps } from "@prismicio/react";
-import { Arima, Amaranth } from 'next/font/google';
+import { Proza_Libre, Cormorant } from 'next/font/google';
 import { PrismicNextImage } from "@prismicio/next";
 import ButtonLink from "@/components/PageBtnLink";
 
-const arima = Arima({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-arima',
-})
-
-const amaranth = Amaranth({
+const cormorant = Cormorant({
   subsets: ['latin'],
   display: 'swap',
   weight: ["400", "700"],
-  variable: '--font-amaranth'
+  variable: '--font-cormorant',
+})
+
+const proza_libre = Proza_Libre({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ["400", "700"],
+  variable: '--font-proza_libre'
 })
 
 
@@ -39,13 +40,13 @@ const CatchPhraseSection = ({
     >
       <SectionWrap className="py-0 md:py-0 lg:py-0 pb-0 md:pb-0 lg:pb-0">
         {isFilled.richText(slice.primary.titre) &&
-          <h1 className={`${arima.className} text-balance font-medium text-4xl lg:text-5xl text-center text-slate-200 
-          w-full mt-10 md:mt-20 lg:mt-24`}>
+          <h1 className={`${cormorant.className} text-balance font-semibold text-4xl lg:text-5xl text-center text-slate-200 
+          w-full mt-10 `}>
             <PrismicText field={slice.primary.titre} />
           </h1>}
         {isFilled.richText(slice.primary.sous_titre) &&
-          <h2 className={`${amaranth.className} text-center font-light md:text-lg bg-[#b2efdb] bg-clip-text text-transparent max-w-xl md:max-w-2xl
-          m-auto`}>
+          <h2 className={`${proza_libre.className} text-center font-light  bg-[#b2efdb] bg-clip-text text-transparent max-w-xl md:max-w-2xl
+          m-auto my-4`}>
             <PrismicText field={slice.primary.sous_titre} />
           </h2>
         }
@@ -57,8 +58,8 @@ const CatchPhraseSection = ({
           <div className="mt-5 max-sm:mt-0 flex flex-wrap flex-col justify-between max-sm:order-1 
           max-sm:justify-center max-sm:items-center">
             {slice.primary.button_a_propos.map((item, index) => {
-              return <div key={index} className={`${arima.className} w-fit font-semibold shadow-2xl`}>
-                <ButtonLink field={item.lien} className={`${arima.className} bg-blue-200/10`}>
+              return <div key={index} className={`${cormorant.className} w-fit font-semibold shadow-2xl`}>
+                <ButtonLink field={item.lien} className={`${cormorant.className} bg-blue-200/10`}>
                   {item.label}
                 </ButtonLink>
               </div>
@@ -82,7 +83,7 @@ const CatchPhraseSection = ({
                     <PrismicNextImage field={item.photo} className="rounded-full" />
                     {/* Conditionally render div only for the last item */}
                     {index === slice.primary.section_photo_personnes_ayant_teste.length - 1 && (
-                      <div className={`${amaranth.className} absolute bottom-0 right-0 transform translate-x-3/4 
+                      <div className={`${proza_libre.className} absolute bottom-0 right-0 transform translate-x-3/4 
                       translate-y-1/2 rounded-full bg-[#072A35] px-2 py-3 flex flex-col justify-center items-center 
                       mb-5 text-slate-300 font-medium`}>
                         {item.numbre_de_personnes_ayant_aimees}
@@ -93,7 +94,7 @@ const CatchPhraseSection = ({
               ))}
             </div>
           </div>
-          <div className={`${amaranth.className} text-balance flex flex-wrap flex-col justify-end pb-8 -ml-4
+          <div className={`${proza_libre.className} text-balance flex flex-wrap flex-col justify-end pb-8 -ml-4
              text-slate-300 max-sm:hidden`}>
             <PrismicText
               field={slice.primary.phrase_des_personnes_qui_ont_testes}

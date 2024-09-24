@@ -30,6 +30,30 @@
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
+        "button_nous_contacter": {
+          "type": "Group",
+          "config": {
+            "label": "Button nous contacter",
+            "repeat": true,
+            "fields": {
+              "placeholder": {
+                "type": "Text",
+                "config": {
+                  "label": "Placeholder",
+                  "placeholder": ""
+                }
+              },
+              "lien_vers_la_page_contacter": {
+                "type": "Link",
+                "config": {
+                  "label": "Lien vers la page contacter",
+                  "placeholder": "",
+                  "select": null
+                }
+              }
+            }
+          }
+        },
         "creatrice_timeo": {
           "type": "Group",
           "config": {

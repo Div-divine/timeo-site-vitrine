@@ -4,6 +4,24 @@ import { PrismicRichText } from '@prismicio/react'; // Assuming these imports ba
 import { PrismicNextImage } from '@prismicio/next';
 import { Content } from '@prismicio/client';
 import { BsPlusCircleFill } from "react-icons/bs";
+import { Proza_Libre, Cormorant  } from "next/font/google";
+
+
+
+const proza_libre = Proza_Libre({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ["400", "700"],
+  variable: '--font-proza_libre'
+})
+
+const cormorant = Cormorant({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ["400", "700"],
+  variable: '--font-cormorant',
+})
+
 
 
 // Define the type for your Prismic Slice
@@ -26,7 +44,8 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
   return (
     <div className="w-[90%] m-auto">
       {/* Season 1 */}
-      <div className="font-bold text-lg sm:text-2xl border-b-2 border-b-[#356A78] w-fit rounded-lg px-2">
+      <div className={`${cormorant.className}
+      font-bold text-lg sm:text-2xl border-b-2 border-b-[#356A78] w-fit rounded-lg px-2`}>
         <PrismicRichText field={slice.primary.titre_saison_1} />
       </div>
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 sm:gap-4 py-4">
@@ -36,10 +55,10 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
             <div key={index}>
               <PrismicNextImage field={item.image_catalogue} className="shadow-footerMenuShadow" />
               <div className="text-center bg-gradient-to-b from-[#03171E] to-[#356A78] text-slate-200 py-2">
-                <div className="font-bold text-[#ffb910]">
+                <div className={`${cormorant.className} font-bold text-[#ffb910]`}>
                   <PrismicRichText field={item.valeur_traitee} />
                 </div>
-                <p>{item.titre_de_conte}</p>
+                <p  className={`${proza_libre.className} text-sm`}>{item.titre_de_conte}</p>
               </div>
             </div>
           ))}
@@ -54,7 +73,8 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
       )}
 
       {/* Season 2 */}
-      <div className="font-bold text-lg sm:text-2xl border-b-2 border-b-[#356A78] w-fit rounded-lg px-2 mt-4">
+      <div className={`${cormorant.className}
+      font-bold text-lg sm:text-2xl border-b-2 border-b-[#356A78] w-fit rounded-lg px-2 pt-2`}>
         <PrismicRichText field={slice.primary.titre_saison_2} />
       </div>
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 sm:gap-4 py-4">
@@ -64,7 +84,7 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
             <div key={index}>
               <PrismicNextImage field={item.image_cata} className="shadow-footerMenuShadow" />
               <div className="text-center bg-gradient-to-b from-[#03171E] to-[#356A78] text-slate-200 py-2">
-                <div className="font-bold text-[#ffb910]">
+                <div className={`${cormorant.className} font-bold text-[#ffb910]`}>
                   <PrismicRichText field={item.valeur_traitee} />
                 </div>
                 <p>{item.titre_de_conte}</p>
@@ -82,7 +102,8 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
       )}
 
       {/* Season 3 */}
-      <div className="font-bold text-lg sm:text-2xl border-b-2 border-b-[#356A78] w-fit rounded-lg px-2 mt-4">
+      <div className={`${cormorant.className}
+      font-bold text-lg sm:text-2xl border-b-2 border-b-[#356A78] w-fit rounded-lg px-2 pt-2`}>
         <PrismicRichText field={slice.primary.titre_saison_3} />
       </div>
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 sm:gap-4 py-4">
@@ -92,10 +113,10 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
             <div key={index}>
               <PrismicNextImage field={item.image_catalogue} className="shadow-footerMenuShadow" />
               <div className="text-center bg-gradient-to-b from-[#03171E] to-[#356A78] text-slate-200 py-2">
-                <div className="font-bold text-[#ffb910]">
+                <div className={`${cormorant.className} font-bold text-[#ffb910]`}>
                   <PrismicRichText field={item.valeur_traitee} />
                 </div>
-                <p>{item.titre_de_conte}</p>
+                <p className={`${proza_libre.className} text-sm`}>{item.titre_de_conte}</p>
               </div>
             </div>
           ))}

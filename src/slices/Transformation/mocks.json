@@ -71,6 +71,45 @@
 					"version": "1.0"
 				},
 				"__TYPE__": "EmbedContent"
+			},
+			"text_temoignage_decathlon": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliquip exercitation duis veniam minim ea aliqua est ut laborum cupidatat nisi officia. Dolor mollit fugiat id anim reprehenderit ut amet nisi commodo Lorem irure officia nulla."
+						}
+					}
+				]
+			},
+			"button_nous_contacter": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"placeholder",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "adventure",
+									"type": "Text"
+								}
+							],
+							[
+								"lien_vers_la_page",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com"
+									}
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": []

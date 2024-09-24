@@ -1,9 +1,21 @@
 import { ImageField, KeyTextField, LinkField } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextImageProps, PrismicNextLink, PrismicNextLinkProps } from "@prismicio/next";
-import Image from "next/image";
-import lightImg from './light-bulb-removebg.png';
-import rocketImg from './rocket-removebg.png'
 import clsx from "clsx";
+import { Cormorant, Proza_Libre } from 'next/font/google';
+
+const cormorant = Cormorant({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ["400", "700"],
+  variable: '--font-cormorant',
+})
+
+const proza_libre = Proza_Libre({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ["400", "700"],
+  variable: '--font-proza_libre'
+})
 
 // Define the type for a single item in the `creatrice_timeo` array
 interface CreatriceTimeoItem {
@@ -22,10 +34,10 @@ interface AuthorSectionProps {
 
 export default function AuthorSection({ content }: AuthorSectionProps) {
     return (
-        <div className="w-full mx-2 md:w-[80%] md:mx-auto grid gap-4 md:grid-cols-2 md:gap-8 py-8 sm:py-10 md:py-20">
+        <div className="w-[90%] md:w-[80%] mx-auto grid gap-4 md:grid-cols-2 md:gap-8 py-8 sm:py-10 md:py-20">
             {content.map((item, index) => (
                 <div key={index} className="block md:flex justify-between md:col-span-1">
-                    <div className={clsx("md:hidden w-[30%] sm:w-[25%] max-md:m-auto md:w-[25%] h-auto flex flex-col justify-center items-center")}>
+                    <div className={clsx("md:hidden w-[30%] sm:w-[25%] max-md:mx-auto md:w-[25%] h-auto flex flex-col justify-center items-center")}>
                         <div className="block md:hidden">
                             <PrismicNextImage
                                 field={item.image_creatrice}
@@ -40,7 +52,7 @@ export default function AuthorSection({ content }: AuthorSectionProps) {
                                 className="border-[1px] border-[#356A78] h-auto rounded-full"
                             />
                         </div>
-                        <div className={clsx('text-sm sm:text-base')}>
+                        <div className={`${cormorant.className} text-lg`}>
                             <h2 className="text-center uppercase font-bold">{item.nom}</h2>
                             <h3 className="text-center capitalize font-bold">{item.titre}</h3>
                             <div className="flex flex-col justify-center items-center">
@@ -49,8 +61,8 @@ export default function AuthorSection({ content }: AuthorSectionProps) {
                                 </PrismicNextLink>
                             </div>
                         </div>
-                        <div className="w-full">
-                            <p className="text-sm sm:text-base text-justify">{item.description}</p>
+                        <div>
+                            <p className={`${proza_libre.className} text-sm sm:text-base text-justify`}>{item.description}</p>
                         </div>
                     </div>
                 </div>

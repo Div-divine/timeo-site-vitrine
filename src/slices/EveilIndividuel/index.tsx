@@ -1,19 +1,20 @@
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import CustomCarousel from "./Slider";
-import { Arima, Amaranth } from 'next/font/google';
+import { Cormorant, Proza_Libre } from 'next/font/google';
 
-const arima = Arima({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-arima',
-})
-
-const amaranth = Amaranth({
+const cormorant = Cormorant({
   subsets: ['latin'],
   display: 'swap',
   weight: ["400", "700"],
-  variable: '--font-amaranth'
+  variable: '--font-cormorant',
+})
+
+const proza_libre = Proza_Libre({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ["400", "700"],
+  variable: '--font-proza_libre'
 })
 
 
@@ -36,11 +37,11 @@ const EveilIndividuel = ({ slice }: EveilIndividuelProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="w-full h-auto bg-[#e4faee] px-4 md:px-4 pt-2 "
     >
-      <div className={`text-balance font-medium text-4xl lg:text-5xl text-center text-[#113a2c]
+      <div className={`${cormorant.className} text-balance font-semibold text-4xl lg:text-5xl text-center text-[#113a2c]
           w-fit m-auto mt-10`}>
         <PrismicRichText field={slice.primary.titre} />
       </div>
-      <div className={`${amaranth.className} max-md:text-balance text-center font-light md:text-lg max-w-xl md:w-full m-auto
+      <div className={`${proza_libre.className} max-md:text-balance text-center  md:w-[60%] mx-auto
       mt-3`}>
         <PrismicRichText field={slice.primary.sous_titre} />
       </div>

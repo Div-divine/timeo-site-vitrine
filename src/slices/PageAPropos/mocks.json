@@ -20,7 +20,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Consequat et irure adipisicing proident elit. Ea cupidatat reprehenderit in enim irure culpa id velit veniam sit nisi sunt occaecat."
+							"text": "Ad mollit in quis id. Enim proident cillum tempor magna excepteur elit pariatur excepteur occaecat."
 						}
 					}
 				]
@@ -97,6 +97,34 @@
 									"__TYPE__": "FieldContent",
 									"value": "vessels",
 									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"button_nous_contacter": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"placeholder",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "dust",
+									"type": "Text"
+								}
+							],
+							[
+								"lien_vers_la_page_contacter",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev"
+									}
 								}
 							]
 						]

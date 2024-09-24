@@ -1,6 +1,6 @@
 "use client"
 import { asLink, Content } from "@prismicio/client"
-import { Amaranth } from "next/font/google";
+import { Proza_Libre } from "next/font/google";
 import Link from "next/link";
 import TimeoIcon from "../LogoTimeo";
 import { PrismicNextLink } from "@prismicio/next";
@@ -10,11 +10,11 @@ import { useState } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
 import clsx from "clsx";
 
-const amaranth = Amaranth({
+const proza_libre = Proza_Libre({
     subsets: ['latin'],
     display: 'swap',
     weight: ["400", "700"],
-    variable: '--font-amaranth'
+    variable: '--font-proza_libre'
 })
 
 type MenuProps = {
@@ -26,7 +26,7 @@ export default function NavBar({ menu }: MenuProps) {
     const pathName = usePathname()
 
     return (
-        <nav aria-label="Main" className={amaranth.className}>
+        <nav aria-label="Main" className={proza_libre.className}>
             <div className="mx-auto w-full flex flex-col justify-between
                 font-medium text-black md:flex-row md:items-center bg-white/100 px-7 py-5">
                 <div className="flex items-center justify-between">
@@ -74,27 +74,25 @@ export default function NavBar({ menu }: MenuProps) {
 
                 </div>
                 {/* Desktop nav */}
-                <div>
-                    <ul className="hidden md:flex gap-4">
-                        {menu && menu.data.menu_de_navigation.map((item, index) => {
-                            const linkUrl = asLink(item.lien_du_menu);
+                <ul className="hidden md:flex justify-between">
+                    {menu && menu.data.menu_de_navigation.map((item, index) => {
+                        const linkUrl = asLink(item.lien_du_menu);
 
-                            return (
-                                linkUrl && (<ActiveLink key={index} href={linkUrl}>
-                                    <PrismicNextLink field={item.lien_du_menu} className="inline-flex min-h-11 items-center text-xl"
-                                        aria-current={
-                                            pathName.includes(asLink(item.lien_du_menu) as string) ? "page" : undefined
-                                        }>
-                                        {item.label_du_menu}
-                                    </PrismicNextLink>
+                        return (
+                            linkUrl && (<ActiveLink key={index} href={linkUrl}>
+                                <PrismicNextLink field={item.lien_du_menu} className="inline-flex min-h-11 items-center text-xl"
+                                    aria-current={
+                                        pathName.includes(asLink(item.lien_du_menu) as string) ? "page" : undefined
+                                    }>
+                                    {item.label_du_menu}
+                                </PrismicNextLink>
 
-                                </ActiveLink>)
-                            );
-                        })
+                            </ActiveLink>)
+                        );
+                    })
 
-                        }
-                    </ul>
-                </div>
+                    }
+                </ul>
             </div>
         </nav>
     )

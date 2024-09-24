@@ -4,19 +4,20 @@ import { PrismicNextImage } from '@prismicio/next';
 import { BsFillPlayCircleFill, BsFillPlayBtnFill, BsFillPauseCircleFill, BsFillPauseBtnFill, BsFillHeartFill } from 'react-icons/bs';
 import { asLink, KeyTextField, LinkToMediaField, RichTextField } from '@prismicio/client';
 import { PrismicRichText } from '@prismicio/react';
-import { Arima, Amaranth } from 'next/font/google';
+import { Cormorant, Proza_Libre } from 'next/font/google';
 
-const arima = Arima({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-arima',
-});
-
-const amaranth = Amaranth({
+const cormorant = Cormorant({
   subsets: ['latin'],
   display: 'swap',
   weight: ['400', '700'],
-  variable: '--font-amaranth',
+  variable: '--font-cormorant',
+});
+
+const proza_libre = Proza_Libre({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '700'],
+  variable: '--font-proza_libre',
 });
 
 type IconKey = 'icon_play_circle' | 'icon_play_square' | 'icon_pause_circle' | 'icon_pause_square';
@@ -139,11 +140,11 @@ export default function AudioPlayer({
                     </div>
                   </div>
                   <div className='ml-2'>
-                    <div className={`${arima.className}text-[#61c1c9] font-bold text-xl sm:text-2xl`}>
+                    <div className={`${cormorant.className}text-[#61c1c9] font-bold text-xl sm:text-2xl`}>
                       <PrismicRichText field={taleValue} />
                     </div>
                     <div>
-                      <p className={`${amaranth.className} text-slate-200 font-medium`}>{taleTitle}</p>
+                      <p className={`${proza_libre.className} text-slate-200 font-medium`}>{taleTitle}</p>
                     </div>
                   </div>
                 </div>

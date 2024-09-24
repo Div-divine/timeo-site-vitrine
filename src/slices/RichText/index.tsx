@@ -6,12 +6,13 @@ import {
   JSXMapSerializer,
 } from "@prismicio/react";
 import SectionWrap from "@/components/SectionWrap";
-import { Arima } from 'next/font/google';
+import { Cormorant } from 'next/font/google';
 
-const arima = Arima({
+const cormorant = Cormorant({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-arima',
+  weight: ["400", "700"],
+  variable: '--font-cormorant',
 })
 
 const components: JSXMapSerializer = {
@@ -35,7 +36,7 @@ type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
  */
 const RichText = ({ slice }: RichTextProps): JSX.Element => {
   return (
-    <SectionWrap className={arima.className}>
+    <SectionWrap className={cormorant.className}>
       <PrismicRichText field={slice.primary.content} components={components} />
     </SectionWrap>
   );

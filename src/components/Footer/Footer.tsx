@@ -1,16 +1,16 @@
 import { createClient } from "@/prismicio";
-import { Amaranth } from "next/font/google";
+import { Proza_Libre } from "next/font/google";
 import Link from "next/link";
 import TimeoIcon from "../LogoTimeo";
 import { PrismicNextLink } from "@prismicio/next";
 import ActiveLink from "../SetNavLinkState";
 import { asLink } from "@prismicio/client";
 
-const amaranth = Amaranth({
+const proza_libre = Proza_Libre({
     subsets: ['latin'],
     display: 'swap',
     weight: ["400", "700"],
-    variable: '--font-amaranth'
+    variable: '--font-proza_libre'
 });
 
 
@@ -33,7 +33,7 @@ export async function Footer({ bgColor }: FooterProps) {
       </div>
       <nav aria-label="Footer" className="mt-5">
         <ul
-          className={`${amaranth.className} flex flex-wrap justify-around w-[90%] sm:w-[40%] m-auto 
+          className={`${proza_libre.className} flex flex-wrap justify-around w-[90%] sm:w-[50%] m-auto 
                 text-sm sm:text-xl border border-gray-300 p-2 bg-gray-200`}
         >
           {footer.data.footer.map((item, index) => {
@@ -54,7 +54,7 @@ export async function Footer({ bgColor }: FooterProps) {
           })}
         </ul>
         <ul
-          className={`${amaranth.className} flex flex-wrap justify-around w-[80%] m-auto 
+          className={`${proza_libre.className} flex flex-wrap justify-around w-[80%] m-auto 
                 text-base mt-5`}
         >
           {footer.data.politiques_de_confidentialite.map((item, index) => (

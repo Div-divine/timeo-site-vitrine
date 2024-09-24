@@ -4,19 +4,25 @@ import { repositoryName } from "@/prismicio";
 import Header from "@/components/nav/Header";
 import { Footer } from "@/components/Footer/Footer";
 import { Content } from "@prismicio/client";
-import { Arima, Amaranth } from 'next/font/google';
+import { Raleway, Cormorant, Proza_Libre } from 'next/font/google';
 
-const arima = Arima({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-arima',
-});
-
-const amaranth = Amaranth({
+const raleway = Raleway({
   subsets: ['latin'],
   display: 'swap',
   weight: ['400', '700'],
-  variable: '--font-amaranth',
+  variable: '--font-raleway',
+});
+const  cormorant = Cormorant({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '700'],
+  variable: '--font-cormorant',
+});
+const  proza_libre = Proza_Libre ({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '700'],
+  variable: '--font-proza_libre',
 });
 
 export const metadata = {
@@ -33,7 +39,7 @@ export default function RootLayout({
   footer: Content.FooterDocument
 }>) {
   return (
-    <html lang="fr" className={`${arima.variable} ${amaranth.variable}`}>
+    <html lang="fr" className={`${raleway} ${cormorant} ${proza_libre}`}>
       <body>
         <Header />
         <main>

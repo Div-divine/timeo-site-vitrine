@@ -9,13 +9,13 @@ import transImg from "./tranfo.png";
 import Image from "next/image";
 import clsx from "clsx";
 import { Content } from "@prismicio/client";
-import { Amaranth } from "next/font/google";
+import { Proza_Libre } from "next/font/google";
 
-const amaranth = Amaranth({
+const proza_libre = Proza_Libre({
   subsets: ['latin'],
   display: 'swap',
   weight: ["400", "700"],
-  variable: '--font-amaranth'
+  variable: '--font-proza_libre'
 })
 
 
@@ -123,7 +123,7 @@ export default function AnimatedContent({
             </div>
 
             {/* Display item.etape under the icon */}
-            <p className={`${amaranth.className} text-center text-slate-300 mt-2 md:hidden`}>
+            <p className={`${proza_libre.className} text-center text-slate-300 mt-2 md:hidden`}>
               {item.etape}
             </p>
           </div>

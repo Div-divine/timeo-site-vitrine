@@ -2,20 +2,21 @@
 import { useState, useEffect } from 'react';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { ImageField, KeyTextField, LinkField } from '@prismicio/client';
-import { Arima, Amaranth } from 'next/font/google';
+import { Cormorant, Proza_Libre } from 'next/font/google';
 import ButtonLink from '@/components/PageBtnLink';
 
-const arima = Arima({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-arima',
-})
-
-const amaranth = Amaranth({
+const cormorant = Cormorant({
     subsets: ['latin'],
     display: 'swap',
     weight: ["400", "700"],
-    variable: '--font-amaranth'
+    variable: '--font-cormorant',
+})
+
+const proza_libre = Proza_Libre({
+    subsets: ['latin'],
+    display: 'swap',
+    weight: ["400", "700"],
+    variable: '--font-proza_libre'
 })
 
 type CarouselProps = {
@@ -104,7 +105,7 @@ export default function CustomCarousel({ content, button_catalogue }: CarouselPr
                             shadow-footerMenuShadow">
                                     <PrismicNextImage field={item.image_slider} className="w-full h-auto object-cover rounded-2xl 
                                  border border-gray-400" quality={100} />
-                                    <p className={`${amaranth.className} max-md:text-balance text-center font-light md:text-lg mt-2 text-gray-800`}>{item.description}</p>
+                                    <p className={`${proza_libre.className} max-md:text-balance text-center mt-2`}>{item.description}</p>
                                 </div>
                             ))}
                         </div>
@@ -125,7 +126,7 @@ export default function CustomCarousel({ content, button_catalogue }: CarouselPr
                     Next
                 </button>
             </div>
-            <div className={`w-fit m-auto font-semibold shadow-2xl max-[380px]:mt-4 sm:mt-2`}>
+            <div className={`${cormorant.className} w-fit m-auto font-semibold shadow-2xl max-[380px]:mt-4 sm:mt-2`}>
                 {button_catalogue && button_catalogue.map((item, index) => (
                     <ButtonLink field={item.lien_vers_la_page_catalogue} className={`bg-[#356A78]`} key={index}>
                         {item.placeholder_button}

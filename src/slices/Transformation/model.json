@@ -28,13 +28,6 @@
             "placeholder": ""
           }
         },
-        "video_explicative": {
-          "type": "Embed",
-          "config": {
-            "label": "Vidéo explicative",
-            "placeholder": ""
-          }
-        },
         "button_transformation": {
           "type": "Group",
           "config": {
@@ -54,6 +47,46 @@
                 "config": {
                   "label": "Placeholder button",
                   "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "text_temoignage_decathlon": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text témoignage DeCathlon ",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "video_explicative": {
+          "type": "Embed",
+          "config": {
+            "label": "Vidéo explicative",
+            "placeholder": ""
+          }
+        },
+        "button_nous_contacter": {
+          "type": "Group",
+          "config": {
+            "label": "Button nous contacter",
+            "repeat": true,
+            "fields": {
+              "placeholder": {
+                "type": "Text",
+                "config": {
+                  "label": "Placeholder",
+                  "placeholder": ""
+                }
+              },
+              "lien_vers_la_page": {
+                "type": "Link",
+                "config": {
+                  "label": "Lien vers la page",
+                  "placeholder": "",
+                  "select": null
                 }
               }
             }

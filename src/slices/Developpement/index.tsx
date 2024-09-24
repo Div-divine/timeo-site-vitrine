@@ -3,20 +3,21 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import AudioPlayer from "./DisplayAudio";
 import Image from "next/image";
 import earset from '@/app/earphone-removebg.png';
-import { Arima, Amaranth } from 'next/font/google';
+import { Cormorant, Proza_Libre } from 'next/font/google';
 import VideoPlayer from "./VideoLeader";
 
-const arima = Arima({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-arima',
-})
-
-const amaranth = Amaranth({
+const cormorant = Cormorant({
   subsets: ['latin'],
   display: 'swap',
   weight: ["400", "700"],
-  variable: '--font-amaranth'
+  variable: '--font-cormorant',
+})
+
+const proza_libre = Proza_Libre({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ["400", "700"],
+  variable: '--font-proza_libre'
 })
 
 
@@ -37,13 +38,13 @@ const Developpement = ({ slice }: DeveloppementProps): JSX.Element => {
       className="w-full h-auto bg-[#e4faee] px-4 md:px-4 -mt-14 pb-5 md:pb-10 lg:pb-12"
     >
       <div className=" w-[95%] md:w-[80%] lg:w-[60%] m-auto">
-        <div className="flex justify-between">
+        <div className="flex justify-between w-full">
           <div className="w-full ml-0 sm:ml-[10%]">
-            <div className={`${arima.className} text-balance font-medium text-4xl lg:text-5xl text-center text-[#113a2c]
+            <div className={`${cormorant.className} text-balance font-semibold text-4xl lg:text-5xl text-center text-[#113a2c]
           w-fit m-auto`}>
               <PrismicRichText field={slice.primary.etape} />
             </div>
-            <div className={`${amaranth.className} max-md:text-balance text-center font-light md:text-lg max-w-xl md:w-full m-auto
+            <div className={`${proza_libre.className} max-md:text-balance text-center m-auto
            mt-3`}>
               <PrismicRichText field={slice.primary.description} />
             </div>
@@ -57,7 +58,7 @@ const Developpement = ({ slice }: DeveloppementProps): JSX.Element => {
           taleValue={slice.primary.valeur} taleTitle={slice.primary.titre_de_conte} />
       </div>
       <div className="w-[90%] lg:w-[50%] mx-auto mt-10">
-          <p className={`${amaranth.className} max-md:text-balance text-center font-light md:text-lg`}>
+          <p className={`${proza_libre.className} max-md:text-balance text-center`}>
             {slice.primary.catch_phrase_video_leader}
           </p>
         </div>

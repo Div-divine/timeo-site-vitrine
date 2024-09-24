@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-arima)', 'var(--font-amaranth)']
+        sans: ['var(--font-raleway)', 'var(--font-cormorant)', 'var(--font-proza_libre)']
       },
       boxShadow: {
         'footerMenuShadow': '0 4px 10px rgba(0, 0, 0, 0.25)'

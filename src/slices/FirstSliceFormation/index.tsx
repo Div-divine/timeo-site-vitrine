@@ -7,18 +7,23 @@ import self_disvovery from './self-discovery.png';
 import trophy from './trophy.png';
 import Image from "next/image";
 import clsx from "clsx";
-import { Amaranth } from "next/font/google";
+import { Proza_Libre, Cormorant  } from "next/font/google";
 
 
 
-const amaranth = Amaranth({
+const proza_libre = Proza_Libre({
   subsets: ['latin'],
   display: 'swap',
   weight: ["400", "700"],
-  variable: '--font-amaranth'
+  variable: '--font-proza_libre'
 })
 
-
+const cormorant = Cormorant({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ["400", "700"],
+  variable: '--font-cormorant',
+})
 
 /**
  * Props for `FirstSliceFormation`.
@@ -54,15 +59,15 @@ const FirstSliceFormation = ({
 
         {/* Content */}
         <div className="relative z-10 h-auto text-slate-300 w-[90%] sm:w-[60%] m-auto">
-          <div className="text-lg sm:text-3xl text-center font-bold pb-4">
+          <div className={`${cormorant.className} text-lg sm:text-3xl text-center font-bold pb-4`}>
             <PrismicRichText field={slice.primary.titre} />
           </div>
-          <div className={`sm:text-xl text-justify text-slate-300`}>
+          <div className={`${proza_libre.className} sm:text-lg text-justify text-slate-300`}>
             <PrismicRichText field={slice.primary.sous_titre} />
           </div>
           {slice.primary.button_nous_contacter.map((item, index) => (
             <div key={index} className="w-fit font-semibold shadow-2xl m-auto mt-3 sm:mt-4">
-              <ButtonLink field={item.lien_vers_la_page_contacter} className="bg-[#366b7a]">
+              <ButtonLink field={item.lien_vers_la_page_contacter} className={`${cormorant.className} bg-[#366b7a]`}>
                 {item.text_button}
               </ButtonLink>
             </div>
@@ -79,11 +84,11 @@ const FirstSliceFormation = ({
             </div>
             <div className="bg-[#366b7a] text-black/100 h-full flex flex-col justify-center items-center px-2 rounded-2xl
             shadow-footerMenuShadow border-t-2 border-slate-200">
-              <div className="font-bold text-center max-sm:mt-4">
+              <div className={`${cormorant.className} font-bold text-center max-sm:mt-4 text-lg`}>
                 <PrismicRichText field={item.titre} />
               </div>
               <div className="mt-2">
-                <p className="text-center text-slate-200">{item.description}</p>
+                <p className={`${proza_libre.className} text-center text-slate-200 text-sm`}>{item.description}</p>
               </div>
             </div>
           </div>
