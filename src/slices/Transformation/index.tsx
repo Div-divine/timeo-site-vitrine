@@ -52,7 +52,7 @@ const Transformation = ({ slice }: TransformationProps): JSX.Element => {
       </div>
       <div className="w-[70%] mx-auto md:grid grid-cols-2 gap-4 my-4">
         <VideoPlayer htmlContent={slice.primary.video_explicative.html} />
-        <div className="w-fit flex flex-col justify-center items-center ">
+        <div className="w-fit flex flex-col justify-center items-center mt-5 md:mt-0">
           <p className={`${proza_libre.className} text-slate-200`}><PrismicRichText
             field={slice.primary.text_temoignage_decathlon}
           /></p>
