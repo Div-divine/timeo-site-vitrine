@@ -27,8 +27,8 @@ export default function NavBar({ menu }: MenuProps) {
 
     return (
         <nav aria-label="Main" className={amaranth.className}>
-            <div className="mx-auto flex max-w-[97%] flex-col justify-between
-                font-medium text-black md:flex-row md:items-center bg-slate-200 rounded-b-lg px-7 py-5">
+            <div className="mx-auto w-full flex flex-col justify-between
+                font-medium text-black md:flex-row md:items-center bg-white/100 px-7 py-5">
                 <div className="flex items-center justify-between">
                     <div className="w-40 z-50">
                         <Link href='/' >
@@ -75,7 +75,7 @@ export default function NavBar({ menu }: MenuProps) {
                 </div>
                 {/* Desktop nav */}
                 <div>
-                    <ul className="gap-16 hidden md:flex">
+                    <ul className="hidden md:flex gap-4">
                         {menu && menu.data.menu_de_navigation.map((item, index) => {
                             const linkUrl = asLink(item.lien_du_menu);
 

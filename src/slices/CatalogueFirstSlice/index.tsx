@@ -25,7 +25,7 @@ const CatalogueFirstSlice = ({
       <div className="h-auto w-full bg-cover bg-center flex flex-col 
       justify-center pb-4 sm:pb-2 lg:pb-0 md:pt-20">
         {/* Content */}
-        <div className="ml-0 text-center md:text-start md:ml-[10%] lg:ml-[15%] text-slate-200 text-2xl md:text-3xl 
+        <div className="ml-0 text-center text-slate-200 text-2xl md:text-3xl 
          lg:text-4xl text-balance font-bold">
           <CustomRichText field={slice.primary.titre} />
         </div>

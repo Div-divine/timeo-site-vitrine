@@ -56,16 +56,18 @@ const Developpement = ({ slice }: DeveloppementProps): JSX.Element => {
           pauseIcon={slice.primary.icon_audio_pause} playIcon={slice.primary.icon_audio_play}
           taleValue={slice.primary.valeur} taleTitle={slice.primary.titre_de_conte} />
       </div>
-      <div className="w-full lg:w-[60%] m-auto flex flex-col lg:flex-row mt-10">
-        <VideoPlayer
-          htmlContent={slice.primary.video_du_leader.html}
-          className="order-2 lg:order-1 w-full lg:w-[70%] m-auto"
-        />
-        <div className="order-1 lg:order-2 w-[90%] lg:w-[30%] m-auto lg:ml-4 ">
+      <div className="w-[90%] lg:w-[50%] mx-auto mt-10">
           <p className={`${amaranth.className} max-md:text-balance text-center font-light md:text-lg`}>
             {slice.primary.catch_phrase_video_leader}
           </p>
         </div>
+      <div className="w-full lg:w-[70%] m-auto flex flex-col lg:flex-row">
+        <VideoPlayer
+          htmlContent={slice.primary.video_du_leader.html}
+        />
+      </div>
+      <div className="w-full lg:w-[70%] mx-auto">
+        <VideoPlayer htmlContent={slice.primary.video_des_leaders.html} />
       </div>
     </section >
   );

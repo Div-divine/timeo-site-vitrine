@@ -28,6 +28,13 @@
             "placeholder": ""
           }
         },
+        "video_explicative": {
+          "type": "Embed",
+          "config": {
+            "label": "Vidéo explicative",
+            "placeholder": ""
+          }
+        },
         "button_transformation": {
           "type": "Group",
           "config": {

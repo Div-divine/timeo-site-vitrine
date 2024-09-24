@@ -99,6 +99,13 @@
             "label": "Video du leader",
             "placeholder": ""
           }
+        },
+        "video_des_leaders": {
+          "type": "Embed",
+          "config": {
+            "label": "Video des leaders",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

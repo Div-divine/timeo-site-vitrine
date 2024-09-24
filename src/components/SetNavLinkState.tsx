@@ -15,7 +15,7 @@ export default function ActiveLink({ href, children, ...props }: ActiveLinkProps
   return (
     <li
       className={`${
-        isActive ? "bg-[#366B79] text-slate-200" : "bg-gray-300"
+        isActive ? "text-[#366B79]" : "text-black"
       } px-5 py-0 rounded-3xl max-lg:mt-1`} // Custom styles
       {...props}
     >

@@ -13,7 +13,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ htmlContent, className }) => 
 
     return (
         <div
-            className={clsx("videoContainer h-auto lg:h-[60%]", className)}
+            className={clsx("videoContainer h-auto lg:h-full", className)}
             dangerouslySetInnerHTML={{ __html: typeof htmlContent === 'string' ? htmlContent : '' }}
         />
     );

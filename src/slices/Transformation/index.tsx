@@ -2,6 +2,7 @@ import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import ButtonLink from "@/components/PageBtnLink";
 import { Amaranth, Arima } from "next/font/google";
+import VideoPlayer from "../Developpement/VideoLeader";
 
 const amaranth = Amaranth({
   subsets: ['latin'],
@@ -40,6 +41,9 @@ const Transformation = ({ slice }: TransformationProps): JSX.Element => {
       <div>
         <p className={`${amaranth.className} text-center font-light md:text-lg text-slate-200 max-w-xl md:max-w-2xl
           m-auto mt-3 md:mt-4`}>{slice.primary.description}</p>
+      </div>
+      <div className="w-[60%] mx-auto">
+        <VideoPlayer htmlContent={slice.primary.video_explicative.html}/>
       </div>
       <div className="flex flex-col justify-center items-center mt-3 md:mt-5">
         <>

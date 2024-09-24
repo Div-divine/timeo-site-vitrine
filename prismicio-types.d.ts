@@ -998,6 +998,16 @@ export interface DeveloppementSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
   video_du_leader: prismic.EmbedField;
+
+  /**
+   * Video des leaders field in *Developpement → Default → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: developpement.default.primary.video_des_leaders
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  video_des_leaders: prismic.EmbedField;
 }
 
 /**
@@ -1882,6 +1892,16 @@ export interface TransformationSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   description: prismic.KeyTextField;
+
+  /**
+   * Vidéo explicative field in *Transformation → Default → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: transformation.default.primary.video_explicative
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  video_explicative: prismic.EmbedField;
 
   /**
    * Button field in *Transformation → Default → Primary*

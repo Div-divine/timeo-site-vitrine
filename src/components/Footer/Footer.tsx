@@ -34,8 +34,7 @@ export async function Footer({ bgColor }: FooterProps) {
       <nav aria-label="Footer" className="mt-5">
         <ul
           className={`${amaranth.className} flex flex-wrap justify-around w-[90%] sm:w-[40%] m-auto 
-                text-sm sm:text-xl border border-gray-300 p-2 rounded-2xl bg-gray-200 
-                shadow-footerMenuShadow`}
+                text-sm sm:text-xl border border-gray-300 p-2 bg-gray-200`}
         >
           {footer.data.footer.map((item, index) => {
             const linkUrl = asLink(item.lien_vers_la_page); // Safely extract URL
