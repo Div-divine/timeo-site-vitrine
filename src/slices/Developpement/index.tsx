@@ -57,7 +57,7 @@ const Developpement = ({ slice }: DeveloppementProps): JSX.Element => {
           pauseIcon={slice.primary.icon_audio_pause} playIcon={slice.primary.icon_audio_play}
           taleValue={slice.primary.valeur} taleTitle={slice.primary.titre_de_conte} />
       </div>
-      <div className="w-[90%] lg:w-[50%] mx-auto mt-10">
+      <div className="w-[90%] lg:w-[50%] mx-auto my-10">
           <p className={`${proza_libre.className} max-md:text-balance text-center`}>
             {slice.primary.catch_phrase_video_leader}
           </p>
