@@ -5,6 +5,7 @@ import React from "react";
 import Bounded from "./Bounded";
 import clsx from "clsx";
 import { Cormorant, Proza_Libre } from 'next/font/google';
+import Link from "next/link";
 
 const cormorant = Cormorant({
   subsets: ['latin'],
@@ -18,6 +19,18 @@ const proza_libre = Proza_Libre({
   weight: ["400", "700"],
   variable: '--font-proza_libre',
 });
+
+const sectionLinks = [
+  {
+    href: "#section-eveil"
+  },
+  {
+    href: "#section-developpement"
+  },
+  {
+    href: "#section-transformation"
+  },
+];
 
 /**
  * Props for `ParcoursTimeo`.
@@ -52,7 +65,8 @@ const ParcoursTimeo = ({ slice }: ParcoursTimeoProps): JSX.Element => {
           <div key={index} className={clsx("text-slate-300 text-center font-light",
             index === 0 ? "w-56" : "w-40"
           )}>
-            {item.etape}
+            {index != 0 ? <Link href={sectionLinks[index - 1]?.href}>{index}. {item.etape}</Link> : ''
+            }
           </div>
         ))}
       </div>

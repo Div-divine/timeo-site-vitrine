@@ -38,6 +38,7 @@ const Developpement = ({ slice }: DeveloppementProps): JSX.Element => {
       className="w-full h-auto bg-[#e4faee] px-4 md:px-4 -mt-14 pb-5 md:pb-10 lg:pb-12"
     >
       <div className=" w-[95%] md:w-[80%] lg:w-[60%] m-auto">
+        <div id="section-developpement"></div>
         <div className="flex justify-between w-full">
           <div className="w-full ml-0 sm:ml-[10%]">
             <div className={`${cormorant.className} text-balance font-semibold text-4xl lg:text-5xl text-center text-[#113a2c]
@@ -57,7 +58,7 @@ const Developpement = ({ slice }: DeveloppementProps): JSX.Element => {
           pauseIcon={slice.primary.icon_audio_pause} playIcon={slice.primary.icon_audio_play}
           taleValue={slice.primary.valeur} taleTitle={slice.primary.titre_de_conte} />
       </div>
-      <div className="w-[90%] lg:w-[50%] mx-auto my-10">
+      <div className="w-[90%] lg:w-[50%] mx-auto mt-10 mb-6">
           <p className={`${proza_libre.className} max-md:text-balance text-center`}>
             {slice.primary.catch_phrase_video_leader}
           </p>
@@ -67,7 +68,7 @@ const Developpement = ({ slice }: DeveloppementProps): JSX.Element => {
           htmlContent={slice.primary.video_du_leader.html}
         />
       </div>
-      <div className="w-full lg:w-[70%] mx-auto">
+      <div className="w-full lg:w-[70%] mx-auto mt-10">
         <VideoPlayer htmlContent={slice.primary.video_des_leaders.html} />
       </div>
     </section >

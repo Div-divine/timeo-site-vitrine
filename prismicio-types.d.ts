@@ -1053,16 +1053,6 @@ export interface EveilIndividuelSliceDefaultPrimaryImageEtDescriptionItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image_slider: prismic.ImageField<never>;
-
-  /**
-   * Description field in *EveilIndividuel → Default → Primary → Image et description*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: eveil_individuel.default.primary.image_et_description[].description
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  description: prismic.KeyTextField;
 }
 
 /**

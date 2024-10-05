@@ -35,14 +35,15 @@ const EveilIndividuel = ({ slice }: EveilIndividuelProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full h-auto bg-[#e4faee] px-4 md:px-4 pt-2 "
+      className="w-full h-auto px-4 md:px-4 pt-2 bg-[#e4faee]"
     >
+      <div id="section-eveil"></div>
       <div className={`${cormorant.className} text-balance font-semibold text-4xl lg:text-5xl text-center text-[#113a2c]
           w-fit m-auto mt-10`}>
         <PrismicRichText field={slice.primary.titre} />
       </div>
       <div className={`${proza_libre.className} max-md:text-balance text-center  md:w-[60%] mx-auto
-      my-5`}>
+      my-5 `}>
         <PrismicRichText field={slice.primary.sous_titre} />
       </div>
       <CustomCarousel content={carouselContent} button_catalogue={button}/>

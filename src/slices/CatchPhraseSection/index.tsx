@@ -4,6 +4,8 @@ import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import { Proza_Libre, Cormorant } from 'next/font/google';
 import { PrismicNextImage } from "@prismicio/next";
 import ButtonLink from "@/components/PageBtnLink";
+import Link from "next/link";
+import { asLink } from "@prismicio/client";
 
 const cormorant = Cormorant({
   subsets: ['latin'],
@@ -58,10 +60,9 @@ const CatchPhraseSection = ({
           <div className="mt-5 max-sm:mt-0 flex flex-wrap flex-col justify-between max-sm:order-1 
           max-sm:justify-center max-sm:items-center">
             {slice.primary.button_a_propos.map((item, index) => {
+               const href = asLink(item.lien) || "#";
               return <div key={index} className={`${cormorant.className} w-fit font-semibold shadow-2xl`}>
-                <ButtonLink field={item.lien} className={`${cormorant.className} bg-blue-200/10`}>
-                  {item.label}
-                </ButtonLink>
+                <Link className="md:text-xl text-center h-fit w-fit rounded-2xl bg-[#a1daca] text-[#082a34] px-4 py-2" href={href}>{item.label}</Link>
               </div>
             })}
             <div className="flex flex-wrap justify-between pb-5  max-sm:mt-6 max-sm:-mr-10">

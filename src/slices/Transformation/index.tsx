@@ -39,6 +39,7 @@ const Transformation = ({ slice }: TransformationProps): JSX.Element => {
           w-fit m-auto pb-1`}>
         <PrismicRichText field={slice.primary.etape} />
       </div>
+      <div id="section-transformation"></div>
       <div className="w-fit mx-auto">
         <p className={`${proza_libre.className} text-center text-slate-200 max-w-xl md:max-w-2xl
           m-auto mt-3 md:mt-4`}>{slice.primary.description}</p>

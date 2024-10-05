@@ -10,6 +10,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import { Content } from "@prismicio/client";
 import { Proza_Libre } from "next/font/google";
+import Link from "next/link";
 
 const proza_libre = Proza_Libre({
   subsets: ['latin'],
@@ -17,6 +18,18 @@ const proza_libre = Proza_Libre({
   weight: ["400", "700"],
   variable: '--font-proza_libre'
 })
+
+const sectionLinks = [
+  {
+    href: "#section-eveil"
+  },
+  {
+    href: "#section-developpement"
+  },
+  {
+    href: "#section-transformation"
+  },
+];
 
 
 export default function AnimatedContent({
@@ -34,74 +47,44 @@ export default function AnimatedContent({
   const container = useRef<HTMLDivElement>(null);
   gsap.registerPlugin(useGSAP);
 
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({
-        repeat: -1,
-        defaults: { ease: "power2.inOut" },
-      });
-
-      tl.to(".pulsing-logo", {
-        keyframes: [
-          {
-            filter: "brightness(2)",
-            opacity: 1,
-            duration: 0.4,
-            ease: "power2.in",
-          },
-          {
-            filter: "brightness(1)",
-            opacity: 0.9,
-            duration: 0.9,
-          },
-        ],
-      });
-
-      tl.to(
-        ".signal-line",
-        {
-          keyframes: [
-            { backgroundPosition: "0% 0%" },
-            {
-              backgroundPosition: "100% 100%",
-              stagger: {
-                from: "center",
-                each: 0.3,
-                duration: 1,
-              },
-            },
-          ],
-        },
-        "-=1.4"
-      );
-
-      tl.to(
-        ".pulsin-icon",
-        {
-          keyframes: [
-            {
-              opacity: 1,
-              stagger: {
-                from: "center",
-                each: 0.3,
-              },
-              duration: 1,
-            },
-            {
-              opacity: 0.8,
-              stagger: {
-                from: "center",
-                each: 0.3,
-              },
-              duration: 1,
-            },
-          ],
-        },
-        "-=2"
-      );
-    },
-    { scope: container }
-  );
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      repeat: -1, // Repeat infinitely
+      defaults: { ease: "power1.inOut" }, // Smoother easing
+    });
+  
+    // Animate the pulsing brightness and opacity with a slower effect
+    tl.to(".pulsin-icon", {
+      filter: "brightness(2)", // Increase brightness
+      opacity: 1, // Fully visible
+      duration: 1.8, // Slower duration (1.2 seconds)
+      stagger: {
+        from: "start", // Start from the first item
+        each: 0.8, // Slower stagger (0.8 seconds between each item)
+      },
+    })
+    .to(".pulsin-icon", {
+      filter: "brightness(1)", // Reset brightness to normal
+      opacity: 0.9, // Slightly reduce opacity
+      duration: 1.8, // Match the slower duration
+      stagger: {
+        from: "start", // Maintain left to right sequence
+        each: 0.8, // Keep the stagger delay consistent
+      },
+    });
+  
+    // Animate the signal-line between items (slightly slower)
+    tl.to(".signal-line", {
+      backgroundPosition: "100% 0%", // Animate the background position
+      stagger: {
+        from: "start", // Animate left to right
+        each: 0.5, // Slightly slower stagger for signal line
+      },
+      duration: 1.5, // Slow down the animation for the signal line
+    }, "-=1.8"); // Overlap with the previous animation
+  }, { scope: container });
+  
+  
 
   return (
     <div
@@ -111,23 +94,34 @@ export default function AnimatedContent({
       {slice.items.map((item, index) => (
         <React.Fragment key={index}>
           {/* Container for icon and etape text */}
-          <div className="flex flex-col items-center md:flex-row md:items-center">
+          {/* For the first item (index === 0), no link */}
+          {index === 0 ? (
             <div
               className={clsx(
                 "pulsin-icon flex aspect-square shrink-0 items-center justify-center rounded-full",
                 "border border-blue-50/30 bg-blue-50/25 p-3 opacity-40",
-                index === 0 ? "w-[140px] h-[140px]" : "w-20 h-20"
+                "w-[140px] h-[140px]"
               )}
             >
               {item.icon && <Image src={icons[item.icon]} alt="" className="" />}
             </div>
-
-            {/* Display item.etape under the icon */}
-            <p className={`${proza_libre.className} text-center text-slate-300 mt-2 md:hidden`}>
-              {item.etape}
-            </p>
-          </div>
-
+          ) : (
+            /* For the other items, use sectionLinks for href */
+            <Link
+              className="flex flex-col items-center md:flex-row md:items-center"
+              href={sectionLinks[index - 1]?.href} // Adjust the index by -1 for the 3 links
+            >
+              <div
+                className={clsx(
+                  "pulsin-icon flex aspect-square shrink-0 items-center justify-center rounded-full",
+                  "border border-blue-50/30 bg-blue-50/25 p-3 opacity-40",
+                  "w-20 h-20"
+                )}
+              >
+                {item.icon && <Image src={icons[item.icon]} alt="" className="" />}
+              </div>
+            </Link>
+          )}
           {index !== slice.items.length - 1 && (
             <div
               className={clsx(

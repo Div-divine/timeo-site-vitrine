@@ -22,7 +22,6 @@ const proza_libre = Proza_Libre({
 type CarouselProps = {
     content: Array<{
         image_slider: ImageField;
-        description: KeyTextField;
     }>;
     button_catalogue: Array<{
         lien_vers_la_page_catalogue: LinkField;
@@ -101,30 +100,28 @@ export default function CustomCarousel({ content, button_catalogue }: CarouselPr
                             style={{ display: slideIndex === currentIndex ? 'flex' : 'none' }}
                         >
                             {slide.map((item, itemIndex) => (
-                                <div key={itemIndex} className="w-[100%] sm:w-[70%] md:w-[45%] lg:w-[26%] p-4 bg-white rounded-2xl
+                                <div key={itemIndex} className="w-[80%] sm:w-[50%] md:w-[45%] lg:w-[22%] p-4 bg-white rounded-2xl
                             shadow-footerMenuShadow">
                                     <PrismicNextImage field={item.image_slider} className="w-full h-auto object-cover rounded-2xl 
                                  border border-gray-400" quality={100} />
-                                    <p className={`${proza_libre.className} max-md:text-balance text-center mt-2`}>{item.description}</p>
                                 </div>
                             ))}
                         </div>
                     ))}
-                </div>
-
-                {/* Navigation buttons */}
+                    {/* Navigation buttons */}
                 <button
                     onClick={goToPrevious}
-                    className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded hover:bg-gray-800 transition"
+                    className="flex lg:hidden absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded hover:bg-gray-800 transition"
                 >
                     Prev
                 </button>
                 <button
                     onClick={goToNext}
-                    className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded hover:bg-gray-800 transition"
+                    className="flex lg:hidden absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded hover:bg-gray-800 transition"
                 >
                     Next
                 </button>
+                </div>
             </div>
             <div className={`${cormorant.className} w-fit m-auto font-semibold shadow-2xl max-[380px]:mt-4 sm:mt-2`}>
                 {button_catalogue && button_catalogue.map((item, index) => (
