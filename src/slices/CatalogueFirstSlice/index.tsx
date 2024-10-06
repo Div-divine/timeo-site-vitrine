@@ -37,7 +37,7 @@ const CatalogueFirstSlice = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-gradient-to-b from-[#03171E] to-[#356A78] py-10"
+      className=" py-10 bg-[#193a45]"
     >
       <div className="h-auto w-full bg-cover bg-center flex flex-col 
       justify-center pb-4 sm:pb-2 lg:pb-0 md:pt-20">
@@ -64,7 +64,7 @@ const CatalogueFirstSlice = ({
           </div>
           {slice.primary.button_nous_contacter.map((item, index) => (
             <div key={index} className={`${cormorant.className} w-fit font-semibold shadow-2xl m-auto mt-3 sm:mt-4`}>
-              <ButtonLink field={item.lien_vers_la_page} className="bg-blue-200/10
+              <ButtonLink field={item.lien_vers_la_page} className="bg-[#366b79]
               shadow-footerMenuShadow">
                 {item.placeholder}
               </ButtonLink>

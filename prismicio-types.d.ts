@@ -902,6 +902,16 @@ export interface DeveloppementSliceDefaultPrimary {
   etape: prismic.RichTextField;
 
   /**
+   * Sous titre field in *Developpement → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: developpement.default.primary.sous_titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sous_titre: prismic.TitleField;
+
+  /**
    * Description field in *Developpement → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -978,6 +988,16 @@ export interface DeveloppementSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   audio_coaching: prismic.LinkToMediaField;
+
+  /**
+   * Sous titre vidéo field in *Developpement → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: developpement.default.primary.sous_titre_video
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sous_titre_video: prismic.TitleField;
 
   /**
    * Catch phrase video leader field in *Developpement → Default → Primary*
@@ -1376,6 +1396,16 @@ export interface PageAProposSliceDefaultPrimaryCreatriceTimeoItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   site: prismic.LinkField;
+
+  /**
+   * lien linkIdn field in *PageAPropos → Default → Primary → Créatrice Timéo*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.creatrice_timeo[].lien_linkidn
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien_linkidn: prismic.LinkField;
 
   /**
    * Description field in *PageAPropos → Default → Primary → Créatrice Timéo*

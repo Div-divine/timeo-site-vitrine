@@ -5,6 +5,7 @@ import { BsFillPlayCircleFill, BsFillPlayBtnFill, BsFillPauseCircleFill, BsFillP
 import { asLink, KeyTextField, LinkToMediaField, RichTextField } from '@prismicio/client';
 import { PrismicRichText } from '@prismicio/react';
 import { Cormorant, Proza_Libre } from 'next/font/google';
+import clsx from 'clsx';
 
 const cormorant = Cormorant({
   subsets: ['latin'],
@@ -52,6 +53,7 @@ export default function AudioPlayer({
   const [currentTime, setCurrentTime] = useState('0:00');
   const [totalDuration, setTotalDuration] = useState('0:00');
   const [playAudio, setPlayAudio] = useState(false);
+  const [clicked, setClicked] = useState(false)
 
   const songRef = useRef<HTMLAudioElement | null>(null);
 
@@ -172,7 +174,7 @@ export default function AudioPlayer({
                 <PrismicNextImage field={taleImgHandler} className='w-[100%] h-auto rounded-2xl' />
               </div>
             </div>
-            <div className='text-slate-100 hover:text-red-400 flex justify-end pt-3 text-2xl'>
+            <div className={`${clicked ? 'text-red-500' : ''} text-slate-100 flex justify-end pt-3 text-2xl`} onClick={(e) => setClicked(!clicked)}>
               <BsFillHeartFill />
             </div>
           </>

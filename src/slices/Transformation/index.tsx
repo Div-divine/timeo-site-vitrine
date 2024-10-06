@@ -33,7 +33,7 @@ const Transformation = ({ slice }: TransformationProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-[#051920] w-full h-auto py-14"
+      className="bg-[#082a34] w-full h-auto py-14"
     >
       <div className={`${cormorant.className} text-balance font-semibold text-4xl lg:text-5xl text-center bg-[#b2efdb] bg-clip-text text-transparent
           w-fit m-auto pb-1`}>
@@ -41,12 +41,12 @@ const Transformation = ({ slice }: TransformationProps): JSX.Element => {
       </div>
       <div id="section-transformation"></div>
       <div className="w-fit mx-auto">
-        <p className={`${proza_libre.className} text-center text-slate-200 max-w-xl md:max-w-2xl
+        <p className={`${proza_libre.className} text-justify text-slate-200 max-w-xl md:max-w-2xl
           m-auto mt-3 md:mt-4`}>{slice.primary.description}</p>
       </div>
       <div className="flex flex-col justify-center items-center mt-3 md:mt-5">
         {slice.primary.button_nous_contacter.map((item, index) => (
-          <ButtonLink field={item.lien_vers_la_page} key={index} className={`${cormorant.className} bg-blue-200/10`}>
+          <ButtonLink field={item.lien_vers_la_page} key={index} className={`${cormorant.className} bg-[#366b79]`}>
             {item.placeholder}
           </ButtonLink>
         ))}
@@ -59,7 +59,7 @@ const Transformation = ({ slice }: TransformationProps): JSX.Element => {
           /></p>
           <div className="flex flex-col justify-center items-center mt-3 md:mt-5">
         {slice.primary.button_transformation.map((item, index) => (
-          <ButtonLink field={item.lien_vers_la_page} key={index} className={`${cormorant.className} bg-blue-200/10`}>
+          <ButtonLink field={item.lien_vers_la_page} key={index} className={`${cormorant.className} bg-[#366b79]`}>
             {item.placeholder_button}
           </ButtonLink>
         ))}

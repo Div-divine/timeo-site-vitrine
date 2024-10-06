@@ -97,6 +97,15 @@
                   "select": null
                 }
               },
+              "lien_linkidn": {
+                "type": "Link",
+                "config": {
+                  "label": "lien linkIdn",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "select": null
+                }
+              },
               "description": {
                 "type": "Text",
                 "config": {

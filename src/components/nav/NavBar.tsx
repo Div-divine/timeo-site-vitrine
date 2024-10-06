@@ -2,13 +2,14 @@
 import { asLink, Content } from "@prismicio/client"
 import { Proza_Libre } from "next/font/google";
 import Link from "next/link";
-import TimeoIcon from "../LogoTimeo";
+import timeoLogo from "../timeo-logo.png";
 import { PrismicNextLink } from "@prismicio/next";
 import { usePathname } from "next/navigation";
 import ActiveLink from "../SetNavLinkState";
 import { useState } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
 import clsx from "clsx";
+import Image from "next/image";
 
 const proza_libre = Proza_Libre({
     subsets: ['latin'],
@@ -30,9 +31,9 @@ export default function NavBar({ menu }: MenuProps) {
             <div className="mx-auto w-full flex flex-col justify-between
                 font-medium text-black md:flex-row md:items-center bg-white/100 px-7 py-5">
                 <div className="flex items-center justify-between">
-                    <div className="w-40 z-50">
+                    <div className="w-32 z-50">
                         <Link href='/' >
-                            <TimeoIcon />
+                            <Image src={timeoLogo} alt="Timéo icon" />
                             <span className="sr-only">Accueil</span>
                         </Link>
                     </div>

@@ -98,6 +98,16 @@
 									"value": "vessels",
 									"type": "Text"
 								}
+							],
+							[
+								"lien_linkidn",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://twitter.com"
+									}
+								}
 							]
 						]
 					}

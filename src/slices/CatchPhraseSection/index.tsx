@@ -38,7 +38,7 @@ const CatchPhraseSection = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-gradient-to-b from-[#03171E] to-[#356A78]"
+      className="bg-[#193a45]"
     >
       <SectionWrap className="py-0 md:py-0 lg:py-0 pb-0 md:pb-0 lg:pb-0">
         {isFilled.richText(slice.primary.titre) &&
@@ -62,7 +62,7 @@ const CatchPhraseSection = ({
             {slice.primary.button_a_propos.map((item, index) => {
                const href = asLink(item.lien) || "#";
               return <div key={index} className={`${cormorant.className} w-fit font-semibold shadow-2xl`}>
-                <Link className="md:text-xl text-center h-fit w-fit rounded-2xl bg-[#a1daca] text-[#082a34] px-4 py-2" href={href}>{item.label}</Link>
+                <Link className="md:text-xl text-center h-fit w-fit rounded-2xl bg-[#a1daca] text-[#082a34] p-4" href={href}>{item.label}</Link>
               </div>
             })}
             <div className="flex flex-wrap justify-between pb-5  max-sm:mt-6 max-sm:-mr-10">

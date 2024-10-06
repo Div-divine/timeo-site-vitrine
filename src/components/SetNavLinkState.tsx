@@ -16,7 +16,7 @@ export default function ActiveLink({ href, children, ...props }: ActiveLinkProps
     <li
       className={`${
         isActive ? "text-[#366B79]" : "text-black"
-      } px-5 py-0 rounded-3xl max-lg:mt-1`} // Custom styles
+      } px-5 py-0 rounded-3xl max-lg:mt-1 hover:text-[#366b7a]`} // Custom styles
       {...props}
     >
       {children}

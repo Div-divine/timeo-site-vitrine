@@ -4,6 +4,7 @@ import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { ImageField, KeyTextField, LinkField } from '@prismicio/client';
 import { Cormorant, Proza_Libre } from 'next/font/google';
 import ButtonLink from '@/components/PageBtnLink';
+import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
 
 const cormorant = Cormorant({
     subsets: ['latin'],
@@ -48,7 +49,7 @@ export default function CustomCarousel({ content, button_catalogue }: CarouselPr
                     setTotalItems(content.length)
                 } else { // sm
                     setItemsPerSlide(1);
-                    setTotalItems(content.length / 2)
+                    setTotalItems(content.length)
                 }
             };
 
@@ -89,7 +90,7 @@ export default function CustomCarousel({ content, button_catalogue }: CarouselPr
     }
 
     return (
-        <div className='h-[85vh] sm:h-[100vh] my-4'>
+        <div className='h-[70vh] sm:h-[80vh]'>
             <div className="relative w-full mx-auto overflow-auto h-[75%]">
                 <div className="relative w-full flex left-0">
                     {slides.map((slide, slideIndex) => (
@@ -111,19 +112,19 @@ export default function CustomCarousel({ content, button_catalogue }: CarouselPr
                     {/* Navigation buttons */}
                 <button
                     onClick={goToPrevious}
-                    className="flex lg:hidden absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded hover:bg-gray-800 transition"
+                    className="flex lg:hidden absolute left-0 top-[25vh] transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded hover:bg-gray-800 transition"
                 >
-                    Prev
+                   <BsChevronDoubleLeft />
                 </button>
                 <button
                     onClick={goToNext}
-                    className="flex lg:hidden absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded hover:bg-gray-800 transition"
+                    className="flex lg:hidden absolute right-0 top-[25vh] transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded hover:bg-gray-800 transition"
                 >
-                    Next
+                    <BsChevronDoubleRight />
                 </button>
                 </div>
             </div>
-            <div className={`${cormorant.className} w-fit m-auto font-semibold shadow-2xl max-[380px]:mt-4 sm:mt-2`}>
+            <div className={`${cormorant.className} w-fit m-auto font-semibold shadow-2xl`}>
                 {button_catalogue && button_catalogue.map((item, index) => (
                     <ButtonLink field={item.lien_vers_la_page_catalogue} className={`bg-[#356A78]`} key={index}>
                         {item.placeholder_button}

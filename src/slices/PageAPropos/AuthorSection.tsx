@@ -2,19 +2,22 @@ import { ImageField, KeyTextField, LinkField } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextImageProps, PrismicNextLink, PrismicNextLinkProps } from "@prismicio/next";
 import clsx from "clsx";
 import { Cormorant, Proza_Libre } from 'next/font/google';
+import imgSite from "./site.png";
+import Image from "next/image";
+import { BsLinkedin } from "react-icons/bs";
 
 const cormorant = Cormorant({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ["400", "700"],
-  variable: '--font-cormorant',
+    subsets: ['latin'],
+    display: 'swap',
+    weight: ["400", "700"],
+    variable: '--font-cormorant',
 })
 
 const proza_libre = Proza_Libre({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ["400", "700"],
-  variable: '--font-proza_libre'
+    subsets: ['latin'],
+    display: 'swap',
+    weight: ["400", "700"],
+    variable: '--font-proza_libre'
 })
 
 // Define the type for a single item in the `creatrice_timeo` array
@@ -24,6 +27,7 @@ interface CreatriceTimeoItem {
     titre: KeyTextField;
     nom_du_lien_vers_le_site: KeyTextField;
     site: LinkField;  // Use LinkField for links
+    lien_linkidn: LinkField;
     description: KeyTextField;
 }
 
@@ -55,9 +59,13 @@ export default function AuthorSection({ content }: AuthorSectionProps) {
                         <div className={`${cormorant.className} text-lg`}>
                             <h2 className="text-center uppercase font-bold">{item.nom}</h2>
                             <h3 className="text-center capitalize font-bold">{item.titre}</h3>
-                            <div className="flex flex-col justify-center items-center">
-                                <PrismicNextLink field={item.site} className="font-bold hover:text-blue-500 cursor-pointer">
-                                    Site: {item.nom_du_lien_vers_le_site}
+                            <div className="flex justify-center items-center">
+                                <PrismicNextLink field={item.site} className="font-bold hover:text-blue-500 cursor-pointer
+                                flex justify-center w-[5%] mr-2" target="_blank">
+                                    <span className=""><Image src={imgSite} alt="" /></span>
+                                </PrismicNextLink>
+                                <PrismicNextLink field={item.lien_linkidn} className="w-fit" target="_blank">
+                                    <BsLinkedin className="text-3xl" />
                                 </PrismicNextLink>
                             </div>
                         </div>

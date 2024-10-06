@@ -21,6 +21,15 @@
             "multi": "heading2"
           }
         },
+        "sous_titre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sous titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
         "description": {
           "type": "StructuredText",
           "config": {
@@ -84,6 +93,15 @@
             "label": "Audio coaching",
             "placeholder": "",
             "select": "media"
+          }
+        },
+        "sous_titre_video": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sous titre vidéo",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
           }
         },
         "catch_phrase_video_leader": {

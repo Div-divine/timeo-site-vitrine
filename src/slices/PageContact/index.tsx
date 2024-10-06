@@ -3,6 +3,7 @@ import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import SectionWrap from "@/components/SectionWrap";
 import { Cormorant, Proza_Libre } from 'next/font/google';
 import clsx from "clsx";
+import ButtonLink from "@/components/PageBtnLink";
 
 const cormorant = Cormorant({
   subsets: ['latin'],
@@ -29,7 +30,7 @@ const PageContact = ({ slice }: PageContactProps): JSX.Element => {
     <SectionWrap
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-gradient-to-b from-[#03171E] to-[#356A78]"
+      className=" bg-[#193a45]"
     >
       <div className="mt-20">
         <h2 className={`${cormorant.className} text-slate-200 text-3xl md:text-4xl lg:text-5xl text-balance`}>
@@ -61,7 +62,7 @@ const PageContact = ({ slice }: PageContactProps): JSX.Element => {
                 className="w-full sm:w-[600px] md:w-[700px] h-40 rounded-2xl p-3 md:text-xl" />
             </div>
           </div>
-          <div className={clsx(`${proza_libre.className} text-slate-300 md:text-xl bg-[#072A35] w-[80%] 
+          <div className={clsx(`${proza_libre.className} text-slate-300 md:text-xl bg-[#366b79] w-fit p-4
             mx-auto flex flex-wrap flex-col justify-center items-center rounded-full border border-blue-100/20
             py-3 mt-5 outline-none ring-yellow-300 transition-colors after:absolute after:inset-0 after:-z-10 
             after:animate-pulse after:rounded-full after:bg-yellow-100 after:bg-opacity-0 

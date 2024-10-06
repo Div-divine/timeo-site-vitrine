@@ -45,10 +45,10 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
     <div className="w-[90%] m-auto">
       {/* Season 1 */}
       <div className={`${cormorant.className}
-      font-bold text-lg sm:text-2xl border-b-2 border-b-[#356A78] w-fit rounded-lg px-2`}>
+      font-bold text-lg sm:text-2xl w-fit rounded-lg px-2`}>
         <PrismicRichText field={slice.primary.titre_saison_1} />
       </div>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 sm:gap-4 py-4">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 sm:gap-4 pt-4">
         {slice.primary.catalogue_saison_1
           .slice(0, visibleColumnsS1 * 3) // Limit the number of visible items
           .map((item, index) => (
@@ -66,7 +66,7 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
       {visibleColumnsS1 * 3 < slice.primary.catalogue_saison_1.length && (
         <button
           onClick={showMoreS1}
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-2 flex justify-between"
+          className="bg-blue-500 text-white px-4 py-2 rounded-2xl mt-2 flex justify-between"
         >
           <span className='text-xl md:text-2xl mr-2'><BsPlusCircleFill /></span> Afficher plus
         </button>
@@ -74,10 +74,10 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
 
       {/* Season 2 */}
       <div className={`${cormorant.className}
-      font-bold text-lg sm:text-2xl border-b-2 border-b-[#356A78] w-fit rounded-lg px-2 pt-2`}>
+      font-bold text-lg sm:text-2xl  w-fit rounded-lg px-2 mt-8`}>
         <PrismicRichText field={slice.primary.titre_saison_2} />
       </div>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 sm:gap-4 py-4">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 sm:gap-4 pt-4">
         {slice.primary.catalogue_saison_2
           .slice(0, visibleColumnsS2 * 3) // Limit the number of visible items
           .map((item, index) => (
@@ -95,7 +95,7 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
       {visibleColumnsS2 * 3 < slice.primary.catalogue_saison_2.length && (
         <button
           onClick={showMoreS2}
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-2 flex justify-between"
+          className="bg-blue-500 text-white px-4 py-2 rounded-2xl mt-2 flex justify-between"
         >
            <span className='text-xl md:text-2xl mr-2'><BsPlusCircleFill /></span> Afficher plus
         </button>
@@ -103,10 +103,10 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
 
       {/* Season 3 */}
       <div className={`${cormorant.className}
-      font-bold text-lg sm:text-2xl border-b-2 border-b-[#356A78] w-fit rounded-lg px-2 pt-2`}>
+      font-bold text-lg sm:text-2xl w-fit rounded-lg px-2 mt-8`}>
         <PrismicRichText field={slice.primary.titre_saison_3} />
       </div>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 sm:gap-4 py-4">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 sm:gap-4 pt-4">
         {slice.primary.catalogue_saison_3
           .slice(0, visibleColumnsS3 * 3) // Limit the number of visible items
           .map((item, index) => (
@@ -124,7 +124,7 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
       {visibleColumnsS3 * 3 < slice.primary.catalogue_saison_3.length && (
         <button
           onClick={showMoreS3}
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-2 flex justify-between"
+          className="bg-blue-500 text-white px-4 py-2 rounded-2xl mt-2 flex justify-between"
         >
            <span className='text-xl md:text-2xl mr-2'><BsPlusCircleFill /></span> Afficher plus
         </button>

@@ -42,8 +42,8 @@ const EveilIndividuel = ({ slice }: EveilIndividuelProps): JSX.Element => {
           w-fit m-auto mt-10`}>
         <PrismicRichText field={slice.primary.titre} />
       </div>
-      <div className={`${proza_libre.className} max-md:text-balance text-center  md:w-[60%] mx-auto
-      my-5 `}>
+      <div className={`${proza_libre.className} w-[80%] sm:w-[70%] md:w-[60%] lg:w-[40%] mx-auto
+      my-5 text-justify`}>
         <PrismicRichText field={slice.primary.sous_titre} />
       </div>
       <CustomCarousel content={carouselContent} button_catalogue={button}/>

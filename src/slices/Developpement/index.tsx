@@ -35,18 +35,22 @@ const Developpement = ({ slice }: DeveloppementProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full h-auto bg-[#e4faee] px-4 md:px-4 -mt-14 pb-5 md:pb-10 lg:pb-12"
+      className="w-full h-auto bg-[#e4faee] -mt-10 pb-4"
     >
       <div className=" w-[95%] md:w-[80%] lg:w-[60%] m-auto">
         <div id="section-developpement"></div>
-        <div className="flex justify-between w-full">
-          <div className="w-full ml-0 sm:ml-[10%]">
-            <div className={`${cormorant.className} text-balance font-semibold text-4xl lg:text-5xl text-center text-[#113a2c]
+        <div className={`${cormorant.className} font-semibold text-4xl lg:text-5xl text-center text-[#113a2c]
           w-fit m-auto`}>
-              <PrismicRichText field={slice.primary.etape} />
+          <PrismicRichText field={slice.primary.etape} />
+        </div>
+        <div className="flex justify-between w-full mt-8">
+          <div className="w-full ml-0 sm:ml-[10%]">
+            <div className={`${cormorant.className} font-semibold text-3xl lg:text-4xl text-center text-[#113a2c]
+          w-fit m-auto`}>
+              <PrismicRichText field={slice.primary.sous_titre} />
             </div>
-            <div className={`${proza_libre.className} max-md:text-balance text-center m-auto
-           mt-3`}>
+            <div className={`${proza_libre.className} text-justify w-[90%]
+           mt-4 m-auto`}>
               <PrismicRichText field={slice.primary.description} />
             </div>
           </div>
@@ -58,11 +62,15 @@ const Developpement = ({ slice }: DeveloppementProps): JSX.Element => {
           pauseIcon={slice.primary.icon_audio_pause} playIcon={slice.primary.icon_audio_play}
           taleValue={slice.primary.valeur} taleTitle={slice.primary.titre_de_conte} />
       </div>
-      <div className="w-[90%] lg:w-[50%] mx-auto mt-10 mb-6">
-          <p className={`${proza_libre.className} max-md:text-balance text-center`}>
-            {slice.primary.catch_phrase_video_leader}
-          </p>
+      <div className="w-[90%] lg:w-[50%] m-auto mt-10 mb-6">
+        <div className={`${cormorant.className} font-semibold text-3xl lg:text-4xl text-center text-[#113a2c]
+          w-fit m-auto`}>
+          <PrismicRichText field={slice.primary.sous_titre_video} />
         </div>
+        <p className={`${proza_libre.className} text-justify mt-4`}>
+          {slice.primary.catch_phrase_video_leader}
+        </p>
+      </div>
       <div className="w-full lg:w-[70%] m-auto flex flex-col lg:flex-row">
         <VideoPlayer
           htmlContent={slice.primary.video_du_leader.html}

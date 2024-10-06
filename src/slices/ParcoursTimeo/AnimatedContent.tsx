@@ -52,7 +52,7 @@ export default function AnimatedContent({
       repeat: -1, // Repeat infinitely
       defaults: { ease: "power1.inOut" }, // Smoother easing
     });
-  
+
     // Animate the pulsing brightness and opacity with a slower effect
     tl.to(".pulsin-icon", {
       filter: "brightness(2)", // Increase brightness
@@ -63,16 +63,16 @@ export default function AnimatedContent({
         each: 0.8, // Slower stagger (0.8 seconds between each item)
       },
     })
-    .to(".pulsin-icon", {
-      filter: "brightness(1)", // Reset brightness to normal
-      opacity: 0.9, // Slightly reduce opacity
-      duration: 1.8, // Match the slower duration
-      stagger: {
-        from: "start", // Maintain left to right sequence
-        each: 0.8, // Keep the stagger delay consistent
-      },
-    });
-  
+      .to(".pulsin-icon", {
+        filter: "brightness(1)", // Reset brightness to normal
+        opacity: 0.9, // Slightly reduce opacity
+        duration: 1.8, // Match the slower duration
+        stagger: {
+          from: "start", // Maintain left to right sequence
+          each: 0.8, // Keep the stagger delay consistent
+        },
+      });
+
     // Animate the signal-line between items (slightly slower)
     tl.to(".signal-line", {
       backgroundPosition: "100% 0%", // Animate the background position
@@ -83,33 +83,22 @@ export default function AnimatedContent({
       duration: 1.5, // Slow down the animation for the signal line
     }, "-=1.8"); // Overlap with the previous animation
   }, { scope: container });
-  
-  
+
+
 
   return (
     <div
       ref={container}
-      className="flex flex-col items-center md:flex-row justify-between mt-3 md:mt-5 lg:mt-6 max-w-6xl m-auto"
+      className="flex flex-col items-center md:flex-row justify-between mt-5 md:mt-8 lg:mt-12 max-w-6xl m-auto"
     >
       {slice.items.map((item, index) => (
         <React.Fragment key={index}>
           {/* Container for icon and etape text */}
           {/* For the first item (index === 0), no link */}
           {index === 0 ? (
-            <div
-              className={clsx(
-                "pulsin-icon flex aspect-square shrink-0 items-center justify-center rounded-full",
-                "border border-blue-50/30 bg-blue-50/25 p-3 opacity-40",
-                "w-[140px] h-[140px]"
-              )}
-            >
-              {item.icon && <Image src={icons[item.icon]} alt="" className="" />}
-            </div>
-          ) : (
-            /* For the other items, use sectionLinks for href */
             <Link
               className="flex flex-col items-center md:flex-row md:items-center"
-              href={sectionLinks[index - 1]?.href} // Adjust the index by -1 for the 3 links
+              href={sectionLinks[0]?.href} // Adjust the index by -1 for the 3 links
             >
               <div
                 className={clsx(
@@ -120,6 +109,24 @@ export default function AnimatedContent({
               >
                 {item.icon && <Image src={icons[item.icon]} alt="" className="" />}
               </div>
+              {item.etape && <div className={`${proza_libre.className} flex md:hidden text-slate-200`}>{item.etape}</div>}
+            </Link>
+          ) : (
+            /* For the other items, use sectionLinks for href */
+            <Link
+              className="flex flex-col items-center md:flex-row md:items-center"
+              href={sectionLinks[index]?.href} // Adjust the index by -1 for the 3 links
+            >
+              <div
+                className={clsx(
+                  "pulsin-icon flex aspect-square shrink-0 items-center justify-center rounded-full",
+                  "border border-blue-50/30 bg-blue-50/25 p-3 opacity-40",
+                  "w-20 h-20"
+                )}
+              >
+                {item.icon && <Image src={icons[item.icon]} alt="" className="" />}
+              </div>
+              {item.etape && <div className={`${proza_libre.className} flex md:hidden text-slate-200 w-[70%] text-center`}>{item.etape}</div>}
             </Link>
           )}
           {index !== slice.items.length - 1 && (

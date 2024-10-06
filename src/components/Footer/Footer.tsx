@@ -5,6 +5,8 @@ import TimeoIcon from "../LogoTimeo";
 import { PrismicNextLink } from "@prismicio/next";
 import ActiveLink from "../SetNavLinkState";
 import { asLink } from "@prismicio/client";
+import timeoLogo from "../timeo-logo.png";
+import Image from "next/image";
 
 const proza_libre = Proza_Libre({
     subsets: ['latin'],
@@ -25,9 +27,9 @@ export async function Footer({ bgColor }: FooterProps) {
 
   return (
     <footer className={`bg-[${bgColor}] mt-8 pb-2`}>
-      <div className="w-40 m-auto">
+      <div className="w-32 m-auto">
         <Link href="/">
-          <TimeoIcon />
+          <Image src={timeoLogo} alt="Timéo Logo"/>
           <span className="sr-only">Accueil</span>
         </Link>
       </div>

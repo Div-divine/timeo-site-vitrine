@@ -46,9 +46,9 @@ const ParcoursTimeo = ({ slice }: ParcoursTimeoProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative overflow-hidden bg-[#082a34] w-full"
+      className=" bg-[#082a34] w-full"
     >
-      <div className="relative w-full">
+      <div className="w-full md:w-[70%]">
         {isFilled.richText(slice.primary.titre) && (
           <h2
             className={`${cormorant.className} text-balance font-medium text-4xl lg:text-5xl text-center text-[#b1efda] w-full`}
@@ -60,12 +60,12 @@ const ParcoursTimeo = ({ slice }: ParcoursTimeoProps): JSX.Element => {
       </div>
 
       {/* Align item.etape with the icon containers */}
-      <div className={`${proza_libre.className} w-full max-w-7xl m-auto hidden md:flex justify-between`}>
+      <div className={`${proza_libre.className} w-full md:w-[75%] m-auto hidden md:flex justify-between`}>
         {slice.items.map((item, index) => (
-          <div key={index} className={clsx("text-slate-300 text-center font-light",
-            index === 0 ? "w-56" : "w-40"
+          <div key={index} className={clsx("text-slate-300 text-center font-light mt-4",
+            "w-40"
           )}>
-            {index != 0 ? <Link href={sectionLinks[index - 1]?.href}>{index}. {item.etape}</Link> : ''
+            {<Link href={sectionLinks[index]?.href}>{index+1}. {item.etape}</Link>
             }
           </div>
         ))}
