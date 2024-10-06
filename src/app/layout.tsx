@@ -36,15 +36,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
   bgColor: string;
-  footer: Content.FooterDocument
 }>) {
   return (
-    <html lang="fr" className={`${raleway} ${cormorant} ${proza_libre}`}>
+    <html lang="fr" className={`${raleway.variable} ${cormorant.variable} ${proza_libre.variable}`}>
       <body>
         <Header />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
         <Footer bgColor={bgColor} />
       </body>
       <PrismicPreview repositoryName={repositoryName} />
