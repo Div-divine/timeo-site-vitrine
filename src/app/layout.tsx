@@ -31,18 +31,16 @@ export const metadata = {
 };
 
 export default function RootLayout({
-  children,
-  bgColor = "#e2e8f0",
+  children
 }: Readonly<{
   children: React.ReactNode;
-  bgColor: string;
 }>) {
   return (
     <html lang="fr" className={`${raleway.variable} ${cormorant.variable} ${proza_libre.variable}`}>
       <body>
         <Header />
         <main>{children}</main>
-        <Footer bgColor={bgColor} />
+        <Footer />
       </body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>

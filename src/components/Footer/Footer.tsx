@@ -21,12 +21,12 @@ type FooterProps = {
 };
 
 
-export async function Footer({ bgColor }: FooterProps) {
+export async function Footer() {
   const client = createClient();
   const footer = await client.getSingle("footer");
 
   return (
-    <footer className={`bg-[${bgColor}] mt-8 pb-2`}>
+    <footer className={`bg-white mt-8 pb-2`}>
       <div className="w-32 m-auto">
         <Link href="/">
           <Image src={timeoLogo} alt="Timéo Logo"/>
