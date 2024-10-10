@@ -109,7 +109,7 @@ export default function AnimatedContent({
               >
                 {item.icon && <Image src={icons[item.icon]} alt="" className="" />}
               </div>
-              {item.etape && <div className={`${proza_libre.className} flex md:hidden text-slate-200`}>{item.etape}</div>}
+              {item.etape && <div className={`${proza_libre.className} flex md:hidden text-slate-200 my-4`}>{index+1}. {item.etape}</div>}
             </Link>
           ) : (
             /* For the other items, use sectionLinks for href */
@@ -126,7 +126,7 @@ export default function AnimatedContent({
               >
                 {item.icon && <Image src={icons[item.icon]} alt="" className="" />}
               </div>
-              {item.etape && <div className={`${proza_libre.className} flex md:hidden text-slate-200 w-[70%] text-center`}>{item.etape}</div>}
+              {item.etape && <div className={`${proza_libre.className} flex md:hidden text-slate-200 w-[70%] text-center my-4`}>{index+1}. {item.etape}</div>}
             </Link>
           )}
           {index !== slice.items.length - 1 && (

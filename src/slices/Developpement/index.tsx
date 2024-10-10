@@ -71,12 +71,12 @@ const Developpement = ({ slice }: DeveloppementProps): JSX.Element => {
           {slice.primary.catch_phrase_video_leader}
         </p>
       </div>
-      <div className="w-full lg:w-[70%] m-auto flex flex-col lg:flex-row">
+      <div className="w-[95%] lg:w-[70%] m-auto flex flex-col lg:flex-row">
         <VideoPlayer
           htmlContent={slice.primary.video_du_leader.html}
         />
       </div>
-      <div className="w-full lg:w-[70%] mx-auto mt-10">
+      <div className="w-[95%] lg:w-[70%] mx-auto mt-10">
         <VideoPlayer htmlContent={slice.primary.video_des_leaders.html} />
       </div>
     </section >

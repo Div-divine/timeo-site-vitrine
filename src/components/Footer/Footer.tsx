@@ -27,7 +27,7 @@ export async function Footer() {
 
   return (
     <footer className={`bg-white mt-8 pb-2`}>
-      <div className="w-32 m-auto">
+      <div className="w-24 m-auto">
         <Link href="/">
           <Image src={timeoLogo} alt="Timéo Logo"/>
           <span className="sr-only">Accueil</span>
@@ -36,7 +36,7 @@ export async function Footer() {
       <nav aria-label="Footer" className="mt-5">
         <ul
           className={`${proza_libre.className} flex flex-wrap justify-around w-[90%] sm:w-[50%] m-auto 
-                text-sm sm:text-xl border border-gray-300 p-2 bg-gray-200`}
+                text-sm sm:text-base border border-gray-300 p-2 bg-gray-200`}
         >
           {footer.data.footer.map((item, index) => {
             const linkUrl = asLink(item.lien_vers_la_page); // Safely extract URL
@@ -57,7 +57,7 @@ export async function Footer() {
         </ul>
         <ul
           className={`${proza_libre.className} flex flex-wrap justify-around w-[80%] m-auto 
-                text-base mt-5`}
+                text-sm mt-5`}
         >
           {footer.data.politiques_de_confidentialite.map((item, index) => (
             <PrismicNextLink field={item.lien_vers_la_politique} key={index}>

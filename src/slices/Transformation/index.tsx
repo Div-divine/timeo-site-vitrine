@@ -40,7 +40,7 @@ const Transformation = ({ slice }: TransformationProps): JSX.Element => {
         <PrismicRichText field={slice.primary.etape} />
       </div>
       <div id="section-transformation"></div>
-      <div className="w-fit mx-auto">
+      <div className="w-[90%] sm:max-w-[60%] mx-auto">
         <p className={`${proza_libre.className} text-justify text-slate-200 max-w-xl md:max-w-2xl
           m-auto mt-3 md:mt-4`}>{slice.primary.description}</p>
       </div>
@@ -51,7 +51,7 @@ const Transformation = ({ slice }: TransformationProps): JSX.Element => {
           </ButtonLink>
         ))}
       </div>
-      <div className="w-[70%] mx-auto md:grid grid-cols-2 gap-4 my-4">
+      <div className="w-[90%] md:w-[70%] mx-auto md:grid grid-cols-2 gap-4 my-4">
         <VideoPlayer htmlContent={slice.primary.video_explicative.html} />
         <div className="w-fit flex flex-col justify-center items-center mt-5 md:mt-0">
           <p className={`${proza_libre.className} text-slate-200`}><PrismicRichText

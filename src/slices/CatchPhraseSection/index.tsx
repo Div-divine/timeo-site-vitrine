@@ -57,15 +57,15 @@ const CatchPhraseSection = ({
           <div className="flex flex-wrap justify-center items-center max-sm:order-2">
             <PrismicNextImage field={slice.primary.photo_mobile} quality={100} />
           </div>
-          <div className="mt-5 max-sm:mt-0 flex flex-wrap flex-col justify-between max-sm:order-1 
+          <div className="my-5 sm:my-0 flex flex-wrap flex-col justify-between max-sm:order-1 
           max-sm:justify-center max-sm:items-center">
             {slice.primary.button_a_propos.map((item, index) => {
                const href = asLink(item.lien) || "#";
-              return <div key={index} className={`${cormorant.className} w-fit font-semibold shadow-2xl`}>
+              return <div key={index} className={`${cormorant.className} w-fit font-semibold shadow-2xl mb-5 sm:mb-0`}>
                 <Link className="md:text-xl text-center h-fit w-fit rounded-2xl bg-[#a1daca] text-[#082a34] p-4" href={href}>{item.label}</Link>
               </div>
             })}
-            <div className="flex flex-wrap justify-between pb-5  max-sm:mt-6 max-sm:-mr-10">
+            <div className="flex flex-wrap justify-between pb-5 max-sm:mt-6 max-sm:-mr-10 ">
               {slice.primary.section_photo_personnes_ayant_teste.map((item, index) => (
                 <div
                   key={index}

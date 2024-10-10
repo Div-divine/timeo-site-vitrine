@@ -31,7 +31,7 @@ export default function NavBar({ menu }: MenuProps) {
             <div className="mx-auto w-full flex flex-col justify-between
                 font-medium text-black md:flex-row md:items-center bg-white/100 px-7 py-5">
                 <div className="flex items-center justify-between">
-                    <div className="w-32 z-50">
+                    <div className="w-24 z-50">
                         <Link href='/' >
                             <Image src={timeoLogo} alt="Timéo icon" />
                             <span className="sr-only">Accueil</span>
@@ -62,7 +62,7 @@ export default function NavBar({ menu }: MenuProps) {
                         {menu && menu.data.menu_de_navigation.map((item, index) => {
                             return (
                                 <PrismicNextLink
-                                    key={index} field={item.lien_du_menu} className="block px-3 text-3xl first:mt-8"
+                                    key={index} field={item.lien_du_menu} className="block px-3 text-sm first:mt-8"
                                     onClick={() => setOpen(false)}
                                     aria-current={
                                         pathName.includes(asLink(item.lien_du_menu) as string) ? "page" : undefined
@@ -81,7 +81,7 @@ export default function NavBar({ menu }: MenuProps) {
 
                         return (
                             linkUrl && (<ActiveLink key={index} href={linkUrl}>
-                                <PrismicNextLink field={item.lien_du_menu} className="inline-flex min-h-11 items-center text-xl"
+                                <PrismicNextLink field={item.lien_du_menu} className="inline-flex min-h-11 items-center text-base"
                                     aria-current={
                                         pathName.includes(asLink(item.lien_du_menu) as string) ? "page" : undefined
                                     }>
