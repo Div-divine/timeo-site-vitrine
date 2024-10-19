@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body {
+    --black: #000000;
+    --ash-black: #222;
+    --white: #fafafa;
+    --sky: #00ccff;
+    --green: #22dddd;
+    --blue: #1300ff;
+    --dusk: #6600ff;
+    --purple: #9900ff;
+    --pink: #ff0066;
+    --red: #fe0222;
+    --orange: #fd7702;
+    --yellow: #ffbb00;
+    --timeo-color: #386E7D;
+    --scroll-corner: #a1dacb;
+
+    --background: var(--black);
+    --accent: var(--timeo-color);
+  
+  }
+
 /* css section for audio display and control*/
 #audio-progress-bar {
     -webkit-appearance: none;
@@ -20,6 +42,16 @@
     border: 8px solid #386E7D;
     border-radius: 50%;
     box-shadow: 0 4px 4px 0 #00000040;
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: var(--red);
+    transform-origin: 0%;
 }
 
 .flex-center {
@@ -115,5 +147,18 @@
     height: 100% !important;
     border: none;
   }
-
   
+  ::-webkit-scrollbar {
+    height: 12px;
+    width: 7px;
+    background: var(--white);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    -webkit-border-radius: 1ex;
+  }
+  
+  ::-webkit-scrollbar-corner {
+    background: var(--white);
+  }
