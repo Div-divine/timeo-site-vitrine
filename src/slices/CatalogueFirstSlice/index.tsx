@@ -64,10 +64,11 @@ const CatalogueFirstSlice = ({
           </div>
           {slice.primary.button_nous_contacter.map((item, index) => (
             <div key={index} className={`${cormorant.className} w-fit font-semibold shadow-2xl m-auto mt-3 sm:mt-4`}>
+              {item.lien_vers_la_page && 
               <ButtonLink field={item.lien_vers_la_page} className="bg-[#366b79]
               shadow-footerMenuShadow">
                 {item.placeholder}
-              </ButtonLink>
+              </ButtonLink>}
             </div>
           ))}
         </div>

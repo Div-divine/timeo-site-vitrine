@@ -67,9 +67,10 @@ const FirstSliceFormation = ({
           </div>
           {slice.primary.button_nous_contacter.map((item, index) => (
             <div key={index} className="w-fit font-semibold shadow-2xl m-auto mt-3 sm:mt-4">
+              {item.lien_vers_la_page_contacter && 
               <ButtonLink field={item.lien_vers_la_page_contacter} className={`${cormorant.className} bg-[#366b7a]`}>
-                {item.text_button}
-              </ButtonLink>
+              {item.text_button}
+            </ButtonLink>}
             </div>
           ))}
         </div>

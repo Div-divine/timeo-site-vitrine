@@ -66,20 +66,31 @@
                   "label": "Sous titre catalogue",
                   "placeholder": ""
                 }
-              },
-              "text_button": {
+              }
+            }
+          }
+        },
+        "bouton": {
+          "type": "Group",
+          "config": {
+            "label": "bouton",
+            "repeat": false,
+            "fields": {
+              "text_bouton": {
                 "type": "Text",
                 "config": {
-                  "label": "Text button",
+                  "label": "Text bouton",
                   "placeholder": ""
                 }
               },
-              "lien_vers_la_page_catalogue": {
+              "lien_vers_la_page_page_catalogue": {
                 "type": "Link",
                 "config": {
-                  "label": "lien vers la page catalogue",
+                  "label": "Lien vers la page page catalogue",
                   "placeholder": "",
-                  "select": null
+                  "allowTargetBlank": false,
+                  "select": null,
+                  "allowText": false
                 }
               }
             }

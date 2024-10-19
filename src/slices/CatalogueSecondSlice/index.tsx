@@ -1,7 +1,7 @@
-import { Content } from "@prismicio/client";
+import { Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import ButtonLink from "@/components/PageBtnLink";
-import { Proza_Libre, Cormorant  } from "next/font/google";
+import { Proza_Libre, Cormorant } from "next/font/google";
 
 
 
@@ -60,12 +60,14 @@ const CatalogueSecondSlice = ({
         </div>
       </div>
       {slice.primary.button_demander_un_devis.map((item, index) => (
-            <div key={index} className={`${cormorant.className} w-fit font-semibold shadow-2xl m-auto mt-3 sm:mt-4`}>
-              <ButtonLink field={item.lien_vers_la_page} className="bg-[#366b79] shadow-footerMenuShadow">
-                {item.placeholder}
-              </ButtonLink>
-            </div>
-          ))}
+        <div key={index} className={`${cormorant.className} w-fit font-semibold shadow-2xl m-auto mt-3 sm:mt-4`}>
+          {item.lien_vers_la_page &&
+            <ButtonLink field={item.lien_vers_la_page} className="bg-[#366b79] shadow-footerMenuShadow">
+              {item.placeholder}
+            </ButtonLink>
+          }
+        </div>
+      ))}
     </section>
   );
 };

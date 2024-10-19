@@ -21,13 +21,38 @@
             "multi": "heading2"
           }
         },
-        "description_timeo": {
+        "a_propos_de_timeo": {
           "type": "StructuredText",
           "config": {
-            "label": "Description Timéo",
+            "label": "A propos de Timéo",
             "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "allowTargetBlank": false,
+            "multi": "paragraph"
+          }
+        },
+        "videos_de_temoignage_de_contes": {
+          "type": "Group",
+          "config": {
+            "label": "Vidéos de témoignage de contes",
+            "repeat": true,
+            "fields": {
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "vidéo",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "les_atouts_timeo": {
+          "type": "StructuredText",
+          "config": {
+            "label": "les atouts Timéo",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph,list-item"
           }
         },
         "button_nous_contacter": {

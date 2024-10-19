@@ -110,26 +110,39 @@ export default function CustomCarousel({ content, button_catalogue }: CarouselPr
                         </div>
                     ))}
                     {/* Navigation buttons */}
-                <button
-                    onClick={goToPrevious}
-                    className="flex lg:hidden absolute left-0 top-[25vh] transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded hover:bg-gray-800 transition"
-                >
-                   <BsChevronDoubleLeft />
-                </button>
-                <button
-                    onClick={goToNext}
-                    className="flex lg:hidden absolute right-0 top-[25vh] transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded hover:bg-gray-800 transition"
-                >
-                    <BsChevronDoubleRight />
-                </button>
+                    <button
+                        onClick={goToPrevious}
+                        className="flex lg:hidden absolute left-0 top-[25vh] transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded hover:bg-gray-800 transition"
+                    >
+                        <BsChevronDoubleLeft />
+                    </button>
+                    <button
+                        onClick={goToNext}
+                        className="flex lg:hidden absolute right-0 top-[25vh] transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded hover:bg-gray-800 transition"
+                    >
+                        <BsChevronDoubleRight />
+                    </button>
                 </div>
             </div>
             <div className={`${cormorant.className} w-fit m-auto font-semibold shadow-2xl`}>
-                {button_catalogue && button_catalogue.map((item, index) => (
-                    <ButtonLink field={item.lien_vers_la_page_catalogue} className={`bg-[#356A78]`} key={index}>
-                        {item.placeholder_button}
-                    </ButtonLink>
-                ))}
+                {button_catalogue && button_catalogue.map((item, index) => {
+                    if (item.lien_vers_la_page_catalogue) {
+                        return (
+                            <div key={index} className='w-fit'>
+                            <ButtonLink
+                                field={item.lien_vers_la_page_catalogue}
+                                className="bg-[#356A78]"
+                                key={index}
+                            >
+                                {item.placeholder_button}
+                            </ButtonLink>
+                            </div>
+                        );
+                    } else {
+                        return null; // or return some fallback UI if needed
+                    }
+                })}
+
             </div>
         </div>
     );

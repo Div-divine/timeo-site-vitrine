@@ -32,24 +32,6 @@
 						"__TYPE__": "GroupItemContent",
 						"value": [
 							[
-								"text_button",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "mission",
-									"type": "Text"
-								}
-							],
-							[
-								"lien_vers_la_page_catalogue",
-								{
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://slicemachine.dev"
-									}
-								}
-							],
-							[
 								"catalogue",
 								{
 									"origin": {
@@ -103,6 +85,34 @@
 									"__TYPE__": "FieldContent",
 									"value": "cut",
 									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"bouton": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"text_bouton",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "plastic",
+									"type": "Text"
+								}
+							],
+							[
+								"lien_vers_la_page_page_catalogue",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com"
+									}
 								}
 							]
 						]

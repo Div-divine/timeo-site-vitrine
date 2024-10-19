@@ -109,4 +109,11 @@
   html {
     scroll-behavior: smooth;
   }
+
+  .video-temoignage iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+  }
+
   

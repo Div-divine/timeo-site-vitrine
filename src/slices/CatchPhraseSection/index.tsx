@@ -3,7 +3,6 @@ import { Content, isFilled } from "@prismicio/client";
 import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import { Proza_Libre, Cormorant } from 'next/font/google';
 import { PrismicNextImage } from "@prismicio/next";
-import ButtonLink from "@/components/PageBtnLink";
 import Link from "next/link";
 import { asLink } from "@prismicio/client";
 

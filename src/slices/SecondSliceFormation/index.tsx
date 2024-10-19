@@ -113,9 +113,16 @@ const SecondSliceFormation = ({
         </div>
       </div>
       <div className="w-full mt-4 md:mt-0 flex flex-col justify-center items-center">
-        <ButtonLink href="/catalogue" className={`${cormorant.className} bg-[#366b7a] text-center font-bold`}>
-          Découvrir tout le catalogue Timéo®
-        </ButtonLink>
+        {slice.primary.bouton.map((item, index) =>
+        (<div key={index}> {/* Add the key here */}
+          <ButtonLink
+            field={item.lien_vers_la_page_page_catalogue}
+            className={`${cormorant.className} bg-[#366b7a] text-center font-bold`}
+          >
+            {item.text_bouton}
+          </ButtonLink>
+        </div>
+        ))}
       </div>
       <div className="w-[90%] text-sm sm:text-base md:w-[70%] lg:w-[60%] mx-auto mt-8">
         <div className="col-span-3">
@@ -163,9 +170,13 @@ const SecondSliceFormation = ({
           </div>
         </div>
         <div className="w-full mt-4 md:mt-0 flex flex-col justify-center items-center">
-          <ButtonLink href="/catalogue" className={`${cormorant.className} bg-[#366b7a] text-center font-bold`}>
-            Découvrir tout le catalogue Timéo®
-          </ButtonLink>
+        {slice.primary.bouton.map((item, index) => (
+          <div key={index}>
+            <ButtonLink field={item.lien_vers_la_page_page_catalogue} className={`${cormorant.className} bg-[#366b7a] text-center font-bold`}>
+          {item.text_bouton}
+        </ButtonLink>
+        </div>
+        ))}
         </div>
       </div>
 

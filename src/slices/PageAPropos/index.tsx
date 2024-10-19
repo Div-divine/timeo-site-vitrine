@@ -5,6 +5,7 @@ import AuthorSection from "./AuthorSection";
 import CustomRichText from "@/components/StyleFirstWord";
 import { Cormorant, Proza_Libre } from 'next/font/google';
 import ButtonLink from "@/components/PageBtnLink";
+import VideoTemoignage from "./VideosTemoignage";
 
 const cormorant = Cormorant({
   subsets: ['latin'],
@@ -31,6 +32,12 @@ export type PageAProposProps = SliceComponentProps<Content.PageAProposSlice>;
  */
 const PageAPropos = ({ slice }: PageAProposProps): JSX.Element => {
 
+  const transformedVideos = slice.primary.videos_de_temoignage_de_contes.map(item => ({
+    video: {
+      html: item.video.html || '', // Ensure html is a string
+    },
+  }));
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -43,20 +50,36 @@ const PageAPropos = ({ slice }: PageAProposProps): JSX.Element => {
           <CustomRichText field={slice.primary.titre} />
         </div>
         <div className={`${proza_libre.className}`}>
-          <AboutTimeo content={slice.primary.description_timeo} />
+          <AboutTimeo content={slice.primary.a_propos_de_timeo} />
+        </div>
+        <VideoTemoignage videos={transformedVideos} />
+        <div className={`${proza_libre.className}`}>
+          <AboutTimeo content={slice.primary.les_atouts_timeo} />
         </div>
 
         {slice.primary.button_nous_contacter.map((item, index) => (
           <div key={index} className={`${cormorant.className} w-fit font-semibold shadow-2xl m-auto mt-3 sm:mt-4`}>
-          <ButtonLink field={item.lien_vers_la_page_contacter} className={`bg-[#366b79] shadow-footerMenuShadow`}>
-            {item.placeholder}
-          </ButtonLink>
-        </div>
+            {item.lien_vers_la_page_contacter &&
+              <ButtonLink field={item.lien_vers_la_page_contacter} className={`bg-[#366b79] shadow-footerMenuShadow`}>
+                {item.placeholder}
+              </ButtonLink>}
+          </div>
         )
         )}
 
       </div>
       <AuthorSection content={slice.primary.creatrice_timeo} />
+      <div className="py-3 sm:py-4">
+        {slice.primary.button_nous_contacter.map((item, index) => (
+          <div key={index} className={`${cormorant.className} w-fit font-semibold shadow-2xl mx-auto`}>
+            {item.lien_vers_la_page_contacter &&
+              <ButtonLink field={item.lien_vers_la_page_contacter} className={`bg-[#366b79] shadow-footerMenuShadow`}>
+                {item.placeholder}
+              </ButtonLink>}
+          </div>
+        )
+        )}
+      </div>
     </section>
   );
 };

@@ -45,11 +45,13 @@ const Transformation = ({ slice }: TransformationProps): JSX.Element => {
           m-auto mt-3 md:mt-4`}>{slice.primary.description}</p>
       </div>
       <div className="flex flex-col justify-center items-center mt-3 md:mt-5">
-        {slice.primary.button_nous_contacter.map((item, index) => (
-          <ButtonLink field={item.lien_vers_la_page} key={index} className={`${cormorant.className} bg-[#366b79]`}>
-            {item.placeholder}
-          </ButtonLink>
-        ))}
+        {slice.primary.button_nous_contacter.map((item, index) => {
+            if(item.lien_vers_la_page){
+              return <span key={index}><ButtonLink field={item.lien_vers_la_page} key={index} className={`${cormorant.className} bg-[#366b79]`}>
+              {item.placeholder}
+            </ButtonLink></span>
+              }
+         })}
       </div>
       <div className="w-[90%] md:w-[70%] mx-auto md:grid grid-cols-2 gap-4 my-4">
         <VideoPlayer htmlContent={slice.primary.video_explicative.html} />
@@ -58,12 +60,15 @@ const Transformation = ({ slice }: TransformationProps): JSX.Element => {
             field={slice.primary.text_temoignage_decathlon}
           /></p>
           <div className="flex flex-col justify-center items-center mt-3 md:mt-5">
-        {slice.primary.button_transformation.map((item, index) => (
-          <ButtonLink field={item.lien_vers_la_page} key={index} className={`${cormorant.className} bg-[#366b79]`}>
-            {item.placeholder_button}
-          </ButtonLink>
-        ))}
-      </div>
+            {slice.primary.button_transformation.map((item, index) => {
+              if(item.lien_vers_la_page){
+                return <span key={index}><ButtonLink field={item.lien_vers_la_page} key={index} className={`${cormorant.className} bg-[#366b79]`}>
+                {item.placeholder_button}
+              </ButtonLink></span>
+              }
+            }
+            )}
+          </div>
         </div>
       </div>
     </section>

@@ -1319,6 +1319,21 @@ export type FirstSliceFormationSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *PageAPropos → Default → Primary → Vidéos de témoignage de contes*
+ */
+export interface PageAProposSliceDefaultPrimaryVideosDeTemoignageDeContesItem {
+  /**
+   * vidéo field in *PageAPropos → Default → Primary → Vidéos de témoignage de contes*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.videos_de_temoignage_de_contes[].video
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  video: prismic.EmbedField;
+}
+
+/**
  * Item in *PageAPropos → Default → Primary → Button nous contacter*
  */
 export interface PageAProposSliceDefaultPrimaryButtonNousContacterItem {
@@ -1433,14 +1448,36 @@ export interface PageAProposSliceDefaultPrimary {
   titre: prismic.RichTextField;
 
   /**
-   * Description Timéo field in *PageAPropos → Default → Primary*
+   * A propos de Timéo field in *PageAPropos → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: page_a_propos.default.primary.description_timeo
+   * - **API ID Path**: page_a_propos.default.primary.a_propos_de_timeo
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  description_timeo: prismic.RichTextField;
+  a_propos_de_timeo: prismic.RichTextField;
+
+  /**
+   * Vidéos de témoignage de contes field in *PageAPropos → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.videos_de_temoignage_de_contes[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  videos_de_temoignage_de_contes: prismic.GroupField<
+    Simplify<PageAProposSliceDefaultPrimaryVideosDeTemoignageDeContesItem>
+  >;
+
+  /**
+   * les atouts Timéo field in *PageAPropos → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_a_propos.default.primary.les_atouts_timeo
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  les_atouts_timeo: prismic.RichTextField;
 
   /**
    * Button nous contacter field in *PageAPropos → Default → Primary*
@@ -1812,26 +1849,31 @@ export interface SecondSliceFormationSliceDefaultPrimarySectionExampleDeCatalogu
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   sous_titre_catalogue: prismic.KeyTextField;
+}
 
+/**
+ * Item in *SecondSliceFormation → Default → Primary → bouton*
+ */
+export interface SecondSliceFormationSliceDefaultPrimaryBoutonItem {
   /**
-   * Text button field in *SecondSliceFormation → Default → Primary → Section example de catalogues*
+   * Text bouton field in *SecondSliceFormation → Default → Primary → bouton*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: second_slice_formation.default.primary.section_example_de_catalogues[].text_button
+   * - **API ID Path**: second_slice_formation.default.primary.bouton[].text_bouton
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  text_button: prismic.KeyTextField;
+  text_bouton: prismic.KeyTextField;
 
   /**
-   * lien vers la page catalogue field in *SecondSliceFormation → Default → Primary → Section example de catalogues*
+   * Lien vers la page page catalogue field in *SecondSliceFormation → Default → Primary → bouton*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: second_slice_formation.default.primary.section_example_de_catalogues[].lien_vers_la_page_catalogue
+   * - **API ID Path**: second_slice_formation.default.primary.bouton[].lien_vers_la_page_page_catalogue
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  lien_vers_la_page_catalogue: prismic.LinkField;
+  lien_vers_la_page_page_catalogue: prismic.LinkField;
 }
 
 /**
@@ -1868,6 +1910,18 @@ export interface SecondSliceFormationSliceDefaultPrimary {
    */
   section_example_de_catalogues: prismic.GroupField<
     Simplify<SecondSliceFormationSliceDefaultPrimarySectionExampleDeCataloguesItem>
+  >;
+
+  /**
+   * bouton field in *SecondSliceFormation → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: second_slice_formation.default.primary.bouton[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  bouton: prismic.GroupField<
+    Simplify<SecondSliceFormationSliceDefaultPrimaryBoutonItem>
   >;
 }
 
@@ -2058,6 +2112,17 @@ declare module "@prismicio/client" {
     ): prismic.Client<AllDocumentTypes>;
   }
 
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>;
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>;
+  }
+
   namespace Content {
     export type {
       FooterDocument,
@@ -2113,6 +2178,7 @@ declare module "@prismicio/client" {
       FirstSliceFormationSliceVariation,
       FirstSliceFormationSliceDefault,
       PageAProposSlice,
+      PageAProposSliceDefaultPrimaryVideosDeTemoignageDeContesItem,
       PageAProposSliceDefaultPrimaryButtonNousContacterItem,
       PageAProposSliceDefaultPrimaryCreatriceTimeoItem,
       PageAProposSliceDefaultPrimary,
@@ -2133,6 +2199,7 @@ declare module "@prismicio/client" {
       RichTextSliceDefault,
       SecondSliceFormationSlice,
       SecondSliceFormationSliceDefaultPrimarySectionExampleDeCataloguesItem,
+      SecondSliceFormationSliceDefaultPrimaryBoutonItem,
       SecondSliceFormationSliceDefaultPrimary,
       SecondSliceFormationSliceVariation,
       SecondSliceFormationSliceDefault,

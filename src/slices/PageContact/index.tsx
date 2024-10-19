@@ -3,7 +3,6 @@ import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import SectionWrap from "@/components/SectionWrap";
 import { Cormorant, Proza_Libre } from 'next/font/google';
 import clsx from "clsx";
-import ButtonLink from "@/components/PageBtnLink";
 
 const cormorant = Cormorant({
   subsets: ['latin'],
