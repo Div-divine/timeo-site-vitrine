@@ -135,7 +135,7 @@ export default function AudioPlayer({
             </audio>
             <div className='flex justify-between'>
               <div className='w-[80%]'>
-                <div className='w-full flex justify-start items-center'>
+                <div className='w-full flex justify-start items-center mt-3'>
                   <div className='w-fit h-auto rounded-full bg-slate-100 p-2'>
                     <div onClick={playPauseController} className='audio-control-container cursor-pointer'>
                       {playAudio ? icons[pauseIcon] : icons[playIcon]}
