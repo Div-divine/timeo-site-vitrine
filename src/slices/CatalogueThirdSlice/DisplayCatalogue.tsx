@@ -87,7 +87,7 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
                 <div className={`${cormorant.className} font-bold text-[#ffb910]`}>
                   <PrismicRichText field={item.valeur_traitee} />
                 </div>
-                <p>{item.titre_de_conte}</p>
+                <p className={`${proza_libre.className} text-sm`}>{item.titre_de_conte}</p>
               </div>
             </div>
           ))}
