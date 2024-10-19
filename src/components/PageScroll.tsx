@@ -20,7 +20,7 @@ const PageScroll = ({ slices, components }: ScrollContainerProps) => {
   });
 
   return (
-    <div style={{ position: "relative", overflow: "hidden"}}>
+    <div>
       {/* Render the progress bar outside of the slices map */}
       <motion.div className="progress-bar" style={{ scaleX }} />
 

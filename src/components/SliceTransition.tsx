@@ -17,7 +17,7 @@ const SliceTransition = ({ slices, components }: ScrollContainerProps) => {
               initial={{ opacity: 0, y: 50 }} // Start off-screen
               whileInView={{ opacity: 1, y: 0 }} // Animate to final position when in view
               exit={{ opacity: 0, y: -20 }} // Animate out
-              transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth transition
+              transition={{ duration: 0.4, ease: "easeInOut" }} // Smooth transition
               viewport={{ once: false }} // Allow multiple animations on scroll
               style={{ position: "relative", zIndex: index }} // Ensure stacking context for overlaps
             >
