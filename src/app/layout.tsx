@@ -5,6 +5,7 @@ import Header from "@/components/nav/Header";
 import { Footer } from "@/components/Footer/Footer";
 import { Content } from "@prismicio/client";
 import { Raleway, Cormorant, Proza_Libre } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/react"
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -41,6 +42,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
