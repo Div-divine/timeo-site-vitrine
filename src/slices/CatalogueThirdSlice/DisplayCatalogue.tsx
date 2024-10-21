@@ -52,9 +52,9 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
         {slice.primary.catalogue_saison_1
           .slice(0, visibleColumnsS1 * 3) // Limit the number of visible items
           .map((item, index) => (
-            <div key={index}>
+            <div key={index} className='bg-gradient-to-b from-[#03171E] to-[#356A78]'>
               <PrismicNextImage field={item.image_catalogue} className="shadow-footerMenuShadow" />
-              <div className="text-center bg-gradient-to-b from-[#03171E] to-[#356A78] text-slate-200 py-2">
+              <div className="text-center text-slate-200 py-2">
                 <div className={`${cormorant.className} font-bold text-[#ffb910]`}>
                   <PrismicRichText field={item.valeur_traitee} />
                 </div>
@@ -81,9 +81,9 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
         {slice.primary.catalogue_saison_2
           .slice(0, visibleColumnsS2 * 3) // Limit the number of visible items
           .map((item, index) => (
-            <div key={index}>
+            <div key={index} className='bg-gradient-to-b from-[#03171E] to-[#356A78]'>
               <PrismicNextImage field={item.image_cata} className="shadow-footerMenuShadow" />
-              <div className="text-center bg-gradient-to-b from-[#03171E] to-[#356A78] text-slate-200 py-2">
+              <div className="text-center text-slate-200 py-2">
                 <div className={`${cormorant.className} font-bold text-[#ffb910]`}>
                   <PrismicRichText field={item.valeur_traitee} />
                 </div>
@@ -110,9 +110,9 @@ const CatalogueSection: React.FC<CatalogueThirdSliceProps> = ({ slice }) => {
         {slice.primary.catalogue_saison_3
           .slice(0, visibleColumnsS3 * 3) // Limit the number of visible items
           .map((item, index) => (
-            <div key={index}>
+            <div key={index} className='bg-gradient-to-b from-[#03171E] to-[#356A78]'>
               <PrismicNextImage field={item.image_catalogue} className="shadow-footerMenuShadow" />
-              <div className="text-center bg-gradient-to-b from-[#03171E] to-[#356A78] text-slate-200 py-2">
+              <div className="text-center text-slate-200 py-2">
                 <div className={`${cormorant.className} font-bold text-[#ffb910]`}>
                   <PrismicRichText field={item.valeur_traitee} />
                 </div>
