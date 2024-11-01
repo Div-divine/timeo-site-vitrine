@@ -33,7 +33,7 @@ export default function NavBar({ menu }: MenuProps) {
                 <div className="flex items-center justify-between">
                     <div className="w-24 z-50">
                         <Link href='/' >
-                            <Image src={timeoLogo} alt="Timéo icon" />
+                            <Image src={timeoLogo} alt="Timéo icon" quality={100}/>
                             <span className="sr-only">Accueil</span>
                         </Link>
                     </div>

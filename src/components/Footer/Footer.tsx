@@ -29,7 +29,7 @@ export async function Footer() {
     <footer className={`bg-white mt-8 pb-2`}>
       <div className="w-24 m-auto">
         <Link href="/">
-          <Image src={timeoLogo} alt="Timéo Logo"/>
+          <Image src={timeoLogo} alt="Timéo Logo" quality={100}/>
           <span className="sr-only">Accueil</span>
         </Link>
       </div>
